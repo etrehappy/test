@@ -1,0 +1,77 @@
+\doxysection{event\+\_\+queue.\+h}
+\hypertarget{event__queue_8h_source}{}\label{event__queue_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event\_queue.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event\_queue.h}}
+\mbox{\hyperlink{event__queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8h}{event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00009}\mbox{\hyperlink{struct_event_comparator}{00009}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_event_comparator}{EventComparator}}\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00011}\mbox{\hyperlink{struct_event_comparator_a2a9dd8929bdbc62a5e7d4971d0b27957}{00011}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_event_comparator_a2a9dd8929bdbc62a5e7d4971d0b27957}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\&\ b)}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a-\/>GetPriority()\ <\ b-\/>GetPriority();}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00015}00015\ \};}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00017}00017\ \textcolor{comment}{//struct\ EventWithType\ \{}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00018}00018\ \textcolor{comment}{//\ \ \ \ EventType\ type;}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00019}00019\ \textcolor{comment}{//\ \ \ \ shrd\_event\ event;}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00020}00020\ \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00022}\mbox{\hyperlink{class_event_queue}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_queue}{EventQueue}}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00024}00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_event_queue_ad06d856b3cf1ac93728d349bd37772da}{EventQueue}}(boost::asio::io\_context\&);}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_event_queue_ac57db8e2366f2c6c594e6afc975e3b59}{\string~EventQueue}}();}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\ event);}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_queue_a0b78d4a8d8627ed5dafa76440b200da6}{IsEmpty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\ \mbox{\hyperlink{class_event_queue_ae154887e7c85db8e2fc4a5c0e2336f11}{ExtractTop}}();}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00034}00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00035}00035\ \ \ \ \ boost::asio::io\_context\&\ io\_context\_;}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00036}00036\ \ \ \ \ std::priority\_queue<shrd\_event,\ std::vector<shrd\_event>,\ \mbox{\hyperlink{struct_event_comparator}{EventComparator}}>\ queue\_;}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//std::priority\_queue<EventWithType,\ std::vector<EventWithType>,\ EventComparator>\ queue\_;\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00038}00038\ \};}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00042}00042\ \textcolor{comment}{//class\ EventQueue\ \{}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00043}00043\ \textcolor{comment}{//public:}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00044}00044\ \textcolor{comment}{//\ \ \ \ EventQueue(boost::asio::io\_context\&\ io\_context)}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00045}00045\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00046}00046\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00047}00047\ \textcolor{comment}{//\ \ \ \ \ \ \ \ //\ Добавление\ события\ в\ очередь}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00048}00048\ \textcolor{comment}{//\ \ \ \ \ \ \ \ void\ push(std::shared\_ptr<Event>\ event)\ \{}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00049}00049\ \textcolor{comment}{//\ \ \ \ \ \ \ \ queue\_.push(event);}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00050}00050\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00051}00051\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00052}00052\ \textcolor{comment}{//\ \ \ \ //\ Обработка\ всех\ событий\ в\ очереди}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00053}00053\ \textcolor{comment}{//\ \ \ \ void\ processEvents()\ \{}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00054}00054\ \textcolor{comment}{//\ \ \ \ \ \ \ \ while\ (!queue\_.empty())\ \{}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00055}00055\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ auto\ event\ =\ queue\_.front();}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00056}00056\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ queue\_.pop();}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00057}00057\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ event-\/>execute();\ //\ Выполнение\ события}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00058}00058\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00059}00059\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00060}00060\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00061}00061\ \textcolor{comment}{//\ \ \ \ //\ Асинхронная\ обработка\ событий\ через\ Boost.Asio}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00062}00062\ \textcolor{comment}{//\ \ \ \ void\ asyncProcess()\ \{}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00063}00063\ \textcolor{comment}{//\ \ \ \ \ \ \ \ io\_context\_.post([this]()\ \{}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00064}00064\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ processEvents();\ //\ Обрабатываем\ все\ события\ в\ очереди}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00065}00065\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \});}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00066}00066\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00067}00067\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00068}00068\ \textcolor{comment}{//private:}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00069}00069\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00070}00070\ \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{event__queue_8h_source_l00071}00071\ }
+
+\end{DoxyCode}

@@ -1,0 +1,71 @@
+\doxysection{view.\+h}
+\hypertarget{view_8h_source}{}\label{view_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/view.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/view.h}}
+\mbox{\hyperlink{view_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}messages.pb.h"{}}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__elements_8h}{game\_elements.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menus_8h}{menus.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texts_8h}{texts.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00013}\mbox{\hyperlink{class_view}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_view}{View}}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_view_a44ad60a768422d3fa8fbd7576950080a}{View}}();}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_view_ad0dc854db9aabbea98a334dec89f785c}{\string~View}}();}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a7e4bfadcce4e1db9d53664d85bb8b118}{ShowTextWithNewLine}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_ae539379d60f07fd6d0a63c4dd4edaa5e}{ShowTextWithoutNewLine}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_aae1124bd00c398e525d86300458b695e}{ShowErrorInput}}();}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a66b05847e5cdc3b1f6a3ca66b4cddb63}{ShowErrorSendMessageToServer}}();}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{/*It\ uses\ ProtoMessage\ here\ so\ to\ lock\ mutex\ only\ one\ time.*/}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_acf2114748159a5208c4038c6a6f6ec0a}{ShowAvatarList}}(\textcolor{keyword}{const}\ ProtoMessage::GameMessage\&\ message);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a4efe6a3ad9776c3e620a6593b015ccc1}{ShowErrorChoiseAvatar}}();}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_ad17c4b6f301e7179fe4dbc9eaebdc18c}{ShowErrorStartGame}}();}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a522c2e94c65cb7b68ca3999a41fcbc77}{ShowStartGameMessage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_avatar}{Avatar}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&,\ std::mutex\&);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a50b47daa7f43dfc9b8e8c818630b6e6c}{ShowCurrentState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_avatar}{Avatar}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&,\ std::mutex\&,\ \textcolor{keywordtype}{bool}\ cout\_lock\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00030}00030\ \ \ \ \ \textcolor{comment}{/*void\ ShowMenu(Menu\&);*/}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a3a81347d0d774ffa57241d17cb64ae19}{ShowMenu}}(\mbox{\hyperlink{class_menu}{Menu<T>}}\&\ menu);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a13da1f05b0bf9ea415b41879ce8ca08d}{ShowMap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_avatar}{Avatar}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&,\ std::mutex\&);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_aa24e0078e20640e2a0e11c927aff4df0}{ShowLocDescription}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&,\ std::mutex\&);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_abee2d24a04aa733c8e3a341f35f255be}{ShowCommonMessage}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ text);}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00039}00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00040}00040\ \ \ \ \ std::mutex\ cout\_mutex\_;}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00041}00041\ \ \ \ \ std::ostream\&\ view\_out\_;}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00043}00043\ \};}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00045}00045\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00046}\mbox{\hyperlink{class_view_a3a81347d0d774ffa57241d17cb64ae19}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a3a81347d0d774ffa57241d17cb64ae19}{View::ShowMenu}}(\mbox{\hyperlink{class_menu}{Menu<T>}}\&\ menu)}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00048}00048\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00049}00049\ \{}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacetext__v}{text\_v}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ item\ :\ menu.\mbox{\hyperlink{class_menu_a721f0e9a7c3fe8dc9e75c9c4e7e35e11}{GetMap}}())}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ (static\_cast<uint16\_t>(item.first))}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ kColon\ <<\ item.second;}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00058}00058\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00059}00059\ \{}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00062}00062\ \}\textcolor{comment}{/*\ ShowMenu\ */}}
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{view_8h_source_l00065}00065\ }
+
+\end{DoxyCode}

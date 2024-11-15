@@ -1,0 +1,66 @@
+\doxysection{argparse\+::details\+::Is\+Choice\+Type\+Supported\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structargparse_1_1details_1_1_is_choice_type_supported}{}\label{structargparse_1_1details_1_1_is_choice_type_supported}\index{argparse::details::IsChoiceTypeSupported$<$ T $>$@{argparse::details::IsChoiceTypeSupported$<$ T $>$}}
+
+
+{\ttfamily \#include $<$argparse.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structargparse_1_1details_1_1_is_choice_type_supported_ace85d5e2c6a270c3dfc6f9ff28e0ecbc}{Clean\+Type}} = typename std\+::decay$<$T$>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const bool \mbox{\hyperlink{structargparse_1_1details_1_1_is_choice_type_supported_a948741bd32d4c4a6c1f7a34b4653cc94}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct argparse\+::details\+::\+Is\+Choice\+Type\+Supported$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00530}{530}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{structargparse_1_1details_1_1_is_choice_type_supported_ace85d5e2c6a270c3dfc6f9ff28e0ecbc}\index{argparse::details::IsChoiceTypeSupported$<$ T $>$@{argparse::details::IsChoiceTypeSupported$<$ T $>$}!CleanType@{CleanType}}
+\index{CleanType@{CleanType}!argparse::details::IsChoiceTypeSupported$<$ T $>$@{argparse::details::IsChoiceTypeSupported$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CleanType}{CleanType}}
+{\footnotesize\ttfamily \label{structargparse_1_1details_1_1_is_choice_type_supported_ace85d5e2c6a270c3dfc6f9ff28e0ecbc} 
+template$<$typename T $>$ \\
+using \mbox{\hyperlink{structargparse_1_1details_1_1_is_choice_type_supported}{argparse\+::details\+::\+Is\+Choice\+Type\+Supported}}$<$ T $>$\+::\+Clean\+Type = typename std\+::decay$<$T$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00531}{531}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structargparse_1_1details_1_1_is_choice_type_supported_a948741bd32d4c4a6c1f7a34b4653cc94}\index{argparse::details::IsChoiceTypeSupported$<$ T $>$@{argparse::details::IsChoiceTypeSupported$<$ T $>$}!value@{value}}
+\index{value@{value}!argparse::details::IsChoiceTypeSupported$<$ T $>$@{argparse::details::IsChoiceTypeSupported$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{structargparse_1_1details_1_1_is_choice_type_supported_a948741bd32d4c4a6c1f7a34b4653cc94} 
+template$<$typename T $>$ \\
+const bool \mbox{\hyperlink{structargparse_1_1details_1_1_is_choice_type_supported}{argparse\+::details\+::\+Is\+Choice\+Type\+Supported}}$<$ T $>$\+::value\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ std::is\_integral<CleanType>::value\ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same<CleanType,\ std::string>::value\ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same<CleanType,\ std::string\_view>::value\ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same<CleanType,\ const\ char\ *>::value}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00532}{532}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{argparse_8hpp}{argparse.\+hpp}}\end{DoxyCompactItemize}

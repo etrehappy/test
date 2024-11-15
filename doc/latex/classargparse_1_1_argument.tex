@@ -1,0 +1,535 @@
+\doxysection{argparse\+::Argument Class Reference}
+\hypertarget{classargparse_1_1_argument}{}\label{classargparse_1_1_argument}\index{argparse::Argument@{argparse::Argument}}
+
+
+{\ttfamily \#include $<$argparse.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\\mbox{\hyperlink{classargparse_1_1_argument_a3acacb3d6458ba97ee4359f6466fe9f6}{Argument}} (std\+::string\+\_\+view prefix\+\_\+chars, std\+::array$<$ std\+::string\+\_\+view, N $>$ \&\&a)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a5011f7a72a5b69fe1ca27e1baff20411}{help}} (std\+::string help\+\_\+text)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_acdf8341266ee361132b7fa0a3823b1d3}{metavar}} (std\+::string metavar)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a6723d8728efb851a46b9dd39e1620e0c}{default\+\_\+value}} (T \&\&value)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a611b811d9f8f71f88c08807496fabc04}{default\+\_\+value}} (const char \texorpdfstring{$\ast$}{*}value)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a9870d5c9efd218ad7bab39855f3ea57f}{required}} ()
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_afe376b29b99d506a24473e88bab5b517}{implicit\+\_\+value}} (std\+::any value)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a4cc60e1af0c7eeb2eace203a87b6a593}{flag}} ()
+\item 
+{\footnotesize template$<$class F , class... Args$>$ }\\auto \mbox{\hyperlink{classargparse_1_1_argument_a39626a4414ce2ac38e9d59f0d583c178}{action}} (F \&\&callable, Args \&\&... bound\+\_\+args) -\/$>$ std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+invocable\+\_\+v$<$ F, Args..., std\+::string const $>$, \mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& $>$
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_a2dd4a7f5af14e6a6d27961f4a9ac4c04}{store\+\_\+into}} (bool \&var)
+\item 
+{\footnotesize template$<$typename T , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\auto \& \mbox{\hyperlink{classargparse_1_1_argument_a9c4f71f13be9b39c74c7d474e79332ce}{store\+\_\+into}} (T \&var)
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_ab0855ab877b9a7e803bd73c46df62d78}{store\+\_\+into}} (double \&var)
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_ac92c880e39d2738faa7492e1a491ad84}{store\+\_\+into}} (std\+::string \&var)
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_ab5b579e211cc4faee9458bb598b6ee00}{store\+\_\+into}} (std\+::vector$<$ std\+::string $>$ \&var)
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_ad7eddbf11f9f0d3aefb67e9077e2b429}{store\+\_\+into}} (std\+::vector$<$ int $>$ \&var)
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_a88c97757a0aff742108b9647a6b95543}{store\+\_\+into}} (std\+::set$<$ std\+::string $>$ \&var)
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_a3661502a7b60b1b4cd109423ed9f7d2e}{store\+\_\+into}} (std\+::set$<$ int $>$ \&var)
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_a6bfed1ff20081d558148dafe89aaa9da}{append}} ()
+\item 
+auto \& \mbox{\hyperlink{classargparse_1_1_argument_a83ac4bd79a1e72ddfef5ecadf8d7ce47}{hidden}} ()
+\item 
+{\footnotesize template$<$char Shape, typename T $>$ }\\auto \mbox{\hyperlink{classargparse_1_1_argument_a09053d140082d45bc47bed74f0f00210}{scan}} () -\/$>$ std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$, \mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& $>$
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a53782d59766fb6b6b2e35e626689f2a5}{nargs}} (std\+::size\+\_\+t num\+\_\+args)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_ad7d78ec8800bc61dfca95c359607a54e}{nargs}} (std\+::size\+\_\+t num\+\_\+args\+\_\+min, std\+::size\+\_\+t num\+\_\+args\+\_\+max)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a60a2efdbc55b9b575756be2c3ac91bb7}{nargs}} (\mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59}{nargs\+\_\+pattern}} pattern)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a93a68634f7f4bd7496f6cd0bdc8d3e79}{remaining}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classargparse_1_1_argument_a453b90519f54f851e287e552c9f92e8f}{add\+\_\+choice}} (T \&\&choice)
+\item 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_ade82f018f60248dc34df623fbaacc69f}{choices}} ()
+\item 
+{\footnotesize template$<$typename T , typename... U$>$ }\\\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& \mbox{\hyperlink{classargparse_1_1_argument_a58e96b99d4983f44ae994497a68579f6}{choices}} (T \&\&first, U \&\&... rest)
+\item 
+void \mbox{\hyperlink{classargparse_1_1_argument_a44c2d44e574836f0f5a2ea4e9f31fc43}{find\+\_\+default\+\_\+value\+\_\+in\+\_\+choices\+\_\+or\+\_\+throw}} () const
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\void \mbox{\hyperlink{classargparse_1_1_argument_a57cb4d1feca828c3a4499b6bfd1c8185}{find\+\_\+value\+\_\+in\+\_\+choices\+\_\+or\+\_\+throw}} (Iterator it) const
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\Iterator \mbox{\hyperlink{classargparse_1_1_argument_a3dfa9c3892161b998696cc0d27e3b70e}{consume}} (Iterator start, Iterator end, std\+::string\+\_\+view used\+\_\+name=\{\}, bool dry\+\_\+run=false)
+\item 
+void \mbox{\hyperlink{classargparse_1_1_argument_a36116c082d6afa0be1910d29dcbb8c55}{validate}} () const
+\item 
+std\+::string \mbox{\hyperlink{classargparse_1_1_argument_a16a92e66a212f47e562fd46c6b79df8a}{get\+\_\+names\+\_\+csv}} (char separator=\textquotesingle{},\textquotesingle{}) const
+\item 
+std\+::string \mbox{\hyperlink{classargparse_1_1_argument_a0300f1bea4cff76979ac033aab755184}{get\+\_\+usage\+\_\+full}} () const
+\item 
+std\+::string \mbox{\hyperlink{classargparse_1_1_argument_af46efcbe4957e9306fc21c7b051c9205}{get\+\_\+inline\+\_\+usage}} () const
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classargparse_1_1_argument_ad8aaf2df6d3bb3fde0d09b2a04cba378}{get\+\_\+arguments\+\_\+length}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classargparse_1_1_argument_a68fb2ffd4e2dcaea80aefd7812f1e850}{operator!=}} (const T \&rhs) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classargparse_1_1_argument_aa3bd4389cb5362f88906ec1286bdc2b7}{operator==}} (const T \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classargparse_1_1_argument_a213a124764afeb5bb22c1090c9ce9f62}{is\+\_\+positional}} (std\+::string\+\_\+view name, std\+::string\+\_\+view prefix\+\_\+chars)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classargparse_1_1_argument_a55c9e1ac006a645af402e3aee6b64e00}{Argument\+Parser}}
+\item 
+auto \mbox{\hyperlink{classargparse_1_1_argument_aa4d339774ec7cbdd83321a17e2cda661}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classargparse_1_1_argument_parser}{Argument\+Parser}} \&parser) -\/$>$ std\+::ostream \&
+\item 
+std\+::ostream \& \mbox{\hyperlink{classargparse_1_1_argument_a8ee97386cf348b35c5fec033ab7d8925}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \&argument)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00598}{598}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classargparse_1_1_argument_a3acacb3d6458ba97ee4359f6466fe9f6}\index{argparse::Argument@{argparse::Argument}!Argument@{Argument}}
+\index{Argument@{Argument}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{Argument()}{Argument()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a3acacb3d6458ba97ee4359f6466fe9f6} 
+template$<$std\+::size\+\_\+t N$>$ \\
+argparse\+::\+Argument\+::\+Argument (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{prefix\+\_\+chars}{, }\item[{std\+::array$<$ std\+::string\+\_\+view, N $>$ \&\&}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00620}{620}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classargparse_1_1_argument_a39626a4414ce2ac38e9d59f0d583c178}\index{argparse::Argument@{argparse::Argument}!action@{action}}
+\index{action@{action}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a39626a4414ce2ac38e9d59f0d583c178} 
+template$<$class F , class... Args$>$ \\
+auto argparse\+::\+Argument\+::action (\begin{DoxyParamCaption}\item[{F \&\&}]{callable}{, }\item[{Args \&\&...}]{bound\+\_\+args}{}\end{DoxyParamCaption}) -\/$>$ std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+invocable\+\_\+v$<$F, Args..., std\+::string const$>$,                           \mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \&$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00674}{674}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a453b90519f54f851e287e552c9f92e8f}\index{argparse::Argument@{argparse::Argument}!add\_choice@{add\_choice}}
+\index{add\_choice@{add\_choice}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{add\_choice()}{add\_choice()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a453b90519f54f851e287e552c9f92e8f} 
+template$<$typename T $>$ \\
+void argparse\+::\+Argument\+::add\+\_\+choice (\begin{DoxyParamCaption}\item[{T \&\&}]{choice}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00874}{874}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a6bfed1ff20081d558148dafe89aaa9da}\index{argparse::Argument@{argparse::Argument}!append@{append}}
+\index{append@{append}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a6bfed1ff20081d558148dafe89aaa9da} 
+auto \& argparse\+::\+Argument\+::append (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00787}{787}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_ade82f018f60248dc34df623fbaacc69f}\index{argparse::Argument@{argparse::Argument}!choices@{choices}}
+\index{choices@{choices}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{choices()}{choices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_ade82f018f60248dc34df623fbaacc69f} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::choices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00892}{892}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a58e96b99d4983f44ae994497a68579f6}\index{argparse::Argument@{argparse::Argument}!choices@{choices}}
+\index{choices@{choices}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{choices()}{choices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a58e96b99d4983f44ae994497a68579f6} 
+template$<$typename T , typename... U$>$ \\
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::choices (\begin{DoxyParamCaption}\item[{T \&\&}]{first}{, }\item[{U \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00900}{900}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a3dfa9c3892161b998696cc0d27e3b70e}\index{argparse::Argument@{argparse::Argument}!consume@{consume}}
+\index{consume@{consume}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a3dfa9c3892161b998696cc0d27e3b70e} 
+template$<$typename Iterator $>$ \\
+Iterator argparse\+::\+Argument\+::consume (\begin{DoxyParamCaption}\item[{Iterator}]{start}{, }\item[{Iterator}]{end}{, }\item[{std\+::string\+\_\+view}]{used\+\_\+name}{ = {\ttfamily \{\}}, }\item[{bool}]{dry\+\_\+run}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00955}{955}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a611b811d9f8f71f88c08807496fabc04}\index{argparse::Argument@{argparse::Argument}!default\_value@{default\_value}}
+\index{default\_value@{default\_value}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{default\_value()}{default\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a611b811d9f8f71f88c08807496fabc04} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::default\+\_\+value (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00648}{648}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a6723d8728efb851a46b9dd39e1620e0c}\index{argparse::Argument@{argparse::Argument}!default\_value@{default\_value}}
+\index{default\_value@{default\_value}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{default\_value()}{default\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a6723d8728efb851a46b9dd39e1620e0c} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::default\+\_\+value (\begin{DoxyParamCaption}\item[{T \&\&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00634}{634}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a44c2d44e574836f0f5a2ea4e9f31fc43}\index{argparse::Argument@{argparse::Argument}!find\_default\_value\_in\_choices\_or\_throw@{find\_default\_value\_in\_choices\_or\_throw}}
+\index{find\_default\_value\_in\_choices\_or\_throw@{find\_default\_value\_in\_choices\_or\_throw}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{find\_default\_value\_in\_choices\_or\_throw()}{find\_default\_value\_in\_choices\_or\_throw()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a44c2d44e574836f0f5a2ea4e9f31fc43} 
+void argparse\+::\+Argument\+::find\+\_\+default\+\_\+value\+\_\+in\+\_\+choices\+\_\+or\+\_\+throw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00906}{906}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a57cb4d1feca828c3a4499b6bfd1c8185}\index{argparse::Argument@{argparse::Argument}!find\_value\_in\_choices\_or\_throw@{find\_value\_in\_choices\_or\_throw}}
+\index{find\_value\_in\_choices\_or\_throw@{find\_value\_in\_choices\_or\_throw}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{find\_value\_in\_choices\_or\_throw()}{find\_value\_in\_choices\_or\_throw()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a57cb4d1feca828c3a4499b6bfd1c8185} 
+template$<$typename Iterator $>$ \\
+void argparse\+::\+Argument\+::find\+\_\+value\+\_\+in\+\_\+choices\+\_\+or\+\_\+throw (\begin{DoxyParamCaption}\item[{Iterator}]{it}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00930}{930}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a4cc60e1af0c7eeb2eace203a87b6a593}\index{argparse::Argument@{argparse::Argument}!flag@{flag}}
+\index{flag@{flag}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{flag()}{flag()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a4cc60e1af0c7eeb2eace203a87b6a593} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::flag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00667}{667}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_ad8aaf2df6d3bb3fde0d09b2a04cba378}\index{argparse::Argument@{argparse::Argument}!get\_arguments\_length@{get\_arguments\_length}}
+\index{get\_arguments\_length@{get\_arguments\_length}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{get\_arguments\_length()}{get\_arguments\_length()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_ad8aaf2df6d3bb3fde0d09b2a04cba378} 
+std\+::size\+\_\+t argparse\+::\+Argument\+::get\+\_\+arguments\+\_\+length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01117}{1117}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_af46efcbe4957e9306fc21c7b051c9205}\index{argparse::Argument@{argparse::Argument}!get\_inline\_usage@{get\_inline\_usage}}
+\index{get\_inline\_usage@{get\_inline\_usage}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{get\_inline\_usage()}{get\_inline\_usage()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_af46efcbe4957e9306fc21c7b051c9205} 
+std\+::string argparse\+::\+Argument\+::get\+\_\+inline\+\_\+usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01087}{1087}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a16a92e66a212f47e562fd46c6b79df8a}\index{argparse::Argument@{argparse::Argument}!get\_names\_csv@{get\_names\_csv}}
+\index{get\_names\_csv@{get\_names\_csv}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{get\_names\_csv()}{get\_names\_csv()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a16a92e66a212f47e562fd46c6b79df8a} 
+std\+::string argparse\+::\+Argument\+::get\+\_\+names\+\_\+csv (\begin{DoxyParamCaption}\item[{char}]{separator}{ = {\ttfamily \textquotesingle{},\textquotesingle{}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01065}{1065}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a0300f1bea4cff76979ac033aab755184}\index{argparse::Argument@{argparse::Argument}!get\_usage\_full@{get\_usage\_full}}
+\index{get\_usage\_full@{get\_usage\_full}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{get\_usage\_full()}{get\_usage\_full()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a0300f1bea4cff76979ac033aab755184} 
+std\+::string argparse\+::\+Argument\+::get\+\_\+usage\+\_\+full (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01073}{1073}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a5011f7a72a5b69fe1ca27e1baff20411}\index{argparse::Argument@{argparse::Argument}!help@{help}}
+\index{help@{help}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{help()}{help()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a5011f7a72a5b69fe1ca27e1baff20411} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::help (\begin{DoxyParamCaption}\item[{std\+::string}]{help\+\_\+text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00624}{624}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a83ac4bd79a1e72ddfef5ecadf8d7ce47}\index{argparse::Argument@{argparse::Argument}!hidden@{hidden}}
+\index{hidden@{hidden}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{hidden()}{hidden()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a83ac4bd79a1e72ddfef5ecadf8d7ce47} 
+auto \& argparse\+::\+Argument\+::hidden (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00793}{793}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_afe376b29b99d506a24473e88bab5b517}\index{argparse::Argument@{argparse::Argument}!implicit\_value@{implicit\_value}}
+\index{implicit\_value@{implicit\_value}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{implicit\_value()}{implicit\_value()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_afe376b29b99d506a24473e88bab5b517} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::implicit\+\_\+value (\begin{DoxyParamCaption}\item[{std\+::any}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00657}{657}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a213a124764afeb5bb22c1090c9ce9f62}\index{argparse::Argument@{argparse::Argument}!is\_positional@{is\_positional}}
+\index{is\_positional@{is\_positional}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{is\_positional()}{is\_positional()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a213a124764afeb5bb22c1090c9ce9f62} 
+static bool argparse\+::\+Argument\+::is\+\_\+positional (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{, }\item[{std\+::string\+\_\+view}]{prefix\+\_\+chars}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01252}{1252}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_acdf8341266ee361132b7fa0a3823b1d3}\index{argparse::Argument@{argparse::Argument}!metavar@{metavar}}
+\index{metavar@{metavar}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{metavar()}{metavar()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_acdf8341266ee361132b7fa0a3823b1d3} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::metavar (\begin{DoxyParamCaption}\item[{std\+::string}]{metavar}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00629}{629}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a60a2efdbc55b9b575756be2c3ac91bb7}\index{argparse::Argument@{argparse::Argument}!nargs@{nargs}}
+\index{nargs@{nargs}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{nargs()}{nargs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a60a2efdbc55b9b575756be2c3ac91bb7} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::nargs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59}{nargs\+\_\+pattern}}}]{pattern}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00852}{852}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a53782d59766fb6b6b2e35e626689f2a5}\index{argparse::Argument@{argparse::Argument}!nargs@{nargs}}
+\index{nargs@{nargs}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{nargs()}{nargs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a53782d59766fb6b6b2e35e626689f2a5} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::nargs (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+\_\+args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00842}{842}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_ad7d78ec8800bc61dfca95c359607a54e}\index{argparse::Argument@{argparse::Argument}!nargs@{nargs}}
+\index{nargs@{nargs}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{nargs()}{nargs()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_ad7d78ec8800bc61dfca95c359607a54e} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::nargs (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{num\+\_\+args\+\_\+min}{, }\item[{std\+::size\+\_\+t}]{num\+\_\+args\+\_\+max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00847}{847}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a68fb2ffd4e2dcaea80aefd7812f1e850}\index{argparse::Argument@{argparse::Argument}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a68fb2ffd4e2dcaea80aefd7812f1e850} 
+template$<$typename T $>$ \\
+bool argparse\+::\+Argument\+::operator!= (\begin{DoxyParamCaption}\item[{const T \&}]{rhs}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01224}{1224}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_aa3bd4389cb5362f88906ec1286bdc2b7}\index{argparse::Argument@{argparse::Argument}!operator==@{operator==}}
+\index{operator==@{operator==}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_aa3bd4389cb5362f88906ec1286bdc2b7} 
+template$<$typename T $>$ \\
+bool argparse\+::\+Argument\+::operator== (\begin{DoxyParamCaption}\item[{const T \&}]{rhs}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01232}{1232}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a93a68634f7f4bd7496f6cd0bdc8d3e79}\index{argparse::Argument@{argparse::Argument}!remaining@{remaining}}
+\index{remaining@{remaining}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{remaining()}{remaining()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a93a68634f7f4bd7496f6cd0bdc8d3e79} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::remaining (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00869}{869}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a9870d5c9efd218ad7bab39855f3ea57f}\index{argparse::Argument@{argparse::Argument}!required@{required}}
+\index{required@{required}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{required()}{required()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a9870d5c9efd218ad7bab39855f3ea57f} 
+\mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \& argparse\+::\+Argument\+::required (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00652}{652}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a09053d140082d45bc47bed74f0f00210}\index{argparse::Argument@{argparse::Argument}!scan@{scan}}
+\index{scan@{scan}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a09053d140082d45bc47bed74f0f00210} 
+template$<$char Shape, typename T $>$ \\
+auto argparse\+::\+Argument\+::scan (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) -\/$>$ std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+arithmetic\+\_\+v$<$T$>$, \mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \&$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00799}{799}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a2dd4a7f5af14e6a6d27961f4a9ac4c04}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a2dd4a7f5af14e6a6d27961f4a9ac4c04} 
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{bool \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00693}{693}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_ab0855ab877b9a7e803bd73c46df62d78}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_ab0855ab877b9a7e803bd73c46df62d78} 
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{double \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00713}{713}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a3661502a7b60b1b4cd109423ed9f7d2e}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a3661502a7b60b1b4cd109423ed9f7d2e} 
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{std\+::set$<$ int $>$ \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00773}{773}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a88c97757a0aff742108b9647a6b95543}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a88c97757a0aff742108b9647a6b95543} 
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{std\+::set$<$ std\+::string $>$ \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00759}{759}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_ac92c880e39d2738faa7492e1a491ad84}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_ac92c880e39d2738faa7492e1a491ad84} 
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{std\+::string \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00723}{723}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_ad7eddbf11f9f0d3aefb67e9077e2b429}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_ad7eddbf11f9f0d3aefb67e9077e2b429} 
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00745}{745}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_ab5b579e211cc4faee9458bb598b6ee00}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_ab5b579e211cc4faee9458bb598b6ee00} 
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00731}{731}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a9c4f71f13be9b39c74c7d474e79332ce}\index{argparse::Argument@{argparse::Argument}!store\_into@{store\_into}}
+\index{store\_into@{store\_into}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{store\_into()}{store\_into()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a9c4f71f13be9b39c74c7d474e79332ce} 
+template$<$typename T , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+auto \& argparse\+::\+Argument\+::store\+\_\+into (\begin{DoxyParamCaption}\item[{T \&}]{var}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00703}{703}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a36116c082d6afa0be1910d29dcbb8c55}\index{argparse::Argument@{argparse::Argument}!validate@{validate}}
+\index{validate@{validate}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a36116c082d6afa0be1910d29dcbb8c55} 
+void argparse\+::\+Argument\+::validate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01042}{1042}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classargparse_1_1_argument_a55c9e1ac006a645af402e3aee6b64e00}\index{argparse::Argument@{argparse::Argument}!ArgumentParser@{ArgumentParser}}
+\index{ArgumentParser@{ArgumentParser}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{ArgumentParser}{ArgumentParser}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a55c9e1ac006a645af402e3aee6b64e00} 
+friend class \mbox{\hyperlink{classargparse_1_1_argument_parser}{Argument\+Parser}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00599}{599}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_a8ee97386cf348b35c5fec033ab7d8925}\index{argparse::Argument@{argparse::Argument}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_a8ee97386cf348b35c5fec033ab7d8925} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream}{, }\item[{const \mbox{\hyperlink{classargparse_1_1_argument}{Argument}} \&}]{argument}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l01142}{1142}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{classargparse_1_1_argument_aa4d339774ec7cbdd83321a17e2cda661}\index{argparse::Argument@{argparse::Argument}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!argparse::Argument@{argparse::Argument}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classargparse_1_1_argument_aa4d339774ec7cbdd83321a17e2cda661} 
+auto operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream}{, }\item[{const \mbox{\hyperlink{classargparse_1_1_argument_parser}{Argument\+Parser}} \&}]{parser}{}\end{DoxyParamCaption}) -\/$>$  std\+::ostream \&\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{argparse_8hpp}{argparse.\+hpp}}\end{DoxyCompactItemize}

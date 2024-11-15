@@ -1,0 +1,256 @@
+\doxysection{Avatar Class Reference}
+\hypertarget{class_avatar}{}\label{class_avatar}\index{Avatar@{Avatar}}
+
+
+{\ttfamily \#include $<$avatar.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_avatar_ad78a6cf117f0a944fad99015219e3342}{Avatar}} (uint32\+\_\+t id, std\+::string uuid)
+\item 
+void \mbox{\hyperlink{class_avatar_a28c016525cd1672f33383c2fa8afc85d}{Set\+All\+Not\+Const\+Parametrs}} (std\+::string name, uint32\+\_\+t race\+\_\+id, uint32\+\_\+t class\+\_\+id, uint32\+\_\+t level, uint32\+\_\+t experience, uint32\+\_\+t health, uint32\+\_\+t mana, uint32\+\_\+t strength, uint32\+\_\+t dexterity, uint32\+\_\+t intelligence, uint32\+\_\+t location\+\_\+id, int32\+\_\+t x=0, int32\+\_\+t y=0)
+\item 
+void \mbox{\hyperlink{class_avatar_a0dffed07131295116cdd9711247dcc34}{Set\+Few\+Parametrs}} (uint32\+\_\+t level, uint32\+\_\+t experience, uint32\+\_\+t health, uint32\+\_\+t mana, uint32\+\_\+t strength, uint32\+\_\+t dexterity, uint32\+\_\+t intelligence, uint32\+\_\+t location\+\_\+id, int32\+\_\+t x, int32\+\_\+t y)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_a6536d98f7e3265734206089c4907b5a3}{Get\+Id}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_avatar_ac2fbbe898fad2f05b0d7040854d1b61b}{Get\+User\+Uuid}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_avatar_a1699e4074188c587a92438ae24a267a4}{Get\+Name}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_a9a2b752913ef82c092e010a3dd0d16b0}{Get\+Race\+Id}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_a4a0b512952966a8b9abbbbcbeb517cf7}{Get\+Class\+Id}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_a20f9125d9feb54868fd919b9a7340895}{Get\+Level}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_aa11a402109f29d4c4af55d35a12e8d53}{Get\+Experience}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_ad26100e29a8565f9304ffb4cdf3b13bc}{Get\+Health}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_adc4e5598f121ea1bb9fc005de2f78cbb}{Get\+Mana}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_abb87fc5c7c0d272952b78a27c83b6fc0}{Get\+Strength}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_ad48b59696ca4f1e944d1dcd2219c917c}{Get\+Dexterity}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_ab2c8152aefd999a96f4f5a0577529265}{Get\+Intelligence}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_avatar_a2de64937a2809c07eb4687514b859e79}{Get\+Location\+Id}} () const
+\item 
+std\+::pair$<$ int32\+\_\+t, int32\+\_\+t $>$ \mbox{\hyperlink{class_avatar_a7cbb35882114fee2d49448802d6a2b1b}{Get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_avatar_a6665ffeafce7670c966ec233cdebd376}{Set\+PosX}} (int32\+\_\+t x)
+\item 
+void \mbox{\hyperlink{class_avatar_a5eb3ca303d495bfc684aaaaf87cf7ad2}{Set\+PosY}} (int32\+\_\+t y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{avatar_8h_source_l00005}{5}} of file \mbox{\hyperlink{avatar_8h_source}{avatar.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_avatar_ad78a6cf117f0a944fad99015219e3342}\index{Avatar@{Avatar}!Avatar@{Avatar}}
+\index{Avatar@{Avatar}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{Avatar()}{Avatar()}}
+{\footnotesize\ttfamily \label{class_avatar_ad78a6cf117f0a944fad99015219e3342} 
+Avatar\+::\+Avatar (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id}{, }\item[{std\+::string}]{uuid}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_avatar_a4a0b512952966a8b9abbbbcbeb517cf7}\index{Avatar@{Avatar}!GetClassId@{GetClassId}}
+\index{GetClassId@{GetClassId}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetClassId()}{GetClassId()}}
+{\footnotesize\ttfamily \label{class_avatar_a4a0b512952966a8b9abbbbcbeb517cf7} 
+uint32\+\_\+t Avatar\+::\+Get\+Class\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_ad48b59696ca4f1e944d1dcd2219c917c}\index{Avatar@{Avatar}!GetDexterity@{GetDexterity}}
+\index{GetDexterity@{GetDexterity}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetDexterity()}{GetDexterity()}}
+{\footnotesize\ttfamily \label{class_avatar_ad48b59696ca4f1e944d1dcd2219c917c} 
+uint32\+\_\+t Avatar\+::\+Get\+Dexterity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_aa11a402109f29d4c4af55d35a12e8d53}\index{Avatar@{Avatar}!GetExperience@{GetExperience}}
+\index{GetExperience@{GetExperience}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetExperience()}{GetExperience()}}
+{\footnotesize\ttfamily \label{class_avatar_aa11a402109f29d4c4af55d35a12e8d53} 
+uint32\+\_\+t Avatar\+::\+Get\+Experience (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_ad26100e29a8565f9304ffb4cdf3b13bc}\index{Avatar@{Avatar}!GetHealth@{GetHealth}}
+\index{GetHealth@{GetHealth}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetHealth()}{GetHealth()}}
+{\footnotesize\ttfamily \label{class_avatar_ad26100e29a8565f9304ffb4cdf3b13bc} 
+uint32\+\_\+t Avatar\+::\+Get\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a6536d98f7e3265734206089c4907b5a3}\index{Avatar@{Avatar}!GetId@{GetId}}
+\index{GetId@{GetId}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetId()}{GetId()}}
+{\footnotesize\ttfamily \label{class_avatar_a6536d98f7e3265734206089c4907b5a3} 
+uint32\+\_\+t Avatar\+::\+Get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_ab2c8152aefd999a96f4f5a0577529265}\index{Avatar@{Avatar}!GetIntelligence@{GetIntelligence}}
+\index{GetIntelligence@{GetIntelligence}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetIntelligence()}{GetIntelligence()}}
+{\footnotesize\ttfamily \label{class_avatar_ab2c8152aefd999a96f4f5a0577529265} 
+uint32\+\_\+t Avatar\+::\+Get\+Intelligence (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a20f9125d9feb54868fd919b9a7340895}\index{Avatar@{Avatar}!GetLevel@{GetLevel}}
+\index{GetLevel@{GetLevel}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetLevel()}{GetLevel()}}
+{\footnotesize\ttfamily \label{class_avatar_a20f9125d9feb54868fd919b9a7340895} 
+uint32\+\_\+t Avatar\+::\+Get\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a2de64937a2809c07eb4687514b859e79}\index{Avatar@{Avatar}!GetLocationId@{GetLocationId}}
+\index{GetLocationId@{GetLocationId}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetLocationId()}{GetLocationId()}}
+{\footnotesize\ttfamily \label{class_avatar_a2de64937a2809c07eb4687514b859e79} 
+uint32\+\_\+t Avatar\+::\+Get\+Location\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_adc4e5598f121ea1bb9fc005de2f78cbb}\index{Avatar@{Avatar}!GetMana@{GetMana}}
+\index{GetMana@{GetMana}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetMana()}{GetMana()}}
+{\footnotesize\ttfamily \label{class_avatar_adc4e5598f121ea1bb9fc005de2f78cbb} 
+uint32\+\_\+t Avatar\+::\+Get\+Mana (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a1699e4074188c587a92438ae24a267a4}\index{Avatar@{Avatar}!GetName@{GetName}}
+\index{GetName@{GetName}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{class_avatar_a1699e4074188c587a92438ae24a267a4} 
+const std\+::string \& Avatar\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a7cbb35882114fee2d49448802d6a2b1b}\index{Avatar@{Avatar}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_avatar_a7cbb35882114fee2d49448802d6a2b1b} 
+std\+::pair$<$ int32\+\_\+t, int32\+\_\+t $>$ Avatar\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a9a2b752913ef82c092e010a3dd0d16b0}\index{Avatar@{Avatar}!GetRaceId@{GetRaceId}}
+\index{GetRaceId@{GetRaceId}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetRaceId()}{GetRaceId()}}
+{\footnotesize\ttfamily \label{class_avatar_a9a2b752913ef82c092e010a3dd0d16b0} 
+uint32\+\_\+t Avatar\+::\+Get\+Race\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_abb87fc5c7c0d272952b78a27c83b6fc0}\index{Avatar@{Avatar}!GetStrength@{GetStrength}}
+\index{GetStrength@{GetStrength}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetStrength()}{GetStrength()}}
+{\footnotesize\ttfamily \label{class_avatar_abb87fc5c7c0d272952b78a27c83b6fc0} 
+uint32\+\_\+t Avatar\+::\+Get\+Strength (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_ac2fbbe898fad2f05b0d7040854d1b61b}\index{Avatar@{Avatar}!GetUserUuid@{GetUserUuid}}
+\index{GetUserUuid@{GetUserUuid}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{GetUserUuid()}{GetUserUuid()}}
+{\footnotesize\ttfamily \label{class_avatar_ac2fbbe898fad2f05b0d7040854d1b61b} 
+const std\+::string \& Avatar\+::\+Get\+User\+Uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a28c016525cd1672f33383c2fa8afc85d}\index{Avatar@{Avatar}!SetAllNotConstParametrs@{SetAllNotConstParametrs}}
+\index{SetAllNotConstParametrs@{SetAllNotConstParametrs}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{SetAllNotConstParametrs()}{SetAllNotConstParametrs()}}
+{\footnotesize\ttfamily \label{class_avatar_a28c016525cd1672f33383c2fa8afc85d} 
+void Avatar\+::\+Set\+All\+Not\+Const\+Parametrs (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{uint32\+\_\+t}]{race\+\_\+id}{, }\item[{uint32\+\_\+t}]{class\+\_\+id}{, }\item[{uint32\+\_\+t}]{level}{, }\item[{uint32\+\_\+t}]{experience}{, }\item[{uint32\+\_\+t}]{health}{, }\item[{uint32\+\_\+t}]{mana}{, }\item[{uint32\+\_\+t}]{strength}{, }\item[{uint32\+\_\+t}]{dexterity}{, }\item[{uint32\+\_\+t}]{intelligence}{, }\item[{uint32\+\_\+t}]{location\+\_\+id}{, }\item[{int32\+\_\+t}]{x}{ = {\ttfamily 0}, }\item[{int32\+\_\+t}]{y}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a0dffed07131295116cdd9711247dcc34}\index{Avatar@{Avatar}!SetFewParametrs@{SetFewParametrs}}
+\index{SetFewParametrs@{SetFewParametrs}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{SetFewParametrs()}{SetFewParametrs()}}
+{\footnotesize\ttfamily \label{class_avatar_a0dffed07131295116cdd9711247dcc34} 
+void Avatar\+::\+Set\+Few\+Parametrs (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{level}{, }\item[{uint32\+\_\+t}]{experience}{, }\item[{uint32\+\_\+t}]{health}{, }\item[{uint32\+\_\+t}]{mana}{, }\item[{uint32\+\_\+t}]{strength}{, }\item[{uint32\+\_\+t}]{dexterity}{, }\item[{uint32\+\_\+t}]{intelligence}{, }\item[{uint32\+\_\+t}]{location\+\_\+id}{, }\item[{int32\+\_\+t}]{x}{, }\item[{int32\+\_\+t}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a6665ffeafce7670c966ec233cdebd376}\index{Avatar@{Avatar}!SetPosX@{SetPosX}}
+\index{SetPosX@{SetPosX}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{SetPosX()}{SetPosX()}}
+{\footnotesize\ttfamily \label{class_avatar_a6665ffeafce7670c966ec233cdebd376} 
+void Avatar\+::\+Set\+PosX (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+\Hypertarget{class_avatar_a5eb3ca303d495bfc684aaaaf87cf7ad2}\index{Avatar@{Avatar}!SetPosY@{SetPosY}}
+\index{SetPosY@{SetPosY}!Avatar@{Avatar}}
+\doxysubsubsection{\texorpdfstring{SetPosY()}{SetPosY()}}
+{\footnotesize\ttfamily \label{class_avatar_a5eb3ca303d495bfc684aaaaf87cf7ad2} 
+void Avatar\+::\+Set\+PosY (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{avatar_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{avatar_8cpp_source}{avatar.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/common/\mbox{\hyperlink{avatar_8h}{avatar.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/common/\mbox{\hyperlink{avatar_8cpp}{avatar.\+cpp}}\end{DoxyCompactItemize}

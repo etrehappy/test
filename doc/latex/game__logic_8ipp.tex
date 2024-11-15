@@ -1,0 +1,209 @@
+\doxysection{C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/game\+\_\+logic.ipp File Reference}
+\hypertarget{game__logic_8ipp}{}\label{game__logic_8ipp}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/game\_logic.ipp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/game\_logic.ipp}}
+{\ttfamily \#include "{}game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include "{}texts.\+h"{}}\newline
+Include dependency graph for game\+\_\+logic.\+ipp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__logic_8ipp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{game__logic_8ipp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{game__logic_8ipp_abf1da8fbde664a11a2cef30aaa467407}{proto\+\_\+message}} = Proto\+Message\+::\+Game\+Message
+\item 
+using \mbox{\hyperlink{game__logic_8ipp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\+\_\+message}}$>$
+\item 
+using \mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\+\_\+message}}$>$
+\item 
+using \mbox{\hyperlink{game__logic_8ipp_a88a2557c91d352aad8b2e203560c55ec}{command\+\_\+type}} = Proto\+Message\+::\+Command\+Type
+\item 
+using \mbox{\hyperlink{game__logic_8ipp_abe5ff4d0a6200969350e761250f09183}{chat\+\_\+pair\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$std\+::pair$<$\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{Command\+List}}, \mbox{\hyperlink{struct_chat_message}{Chat\+Message}}$>$$>$
+\item 
+using \mbox{\hyperlink{game__logic_8ipp_a885ad4e20ececbed10dd991c8ca4556a}{go\+\_\+pair\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$std\+::pair$<$\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{Command\+List}}, \mbox{\hyperlink{struct_go_command}{Go\+Command}}$>$$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+template$<$$>$ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} \mbox{\hyperlink{game__logic_8ipp_a49fdc2328988dd1d335e912caa923aa7}{Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Login\+Pas\+Response $>$}} (const std\+::string \&login, const std\+::string \&password)
+\item 
+template$<$$>$ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} \mbox{\hyperlink{game__logic_8ipp_ab666f6a4391a6af15a1250e05d5619ba}{Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Users\+Avatar\+List\+Client\+Request $>$}} ()
+\item 
+template$<$$>$ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} \mbox{\hyperlink{game__logic_8ipp_a12b251bfac5d355925f1edc3ec4bba06}{Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Start\+Game\+Client\+Request $>$}} (const uint32\+\_\+t \&avatar\+\_\+id)
+\item 
+template$<$$>$ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} \mbox{\hyperlink{game__logic_8ipp_aaebf47d31635a685abb7c87b41284979}{Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Exit\+Game\+Client\+Request $>$}} ()
+\item 
+template$<$$>$ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} \mbox{\hyperlink{game__logic_8ipp_a46c7b1408d662399b189e0ef5dca6108}{Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Send\+To\+Common\+Chat $>$}} (const std\+::string \&text\+\_\+message)
+\item 
+template$<$$>$ void \mbox{\hyperlink{game__logic_8ipp_ad9f53e10d1f8487ea050f9ec7b33f675}{Game\+Logic\+::\+Handle\+Command$<$ Command\+List\+::k\+Menu $>$}} ()
+\item 
+template$<$$>$ void \mbox{\hyperlink{game__logic_8ipp_a8c3719c6df4457491448ec9b4a320352}{Game\+Logic\+::\+Handle\+Command$<$ Command\+List\+::k\+Map $>$}} ()
+\item 
+template$<$$>$ void \mbox{\hyperlink{game__logic_8ipp_ab36a7a3f918d4129b477fa90abd84d55}{Game\+Logic\+::\+Handle\+Command$<$ Command\+List\+::k\+Current\+Location $>$}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{game__logic_8ipp_abe5ff4d0a6200969350e761250f09183}\index{game\_logic.ipp@{game\_logic.ipp}!chat\_pair\_ptr@{chat\_pair\_ptr}}
+\index{chat\_pair\_ptr@{chat\_pair\_ptr}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{chat\_pair\_ptr}{chat\_pair\_ptr}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_abe5ff4d0a6200969350e761250f09183} 
+using \mbox{\hyperlink{game__logic_8ipp_abe5ff4d0a6200969350e761250f09183}{chat\+\_\+pair\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$std\+::pair$<$\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{Command\+List}}, \mbox{\hyperlink{struct_chat_message}{Chat\+Message}}$>$$>$}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00009}{9}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a88a2557c91d352aad8b2e203560c55ec}\index{game\_logic.ipp@{game\_logic.ipp}!command\_type@{command\_type}}
+\index{command\_type@{command\_type}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{command\_type}{command\_type}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a88a2557c91d352aad8b2e203560c55ec} 
+using \mbox{\hyperlink{game__logic_8ipp_a88a2557c91d352aad8b2e203560c55ec}{command\+\_\+type}} = Proto\+Message\+::\+Command\+Type}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00008}{8}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a5351de698117b0f89eb84f22a897ec8f}\index{game\_logic.ipp@{game\_logic.ipp}!const\_proto\_ptr@{const\_proto\_ptr}}
+\index{const\_proto\_ptr@{const\_proto\_ptr}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{const\_proto\_ptr}{const\_proto\_ptr}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a5351de698117b0f89eb84f22a897ec8f} 
+using \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\+\_\+message}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00006}{6}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a885ad4e20ececbed10dd991c8ca4556a}\index{game\_logic.ipp@{game\_logic.ipp}!go\_pair\_ptr@{go\_pair\_ptr}}
+\index{go\_pair\_ptr@{go\_pair\_ptr}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{go\_pair\_ptr}{go\_pair\_ptr}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a885ad4e20ececbed10dd991c8ca4556a} 
+using \mbox{\hyperlink{game__logic_8ipp_a885ad4e20ececbed10dd991c8ca4556a}{go\+\_\+pair\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$std\+::pair$<$\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{Command\+List}}, \mbox{\hyperlink{struct_go_command}{Go\+Command}}$>$$>$}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00010}{10}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_abf1da8fbde664a11a2cef30aaa467407}\index{game\_logic.ipp@{game\_logic.ipp}!proto\_message@{proto\_message}}
+\index{proto\_message@{proto\_message}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{proto\_message}{proto\_message}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_abf1da8fbde664a11a2cef30aaa467407} 
+using \mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\+\_\+message}} = Proto\+Message\+::\+Game\+Message}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00005}{5}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}\index{game\_logic.ipp@{game\_logic.ipp}!proto\_ptr@{proto\_ptr}}
+\index{proto\_ptr@{proto\_ptr}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{proto\_ptr}{proto\_ptr}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352} 
+using \mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\+\_\+message}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00007}{7}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game__logic_8ipp_ab36a7a3f918d4129b477fa90abd84d55}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::HandleCommand$<$ CommandList::kCurrentLocation $>$@{GameLogic::HandleCommand$<$ CommandList::kCurrentLocation $>$}}
+\index{GameLogic::HandleCommand$<$ CommandList::kCurrentLocation $>$@{GameLogic::HandleCommand$<$ CommandList::kCurrentLocation $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::HandleCommand$<$ CommandList::kCurrentLocation $>$()}{GameLogic::HandleCommand< CommandList::kCurrentLocation >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_ab36a7a3f918d4129b477fa90abd84d55} 
+template$<$$>$ \\
+void Game\+Logic\+::\+Handle\+Command$<$ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1acd1750f89d2eda82b0212e859686d62b}{Command\+List\+::k\+Current\+Location}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00171}{171}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a8c3719c6df4457491448ec9b4a320352}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::HandleCommand$<$ CommandList::kMap $>$@{GameLogic::HandleCommand$<$ CommandList::kMap $>$}}
+\index{GameLogic::HandleCommand$<$ CommandList::kMap $>$@{GameLogic::HandleCommand$<$ CommandList::kMap $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::HandleCommand$<$ CommandList::kMap $>$()}{GameLogic::HandleCommand< CommandList::kMap >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a8c3719c6df4457491448ec9b4a320352} 
+template$<$$>$ \\
+void Game\+Logic\+::\+Handle\+Command$<$ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1afb5397a5037cdaeda0a604dcbfe8c01f}{Command\+List\+::k\+Map}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00157}{157}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_ad9f53e10d1f8487ea050f9ec7b33f675}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::HandleCommand$<$ CommandList::kMenu $>$@{GameLogic::HandleCommand$<$ CommandList::kMenu $>$}}
+\index{GameLogic::HandleCommand$<$ CommandList::kMenu $>$@{GameLogic::HandleCommand$<$ CommandList::kMenu $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::HandleCommand$<$ CommandList::kMenu $>$()}{GameLogic::HandleCommand< CommandList::kMenu >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_ad9f53e10d1f8487ea050f9ec7b33f675} 
+template$<$$>$ \\
+void Game\+Logic\+::\+Handle\+Command$<$ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a3ff3255763404f286cc75aa78972601c}{Command\+List\+::k\+Menu}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00121}{121}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_aaebf47d31635a685abb7c87b41284979}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::PrepareMessage$<$ command\_type::kExitGameClientRequest $>$@{GameLogic::PrepareMessage$<$ command\_type::kExitGameClientRequest $>$}}
+\index{GameLogic::PrepareMessage$<$ command\_type::kExitGameClientRequest $>$@{GameLogic::PrepareMessage$<$ command\_type::kExitGameClientRequest $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::PrepareMessage$<$ command\_type::kExitGameClientRequest $>$()}{GameLogic::PrepareMessage< command\_type::kExitGameClientRequest >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_aaebf47d31635a685abb7c87b41284979} 
+template$<$$>$ \\
+\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Exit\+Game\+Client\+Request $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00069}{69}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a49fdc2328988dd1d335e912caa923aa7}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::PrepareMessage$<$ command\_type::kLoginPasResponse $>$@{GameLogic::PrepareMessage$<$ command\_type::kLoginPasResponse $>$}}
+\index{GameLogic::PrepareMessage$<$ command\_type::kLoginPasResponse $>$@{GameLogic::PrepareMessage$<$ command\_type::kLoginPasResponse $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::PrepareMessage$<$ command\_type::kLoginPasResponse $>$()}{GameLogic::PrepareMessage< command\_type::kLoginPasResponse >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a49fdc2328988dd1d335e912caa923aa7} 
+template$<$$>$ \\
+\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Login\+Pas\+Response $>$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{login}{, }\item[{const std\+::string \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00013}{13}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a46c7b1408d662399b189e0ef5dca6108}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::PrepareMessage$<$ command\_type::kSendToCommonChat $>$@{GameLogic::PrepareMessage$<$ command\_type::kSendToCommonChat $>$}}
+\index{GameLogic::PrepareMessage$<$ command\_type::kSendToCommonChat $>$@{GameLogic::PrepareMessage$<$ command\_type::kSendToCommonChat $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::PrepareMessage$<$ command\_type::kSendToCommonChat $>$()}{GameLogic::PrepareMessage< command\_type::kSendToCommonChat >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a46c7b1408d662399b189e0ef5dca6108} 
+template$<$$>$ \\
+\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} Game\+Logic\+::\+Prepare\+Message$<$ command\+\_\+type\+::k\+Send\+To\+Common\+Chat $>$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text\+\_\+message}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00099}{99}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_a12b251bfac5d355925f1edc3ec4bba06}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::PrepareMessage$<$ command\_type::kStartGameClientRequest $>$@{GameLogic::PrepareMessage$<$ command\_type::kStartGameClientRequest $>$}}
+\index{GameLogic::PrepareMessage$<$ command\_type::kStartGameClientRequest $>$@{GameLogic::PrepareMessage$<$ command\_type::kStartGameClientRequest $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::PrepareMessage$<$ command\_type::kStartGameClientRequest $>$()}{GameLogic::PrepareMessage< command\_type::kStartGameClientRequest >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_a12b251bfac5d355925f1edc3ec4bba06} 
+template$<$$>$ \\
+\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} Game\+Logic\+::\+Prepare\+Message$<$ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a248c0d18c59730fb232512cf5797423c}{command\+\_\+type\+::k\+Start\+Game\+Client\+Request}} $>$ (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \&}]{avatar\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00050}{50}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+
+\Hypertarget{game__logic_8ipp_ab666f6a4391a6af15a1250e05d5619ba}\index{game\_logic.ipp@{game\_logic.ipp}!GameLogic::PrepareMessage$<$ command\_type::kUsersAvatarListClientRequest $>$@{GameLogic::PrepareMessage$<$ command\_type::kUsersAvatarListClientRequest $>$}}
+\index{GameLogic::PrepareMessage$<$ command\_type::kUsersAvatarListClientRequest $>$@{GameLogic::PrepareMessage$<$ command\_type::kUsersAvatarListClientRequest $>$}!game\_logic.ipp@{game\_logic.ipp}}
+\doxysubsubsection{\texorpdfstring{GameLogic::PrepareMessage$<$ command\_type::kUsersAvatarListClientRequest $>$()}{GameLogic::PrepareMessage< command\_type::kUsersAvatarListClientRequest >()}}
+{\footnotesize\ttfamily \label{game__logic_8ipp_ab666f6a4391a6af15a1250e05d5619ba} 
+template$<$$>$ \\
+\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\+\_\+proto\+\_\+ptr}} Game\+Logic\+::\+Prepare\+Message$<$ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a3e9f7058dc7c25fe1c5286a7da7ba767}{command\+\_\+type\+::k\+Users\+Avatar\+List\+Client\+Request}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__logic_8ipp_source_l00033}{33}} of file \mbox{\hyperlink{game__logic_8ipp_source}{game\+\_\+logic.\+ipp}}.
+

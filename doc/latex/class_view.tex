@@ -1,0 +1,209 @@
+\doxysection{View Class Reference}
+\hypertarget{class_view}{}\label{class_view}\index{View@{View}}
+
+
+{\ttfamily \#include $<$view.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_view_a44ad60a768422d3fa8fbd7576950080a}{View}} ()
+\item 
+\mbox{\hyperlink{class_view_ad0dc854db9aabbea98a334dec89f785c}{\texorpdfstring{$\sim$}{\string~}\+View}} ()
+\item 
+void \mbox{\hyperlink{class_view_a7e4bfadcce4e1db9d53664d85bb8b118}{Show\+Text\+With\+New\+Line}} (const std\+::string \&s)
+\item 
+void \mbox{\hyperlink{class_view_ae539379d60f07fd6d0a63c4dd4edaa5e}{Show\+Text\+Without\+New\+Line}} (const std\+::string \&s)
+\item 
+void \mbox{\hyperlink{class_view_aae1124bd00c398e525d86300458b695e}{Show\+Error\+Input}} ()
+\item 
+void \mbox{\hyperlink{class_view_a66b05847e5cdc3b1f6a3ca66b4cddb63}{Show\+Error\+Send\+Message\+To\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_view_acf2114748159a5208c4038c6a6f6ec0a}{Show\+Avatar\+List}} (const Proto\+Message\+::\+Game\+Message \&message)
+\item 
+void \mbox{\hyperlink{class_view_a4efe6a3ad9776c3e620a6593b015ccc1}{Show\+Error\+Choise\+Avatar}} ()
+\item 
+void \mbox{\hyperlink{class_view_ad17c4b6f301e7179fe4dbc9eaebdc18c}{Show\+Error\+Start\+Game}} ()
+\item 
+void \mbox{\hyperlink{class_view_a522c2e94c65cb7b68ca3999a41fcbc77}{Show\+Start\+Game\+Message}} (const \mbox{\hyperlink{class_avatar}{Avatar}} \&, const \mbox{\hyperlink{class_location}{Location}} \&, std\+::mutex \&)
+\item 
+void \mbox{\hyperlink{class_view_a50b47daa7f43dfc9b8e8c818630b6e6c}{Show\+Current\+State}} (const \mbox{\hyperlink{class_avatar}{Avatar}} \&, const \mbox{\hyperlink{class_location}{Location}} \&, std\+::mutex \&, bool cout\+\_\+lock=false)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_view_a3a81347d0d774ffa57241d17cb64ae19}{Show\+Menu}} (\mbox{\hyperlink{class_menu}{Menu}}$<$ T $>$ \&menu)
+\item 
+void \mbox{\hyperlink{class_view_a13da1f05b0bf9ea415b41879ce8ca08d}{Show\+Map}} (const \mbox{\hyperlink{class_avatar}{Avatar}} \&, const \mbox{\hyperlink{class_location}{Location}} \&, std\+::mutex \&)
+\item 
+void \mbox{\hyperlink{class_view_aa24e0078e20640e2a0e11c927aff4df0}{Show\+Loc\+Description}} (const \mbox{\hyperlink{class_location}{Location}} \&, std\+::mutex \&)
+\item 
+void \mbox{\hyperlink{class_view_abee2d24a04aa733c8e3a341f35f255be}{Show\+Common\+Message}} (const std\+::string \&name, const std\+::string \&text)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{view_8h_source_l00013}{13}} of file \mbox{\hyperlink{view_8h_source}{view.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_view_a44ad60a768422d3fa8fbd7576950080a}\index{View@{View}!View@{View}}
+\index{View@{View}!View@{View}}
+\doxysubsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily \label{class_view_a44ad60a768422d3fa8fbd7576950080a} 
+View\+::\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_ad0dc854db9aabbea98a334dec89f785c}\index{View@{View}!````~View@{\texorpdfstring{$\sim$}{\string~}View}}
+\index{````~View@{\texorpdfstring{$\sim$}{\string~}View}!View@{View}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}View()}{\string~View()}}
+{\footnotesize\ttfamily \label{class_view_ad0dc854db9aabbea98a334dec89f785c} 
+View\+::\texorpdfstring{$\sim$}{\string~}\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_view_acf2114748159a5208c4038c6a6f6ec0a}\index{View@{View}!ShowAvatarList@{ShowAvatarList}}
+\index{ShowAvatarList@{ShowAvatarList}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowAvatarList()}{ShowAvatarList()}}
+{\footnotesize\ttfamily \label{class_view_acf2114748159a5208c4038c6a6f6ec0a} 
+void View\+::\+Show\+Avatar\+List (\begin{DoxyParamCaption}\item[{const Proto\+Message\+::\+Game\+Message \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_abee2d24a04aa733c8e3a341f35f255be}\index{View@{View}!ShowCommonMessage@{ShowCommonMessage}}
+\index{ShowCommonMessage@{ShowCommonMessage}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowCommonMessage()}{ShowCommonMessage()}}
+{\footnotesize\ttfamily \label{class_view_abee2d24a04aa733c8e3a341f35f255be} 
+void View\+::\+Show\+Common\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00213}{213}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_a50b47daa7f43dfc9b8e8c818630b6e6c}\index{View@{View}!ShowCurrentState@{ShowCurrentState}}
+\index{ShowCurrentState@{ShowCurrentState}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowCurrentState()}{ShowCurrentState()}}
+{\footnotesize\ttfamily \label{class_view_a50b47daa7f43dfc9b8e8c818630b6e6c} 
+void View\+::\+Show\+Current\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_avatar}{Avatar}} \&}]{avatar}{, }\item[{const \mbox{\hyperlink{class_location}{Location}} \&}]{location}{, }\item[{std\+::mutex \&}]{avatar\+\_\+and\+\_\+location}{, }\item[{bool}]{cout\+\_\+lock}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_a4efe6a3ad9776c3e620a6593b015ccc1}\index{View@{View}!ShowErrorChoiseAvatar@{ShowErrorChoiseAvatar}}
+\index{ShowErrorChoiseAvatar@{ShowErrorChoiseAvatar}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowErrorChoiseAvatar()}{ShowErrorChoiseAvatar()}}
+{\footnotesize\ttfamily \label{class_view_a4efe6a3ad9776c3e620a6593b015ccc1} 
+void View\+::\+Show\+Error\+Choise\+Avatar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_aae1124bd00c398e525d86300458b695e}\index{View@{View}!ShowErrorInput@{ShowErrorInput}}
+\index{ShowErrorInput@{ShowErrorInput}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowErrorInput()}{ShowErrorInput()}}
+{\footnotesize\ttfamily \label{class_view_aae1124bd00c398e525d86300458b695e} 
+void View\+::\+Show\+Error\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_a66b05847e5cdc3b1f6a3ca66b4cddb63}\index{View@{View}!ShowErrorSendMessageToServer@{ShowErrorSendMessageToServer}}
+\index{ShowErrorSendMessageToServer@{ShowErrorSendMessageToServer}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowErrorSendMessageToServer()}{ShowErrorSendMessageToServer()}}
+{\footnotesize\ttfamily \label{class_view_a66b05847e5cdc3b1f6a3ca66b4cddb63} 
+void View\+::\+Show\+Error\+Send\+Message\+To\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_ad17c4b6f301e7179fe4dbc9eaebdc18c}\index{View@{View}!ShowErrorStartGame@{ShowErrorStartGame}}
+\index{ShowErrorStartGame@{ShowErrorStartGame}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowErrorStartGame()}{ShowErrorStartGame()}}
+{\footnotesize\ttfamily \label{class_view_ad17c4b6f301e7179fe4dbc9eaebdc18c} 
+void View\+::\+Show\+Error\+Start\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_aa24e0078e20640e2a0e11c927aff4df0}\index{View@{View}!ShowLocDescription@{ShowLocDescription}}
+\index{ShowLocDescription@{ShowLocDescription}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowLocDescription()}{ShowLocDescription()}}
+{\footnotesize\ttfamily \label{class_view_aa24e0078e20640e2a0e11c927aff4df0} 
+void View\+::\+Show\+Loc\+Description (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_location}{Location}} \&}]{l}{, }\item[{std\+::mutex \&}]{avatar\+\_\+and\+\_\+location}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_a13da1f05b0bf9ea415b41879ce8ca08d}\index{View@{View}!ShowMap@{ShowMap}}
+\index{ShowMap@{ShowMap}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowMap()}{ShowMap()}}
+{\footnotesize\ttfamily \label{class_view_a13da1f05b0bf9ea415b41879ce8ca08d} 
+void View\+::\+Show\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_avatar}{Avatar}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_location}{Location}} \&}]{l}{, }\item[{std\+::mutex \&}]{avatar\+\_\+and\+\_\+location}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00166}{166}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_a3a81347d0d774ffa57241d17cb64ae19}\index{View@{View}!ShowMenu@{ShowMenu}}
+\index{ShowMenu@{ShowMenu}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowMenu()}{ShowMenu()}}
+{\footnotesize\ttfamily \label{class_view_a3a81347d0d774ffa57241d17cb64ae19} 
+template$<$typename T $>$ \\
+void View\+::\+Show\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu}{Menu}}$<$ T $>$ \&}]{menu}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8h_source_l00046}{46}} of file \mbox{\hyperlink{view_8h_source}{view.\+h}}.
+
+\Hypertarget{class_view_a522c2e94c65cb7b68ca3999a41fcbc77}\index{View@{View}!ShowStartGameMessage@{ShowStartGameMessage}}
+\index{ShowStartGameMessage@{ShowStartGameMessage}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowStartGameMessage()}{ShowStartGameMessage()}}
+{\footnotesize\ttfamily \label{class_view_a522c2e94c65cb7b68ca3999a41fcbc77} 
+void View\+::\+Show\+Start\+Game\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_avatar}{Avatar}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_location}{Location}} \&}]{l}{, }\item[{std\+::mutex \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_a7e4bfadcce4e1db9d53664d85bb8b118}\index{View@{View}!ShowTextWithNewLine@{ShowTextWithNewLine}}
+\index{ShowTextWithNewLine@{ShowTextWithNewLine}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowTextWithNewLine()}{ShowTextWithNewLine()}}
+{\footnotesize\ttfamily \label{class_view_a7e4bfadcce4e1db9d53664d85bb8b118} 
+void View\+::\+Show\+Text\+With\+New\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+\Hypertarget{class_view_ae539379d60f07fd6d0a63c4dd4edaa5e}\index{View@{View}!ShowTextWithoutNewLine@{ShowTextWithoutNewLine}}
+\index{ShowTextWithoutNewLine@{ShowTextWithoutNewLine}!View@{View}}
+\doxysubsubsection{\texorpdfstring{ShowTextWithoutNewLine()}{ShowTextWithoutNewLine()}}
+{\footnotesize\ttfamily \label{class_view_ae539379d60f07fd6d0a63c4dd4edaa5e} 
+void View\+::\+Show\+Text\+Without\+New\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{view_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{view_8cpp_source}{view.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{view_8h}{view.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{view_8cpp}{view.\+cpp}}\end{DoxyCompactItemize}

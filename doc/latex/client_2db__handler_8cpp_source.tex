@@ -1,0 +1,137 @@
+\doxysection{db\+\_\+handler.\+cpp}
+\hypertarget{client_2db__handler_8cpp_source}{}\label{client_2db__handler_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/db\_handler.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/db\_handler.cpp}}
+\mbox{\hyperlink{client_2db__handler_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2db__handler_8h}{db\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00005}\mbox{\hyperlink{class_database_handler_ac27357d3431faf4fd6810483a24a43fd}{00005}}\ \mbox{\hyperlink{class_database_handler_ac27357d3431faf4fd6810483a24a43fd}{DatabaseHandler::DatabaseHandler}}()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00006}00006\ \ \ \ \ :db\_read\_\{nullptr\}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00008}00008\ \ \ \ \ OpenDb();}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00011}\mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{00011}}\ \mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{DatabaseHandler::\string~DatabaseHandler}}()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00015}00015\ \textcolor{comment}{/*\ thread\ Listen\ */}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00016}\mbox{\hyperlink{class_database_handler_a946354e8d12080390e0e6aaadebaf284}{00016}}\ std::shared\_ptr<Location>\ \mbox{\hyperlink{class_database_handler_a946354e8d12080390e0e6aaadebaf284}{DatabaseHandler::SetLocation}}(\textcolor{keyword}{const}\ uint32\_t\ location\_id}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00017}00017\ \ \ \ \ ,\ std::mutex\&\ avatar\_and\_location)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00019}00019\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00021}00021\ \ \ \ \ std::lock\_guard\ g\{avatar\_and\_location\};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{/*Step\ 1:\ location\_query*/}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{enum}\ cid\_loc\ :\ uint8\_t}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ name\ =\ 0,\ description,\ x,\ y,\ is\_safe\_zone}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00028}00028\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00030}00030\ \ \ \ \ SQLite::Statement\ location\_query\{*db\_read\_}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ ,\ \textcolor{stringliteral}{"{}SELECT\ name,\ description,\ x,\ y,\ is\_safe\_zone\ FROM\ location\ WHERE\ id\ =\ ?"{}}\};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ id\_pos\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00035}00035\ \ \ \ \ location\_query.bind(id\_pos,\ location\_id);}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!location\_query.executeStep())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelogger_ad1eb168a08aa05b956bcff5e5ce832c0}{logger::ErrorLocatinReadDb}}();}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{/*Step\ 2:\ npc\_query*/}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00045}00045\ \ \ \ \ std::map<NpcName,\ Npc>\ npc\_container\ =\ std::move(GetNpcListData(location\_id));}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (npc\_container.empty())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelogger_ad1eb168a08aa05b956bcff5e5ce832c0}{logger::ErrorLocatinReadDb}}();}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{/*Step\ 3:\ Create\ Location*/}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00054}00054\ \ \ \ \ std::shared\_ptr<Location>\ location\ =\ std::make\_shared<Location>(location\_id}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ ,\ std::move(location\_query.getColumn(cid\_loc::name).getString())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ ,\ std::move(location\_query.getColumn(cid\_loc::description).getString())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ ,\ location\_query.getColumn(cid\_loc::x).getInt()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ ,\ location\_query.getColumn(cid\_loc::y).getInt()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ ,\ location\_query.getColumn(cid\_loc::is\_safe\_zone).getInt()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ ,\ std::move(npc\_container)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00061}00061\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{return}\ location;}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00065}00065\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00066}00066\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00070}00070\ \}\textcolor{comment}{/*\ SetLocation\ */}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00072}00072\ \textcolor{keywordtype}{void}\ DatabaseHandler::OpenDb()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00073}00073\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00074}00074\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00075}00075\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00076}00076\ \ \ \ \ db\_read\_\ =\ std::make\_shared<SQLite::Database>(settings::client::kDatabaseFile}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ ,\ SQLite::OPEN\_READONLY);}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00079}00079\ \ \ \ \ db\_read\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ synchronous\ =\ NORMAL;"{}});}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00080}00080\ \ \ \ \ db\_read\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ journal\_mode\ =\ WAL;"{}});}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00081}00081\ \ \ \ \ db\_read\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ cache\_size\ =\ 10000;"{}});}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00082}00082\ \ \ \ \ db\_read\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ temp\_store\ =\ MEMORY;"{}});}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00084}00084\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00088}00088\ \}\textcolor{comment}{/*\ OpenDb\ */}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00091}00091\ std::map<NpcName,\ Npc>\ DatabaseHandler::GetNpcListData(\textcolor{keyword}{const}\ uint32\_t\ location\_id)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00093}00093\ \ \ \ \ std::map<NpcName,\ Npc>\ npc\_container\{\};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{enum}\ cid\_npc\ :\ uint8\_t}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ 0,\ name,\ race\_id,\ description,\ health,\ pos\_x,\ pos\_y}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00098}00098\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00100}00100\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00102}00102\ \ \ \ \ SQLite::Statement\ npc\_query\{*db\_read\_}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ ,\ \textcolor{stringliteral}{"{}SELECT\ id,\ name,\ race\_id,\ description,\ health,\ pos\_x,\ pos\_y\ FROM\ npc\ WHERE\ location\_id\ =\ ?"{}}\};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{int}\ location\_id\_pos\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00107}00107\ \ \ \ \ npc\_query.bind(location\_id\_pos,\ location\_id);}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{while}\ (npc\_query.executeStep())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00110}00110\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int32\_t\ id\_npc\ =\ npc\_query.getColumn(cid\_npc::id).getInt();}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ npc\_container.emplace(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdf}{NpcName}}\textcolor{keyword}{>}(id\_npc),\ \mbox{\hyperlink{class_npc}{Npc}}\{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(npc\_query.getColumn(cid\_npc::id).getInt())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ npc\_query.getColumn(cid\_npc::name).getText()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(npc\_query.getColumn(cid\_npc::race\_id).getInt())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ npc\_query.getColumn(cid\_npc::description).getText()}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(npc\_query.getColumn(cid\_npc::health).getInt())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ location\_id}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(npc\_query.getColumn(cid\_npc::pos\_x).getInt())}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(npc\_query.getColumn(cid\_npc::pos\_y).getInt())\}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00123}00123\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00124}00124\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00125}00125\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00126}00126\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return}\ npc\_container;}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8cpp_source_l00131}00131\ \}\textcolor{comment}{/*\ GetNpcListData\ */}}
+
+\end{DoxyCode}

@@ -1,0 +1,141 @@
+\doxysection{Controller Class Reference}
+\hypertarget{class_controller}{}\label{class_controller}\index{Controller@{Controller}}
+
+
+{\ttfamily \#include $<$controller.\+h$>$}
+
+
+
+Inheritance diagram for Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controller_aafd5844f245e083d65a7124805c31ffb}{Controller}} (\mbox{\hyperlink{class_view}{View}} \&, \mbox{\hyperlink{class_database_handler}{Database\+Handler}} \&)
+\item 
+\mbox{\hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{\texorpdfstring{$\sim$}{\string~}\+Controller}} ()
+\item 
+void \mbox{\hyperlink{class_controller_a0d1dbb7a39dfc1cd3d2162cf084189c6}{Start}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_controller}{Controller} observes message from Network\+Handler\+::\+Listen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_ae9a1c34ff8d28693830fbff435d3f87b}{Stop\+Game}} () override
+\item 
+std\+::string \mbox{\hyperlink{class_controller_a26f1430e3f19c4a95d30b00c35ba41b1}{Get\+String}} (std\+::function$<$ void()$>$) override
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_controller_a20d3047d5a7bc2d13458d072b5e8b4f0}{Get\+Int}} (std\+::function$<$ void()$>$, uint16\+\_\+t) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_input_data_provider}{IInput\+Data\+Provider}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_input_data_provider_a98d2fe30409a17ccc9b04deec92e192c}{\texorpdfstring{$\sim$}{\string~}\+IInput\+Data\+Provider}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{controller_8h_source_l00012}{12}} of file \mbox{\hyperlink{controller_8h_source}{controller.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_controller_aafd5844f245e083d65a7124805c31ffb}\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily \label{class_controller_aafd5844f245e083d65a7124805c31ffb} 
+Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_view}{View}} \&}]{v}{, }\item[{\mbox{\hyperlink{class_database_handler}{Database\+Handler}} \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{controller_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{controller_8cpp_source}{controller.\+cpp}}.
+
+\Hypertarget{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}\index{Controller@{Controller}!````~Controller@{\texorpdfstring{$\sim$}{\string~}Controller}}
+\index{````~Controller@{\texorpdfstring{$\sim$}{\string~}Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Controller()}{\string~Controller()}}
+{\footnotesize\ttfamily \label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5} 
+Controller\+::\texorpdfstring{$\sim$}{\string~}\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{controller_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{controller_8cpp_source}{controller.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_controller_a20d3047d5a7bc2d13458d072b5e8b4f0}\index{Controller@{Controller}!GetInt@{GetInt}}
+\index{GetInt@{GetInt}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{GetInt()}{GetInt()}}
+{\footnotesize\ttfamily \label{class_controller_a20d3047d5a7bc2d13458d072b5e8b4f0} 
+uint16\+\_\+t Controller\+::\+Get\+Int (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{original\+\_\+req}{, }\item[{uint16\+\_\+t}]{max\+\_\+number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_input_data_provider_ab400216dfcc3dea03a4f386d258cd104}{IInput\+Data\+Provider}}.
+
+
+
+Definition at line \mbox{\hyperlink{controller_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{controller_8cpp_source}{controller.\+cpp}}.
+
+\Hypertarget{class_controller_a26f1430e3f19c4a95d30b00c35ba41b1}\index{Controller@{Controller}!GetString@{GetString}}
+\index{GetString@{GetString}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{GetString()}{GetString()}}
+{\footnotesize\ttfamily \label{class_controller_a26f1430e3f19c4a95d30b00c35ba41b1} 
+std\+::string Controller\+::\+Get\+String (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{original\+\_\+req}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_input_data_provider_a1425cf753a58f28ee828d0345c05c338}{IInput\+Data\+Provider}}.
+
+
+
+Definition at line \mbox{\hyperlink{controller_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{controller_8cpp_source}{controller.\+cpp}}.
+
+\Hypertarget{class_controller_a0d1dbb7a39dfc1cd3d2162cf084189c6}\index{Controller@{Controller}!Start@{Start}}
+\index{Start@{Start}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_controller_a0d1dbb7a39dfc1cd3d2162cf084189c6} 
+void Controller\+::\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_controller}{Controller} observes message from Network\+Handler\+::\+Listen. 
+
+
+
+Definition at line \mbox{\hyperlink{controller_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{controller_8cpp_source}{controller.\+cpp}}.
+
+\Hypertarget{class_controller_ae9a1c34ff8d28693830fbff435d3f87b}\index{Controller@{Controller}!StopGame@{StopGame}}
+\index{StopGame@{StopGame}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{StopGame()}{StopGame()}}
+{\footnotesize\ttfamily \label{class_controller_ae9a1c34ff8d28693830fbff435d3f87b} 
+void Controller\+::\+Stop\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_exit_aa0dc39eb13e3ca7aaf10633fc34b2af8}{IExit}}.
+
+
+
+Definition at line \mbox{\hyperlink{controller_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{controller_8cpp_source}{controller.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{controller_8h}{controller.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{controller_8cpp}{controller.\+cpp}}\end{DoxyCompactItemize}

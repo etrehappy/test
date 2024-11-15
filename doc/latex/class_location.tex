@@ -1,0 +1,148 @@
+\doxysection{Location Class Reference}
+\hypertarget{class_location}{}\label{class_location}\index{Location@{Location}}
+
+
+{\ttfamily \#include $<$location.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_location_ab2aa7c16fa9e0e3498dbf5b0570b5acf}{Location}} (int id, std\+::string s\+\_\+name, std\+::string description, int x, int y, bool is\+\_\+safe\+\_\+zone, std\+::map$<$ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdf}{Npc\+Name}}, \mbox{\hyperlink{class_npc}{Npc}} $>$ \&\&npc\+\_\+container)
+\item 
+int \mbox{\hyperlink{class_location_a940f22a5eafd6cc978a455510d1b31d2}{Get\+Id}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_location_aef1490068c12124a6aed7b18e4bc1467}{Get\+Name}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_location_aaba682fffd7c0c260f4834f2239d4a96}{Get\+Description}} () const
+\item 
+bool \mbox{\hyperlink{class_location_ae1bf49b5984ebad53b29f2cae3611bf7}{Is\+Safe\+Zone}} () const
+\item 
+void \mbox{\hyperlink{class_location_a6ee1a6d7ea4ad3ca9dff04d18e94b245}{Init\+Positions}} (const \mbox{\hyperlink{class_avatar}{Avatar}} \&current\+\_\+avatar)
+\item 
+void \mbox{\hyperlink{class_location_a103bd2c3600a39990bf645ce4f4215be}{Update\+Symbols\+On\+Map}} (const \mbox{\hyperlink{class_avatar}{Avatar}} \&current\+\_\+avatar)
+\item 
+const std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{class_location_a2f8e517588f0381f62eec050f1b762cf}{Get\+Map}} () const
+\item 
+void \mbox{\hyperlink{class_location_a04924cca012b1354178a098e4c2a9a2a}{Set\+New\+Pos\+On\+Map}} (uint32\+\_\+t x, uint32\+\_\+t y, const char map\+\_\+symbol)
+\item 
+void \mbox{\hyperlink{class_location_a6167d380fe7cd9d1842d7c82546b5af1}{Clear\+Pos\+On\+Map}} (uint32\+\_\+t x, uint32\+\_\+t y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{location_8h_source_l00036}{36}} of file \mbox{\hyperlink{location_8h_source}{location.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_location_ab2aa7c16fa9e0e3498dbf5b0570b5acf}\index{Location@{Location}!Location@{Location}}
+\index{Location@{Location}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{Location()}{Location()}}
+{\footnotesize\ttfamily \label{class_location_ab2aa7c16fa9e0e3498dbf5b0570b5acf} 
+Location\+::\+Location (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{std\+::string}]{s\+\_\+name}{, }\item[{std\+::string}]{description}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{bool}]{is\+\_\+safe\+\_\+zone}{, }\item[{std\+::map$<$ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdf}{Npc\+Name}}, \mbox{\hyperlink{class_npc}{Npc}} $>$ \&\&}]{npc\+\_\+container}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{location_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_location_a6167d380fe7cd9d1842d7c82546b5af1}\index{Location@{Location}!ClearPosOnMap@{ClearPosOnMap}}
+\index{ClearPosOnMap@{ClearPosOnMap}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{ClearPosOnMap()}{ClearPosOnMap()}}
+{\footnotesize\ttfamily \label{class_location_a6167d380fe7cd9d1842d7c82546b5af1} 
+void Location\+::\+Clear\+Pos\+On\+Map (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x}{, }\item[{uint32\+\_\+t}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{location_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+\Hypertarget{class_location_aaba682fffd7c0c260f4834f2239d4a96}\index{Location@{Location}!GetDescription@{GetDescription}}
+\index{GetDescription@{GetDescription}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{GetDescription()}{GetDescription()}}
+{\footnotesize\ttfamily \label{class_location_aaba682fffd7c0c260f4834f2239d4a96} 
+const std\+::string \& Location\+::\+Get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{location_8h_source_l00046}{46}} of file \mbox{\hyperlink{location_8h_source}{location.\+h}}.
+
+\Hypertarget{class_location_a940f22a5eafd6cc978a455510d1b31d2}\index{Location@{Location}!GetId@{GetId}}
+\index{GetId@{GetId}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{GetId()}{GetId()}}
+{\footnotesize\ttfamily \label{class_location_a940f22a5eafd6cc978a455510d1b31d2} 
+int Location\+::\+Get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{location_8h_source_l00044}{44}} of file \mbox{\hyperlink{location_8h_source}{location.\+h}}.
+
+\Hypertarget{class_location_a2f8e517588f0381f62eec050f1b762cf}\index{Location@{Location}!GetMap@{GetMap}}
+\index{GetMap@{GetMap}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{GetMap()}{GetMap()}}
+{\footnotesize\ttfamily \label{class_location_a2f8e517588f0381f62eec050f1b762cf} 
+const std\+::vector$<$ std\+::string $>$ \& Location\+::\+Get\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{location_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+\Hypertarget{class_location_aef1490068c12124a6aed7b18e4bc1467}\index{Location@{Location}!GetName@{GetName}}
+\index{GetName@{GetName}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{class_location_aef1490068c12124a6aed7b18e4bc1467} 
+const std\+::string \& Location\+::\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{location_8h_source_l00045}{45}} of file \mbox{\hyperlink{location_8h_source}{location.\+h}}.
+
+\Hypertarget{class_location_a6ee1a6d7ea4ad3ca9dff04d18e94b245}\index{Location@{Location}!InitPositions@{InitPositions}}
+\index{InitPositions@{InitPositions}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{InitPositions()}{InitPositions()}}
+{\footnotesize\ttfamily \label{class_location_a6ee1a6d7ea4ad3ca9dff04d18e94b245} 
+void Location\+::\+Init\+Positions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_avatar}{Avatar}} \&}]{current\+\_\+avatar}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{location_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+\Hypertarget{class_location_ae1bf49b5984ebad53b29f2cae3611bf7}\index{Location@{Location}!IsSafeZone@{IsSafeZone}}
+\index{IsSafeZone@{IsSafeZone}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{IsSafeZone()}{IsSafeZone()}}
+{\footnotesize\ttfamily \label{class_location_ae1bf49b5984ebad53b29f2cae3611bf7} 
+bool Location\+::\+Is\+Safe\+Zone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{location_8h_source_l00047}{47}} of file \mbox{\hyperlink{location_8h_source}{location.\+h}}.
+
+\Hypertarget{class_location_a04924cca012b1354178a098e4c2a9a2a}\index{Location@{Location}!SetNewPosOnMap@{SetNewPosOnMap}}
+\index{SetNewPosOnMap@{SetNewPosOnMap}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{SetNewPosOnMap()}{SetNewPosOnMap()}}
+{\footnotesize\ttfamily \label{class_location_a04924cca012b1354178a098e4c2a9a2a} 
+void Location\+::\+Set\+New\+Pos\+On\+Map (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x}{, }\item[{uint32\+\_\+t}]{y}{, }\item[{const char}]{map\+\_\+symbol}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{location_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+\Hypertarget{class_location_a103bd2c3600a39990bf645ce4f4215be}\index{Location@{Location}!UpdateSymbolsOnMap@{UpdateSymbolsOnMap}}
+\index{UpdateSymbolsOnMap@{UpdateSymbolsOnMap}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{UpdateSymbolsOnMap()}{UpdateSymbolsOnMap()}}
+{\footnotesize\ttfamily \label{class_location_a103bd2c3600a39990bf645ce4f4215be} 
+void Location\+::\+Update\+Symbols\+On\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_avatar}{Avatar}} \&}]{current\+\_\+avatar}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{location_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{location_8cpp_source}{location.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/common/\mbox{\hyperlink{location_8h}{location.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/common/\mbox{\hyperlink{location_8cpp}{location.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,246 @@
+\doxysection{C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/event.h File Reference}
+\hypertarget{event_8h}{}\label{event_8h}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}messages.\+pb.\+h"{}}\newline
+{\ttfamily \#include "{}settings.\+h"{}}\newline
+{\ttfamily \#include "{}game\+\_\+elements.\+h"{}}\newline
+Include dependency graph for event.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{event_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{event_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_event}{Event}}
+\item 
+class \mbox{\hyperlink{class_first_connect}{First\+Connect}}
+\begin{DoxyCompactList}\small\item\em Add these events\+: \doxylink{class_client_session}{Client\+Session}. Handles\+: \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_login_request}{Login\+Request}}
+\begin{DoxyCompactList}\small\item\em Add these events\+: \doxylink{class_user_handler}{User\+Handler}. Handles\+: \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_database_handler}{Database\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_success_check_log_pas}{Success\+Check\+Log\+Pas}}
+\begin{DoxyCompactList}\small\item\em Add these events\+: \doxylink{class_database_handler}{Database\+Handler}. Handles\+: \doxylink{class_network_handler}{Network\+Handler} in MVP-\/version, \doxylink{class_user_handler}{User\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_failure_check_log_pas}{Failure\+Check\+Log\+Pas}}
+\begin{DoxyCompactList}\small\item\em Add these events\+: \doxylink{class_database_handler}{Database\+Handler}. Handles\+: \doxylink{class_network_handler}{Network\+Handler} in MVP-\/version. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_avatar_list_client_request}{Avatar\+List\+Client\+Request}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_database_handler}{Database\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_avatar_list_is_ready}{Avatar\+List\+Is\+Ready}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_database_handler}{Database\+Handler}. Handles\+: \doxylink{class_network_handler}{Network\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_start_game_client_request}{Start\+Game\+Client\+Request}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_game_handler}{Game\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_avatars_data_ready}{Avatars\+Data\+Ready}}
+\begin{DoxyCompactList}\small\item\em Add these events\+: \doxylink{class_database_handler}{Database\+Handler}. Handles\+: \doxylink{class_game_handler}{Game\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_get_avatars_data}{Get\+Avatars\+Data}}
+\begin{DoxyCompactList}\small\item\em Add these events\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_database_handler}{Database\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_start_game_server_response_sucsses}{Start\+Game\+Server\+Response\+Sucsses}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_game_handler}{Game\+Handler}. Handles\+: \doxylink{class_network_handler}{Network\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_add_item_in_inventory}{Add\+Item\+In\+Inventory}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_database_handler}{Database\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_broadcast_message}{Broadcast\+Message}}
+\begin{DoxyCompactList}\small\item\em Added\+: sender\textquotesingle{}s \doxylink{class_network_handler}{Network\+Handler}. Handles\+: all client\textquotesingle{}s \doxylink{class_network_handler}{Network\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_exit_game_request}{Exit\+Game\+Request}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_game_handler}{Game\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_save_game}{Save\+Game}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_game_handler}{Game\+Handler}. Handles\+: \doxylink{class_database_handler}{Database\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_exit_game_response}{Exit\+Game\+Response}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_database_handler}{Database\+Handler}. Handles\+: \doxylink{class_network_handler}{Network\+Handler}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_disconnect_session}{Disconnect\+Session}}
+\begin{DoxyCompactList}\small\item\em Added\+: \doxylink{class_database_handler}{Database\+Handler}. Handles\+: \doxylink{class_network_handler}{Network\+Handler}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}} = std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_event}{Event}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}} \+: unsigned short \{ \newline
+\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613a35c3ace1970663a16e5c65baa5941b13}{k\+None}} = 0
+, \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613acd8fe42741a3bbc973bbf1d404afeff4}{k\+Low}}
+, \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613a3ce9d817402b59f65fb01ea044bb1ee9}{k\+Medium}}
+, \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613aa022f15e910eb36278094efb6e808a07}{k\+High}}
+, \newline
+\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613ae3587c730cc1aa530fa4ddc9c4204e97}{k\+Error}}
+, \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613a84e433ab4609f1c798e455b2523c2a98}{k\+End\+Game}}
+ \}
+\item 
+enum class \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}} \+: unsigned short \{ \newline
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a35c3ace1970663a16e5c65baa5941b13}{k\+None}} = 0
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a0aecc0adfa4e90597339a8a8441778ba}{k\+First\+Connect}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf55fc79f036ce4fea8eeb35a8a13b88}{k\+Success\+Check\+Log\+Pas}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a99078108fbdab303d1febe2a321b4a80}{k\+Failure\+Check\+Log\+Pas}}
+, \newline
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629ab320da4595b495406a9749bad2e43732}{k\+Avatars\+Data\+Ready}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8a3b745541ef250c792de692a54af116}{k\+User\+Log\+Pas\+Server\+Request}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5fc8ee48c0c56b8e0c5e24bc88c400c4}{k\+Avatar\+List\+Is\+Ready}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a53cd1486a2b1d100642e2bda017dc5a6}{k\+Start\+Game\+Server\+Response\+Sucsses}}
+, \newline
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a91b38dfbdf306af957c0ba22fb5cf436}{k\+Exit\+Game\+Response}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aebae12d7c937b743dcc14615c89d15af}{k\+User\+Log\+Pas\+Client\+Response}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a3e9f7058dc7c25fe1c5286a7da7ba767}{k\+Users\+Avatar\+List\+Client\+Request}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a50e515120f9b7e010dd1f6c3d13a7d1a}{k\+Get\+Avatars\+Data}}
+, \newline
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abc7535d303037ff917effe7d6cb333a7}{k\+Add\+Item\+In\+Inventory}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5db6b6ab6b584b35aee715796431c8d3}{k\+Save\+Game}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8ffcf14f9269e2cdc8f086caed5e14e8}{k\+Exit\+Game\+Request}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a248c0d18c59730fb232512cf5797423c}{k\+Start\+Game\+Client\+Request}}
+, \newline
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf5b639c245ebb59f065e7418413f0db}{k\+Broadcast\+Message}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aeaff67467eed443cd69d52fe5ca8d152}{k\+Disconnect\+Session}}
+, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a374bf9ba57a441a600d65b212cf9d13c}{k\+End}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{event_8h_aa94052c7b85316a6d3208b4be2c2628f}\index{event.h@{event.h}!shrd\_event@{shrd\_event}}
+\index{shrd\_event@{shrd\_event}!event.h@{event.h}}
+\doxysubsubsection{\texorpdfstring{shrd\_event}{shrd\_event}}
+{\footnotesize\ttfamily \label{event_8h_aa94052c7b85316a6d3208b4be2c2628f} 
+using \mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}} = std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_event}{Event}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{event_8h_source_l00099}{99}} of file \mbox{\hyperlink{event_8h_source}{event.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{event_8h_a1a2838dc20b8334df3c32f18f56e8613}\index{event.h@{event.h}!EventPriority@{EventPriority}}
+\index{EventPriority@{EventPriority}!event.h@{event.h}}
+\doxysubsubsection{\texorpdfstring{EventPriority}{EventPriority}}
+{\footnotesize\ttfamily \label{event_8h_a1a2838dc20b8334df3c32f18f56e8613} 
+enum class \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}} \+: unsigned short\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNone@{kNone}!event.h@{event.h}}\index{event.h@{event.h}!kNone@{kNone}}}\Hypertarget{event_8h_a1a2838dc20b8334df3c32f18f56e8613a35c3ace1970663a16e5c65baa5941b13}\label{event_8h_a1a2838dc20b8334df3c32f18f56e8613} 
+k\+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLow@{kLow}!event.h@{event.h}}\index{event.h@{event.h}!kLow@{kLow}}}\Hypertarget{event_8h_a1a2838dc20b8334df3c32f18f56e8613acd8fe42741a3bbc973bbf1d404afeff4}\label{event_8h_a1a2838dc20b8334df3c32f18f56e8613} 
+k\+Low&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMedium@{kMedium}!event.h@{event.h}}\index{event.h@{event.h}!kMedium@{kMedium}}}\Hypertarget{event_8h_a1a2838dc20b8334df3c32f18f56e8613a3ce9d817402b59f65fb01ea044bb1ee9}\label{event_8h_a1a2838dc20b8334df3c32f18f56e8613} 
+k\+Medium&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kHigh@{kHigh}!event.h@{event.h}}\index{event.h@{event.h}!kHigh@{kHigh}}}\Hypertarget{event_8h_a1a2838dc20b8334df3c32f18f56e8613aa022f15e910eb36278094efb6e808a07}\label{event_8h_a1a2838dc20b8334df3c32f18f56e8613} 
+k\+High&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kError@{kError}!event.h@{event.h}}\index{event.h@{event.h}!kError@{kError}}}\Hypertarget{event_8h_a1a2838dc20b8334df3c32f18f56e8613ae3587c730cc1aa530fa4ddc9c4204e97}\label{event_8h_a1a2838dc20b8334df3c32f18f56e8613} 
+k\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEndGame@{kEndGame}!event.h@{event.h}}\index{event.h@{event.h}!kEndGame@{kEndGame}}}\Hypertarget{event_8h_a1a2838dc20b8334df3c32f18f56e8613a84e433ab4609f1c798e455b2523c2a98}\label{event_8h_a1a2838dc20b8334df3c32f18f56e8613} 
+k\+End\+Game&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{event_8h_source_l00010}{10}} of file \mbox{\hyperlink{event_8h_source}{event.\+h}}.
+
+\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629}\index{event.h@{event.h}!EventType@{EventType}}
+\index{EventType@{EventType}!event.h@{event.h}}
+\doxysubsubsection{\texorpdfstring{EventType}{EventType}}
+{\footnotesize\ttfamily \label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+enum class \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}} \+: unsigned short\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNone@{kNone}!event.h@{event.h}}\index{event.h@{event.h}!kNone@{kNone}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a35c3ace1970663a16e5c65baa5941b13}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kFirstConnect@{kFirstConnect}!event.h@{event.h}}\index{event.h@{event.h}!kFirstConnect@{kFirstConnect}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a0aecc0adfa4e90597339a8a8441778ba}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+First\+Connect&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSuccessCheckLogPas@{kSuccessCheckLogPas}!event.h@{event.h}}\index{event.h@{event.h}!kSuccessCheckLogPas@{kSuccessCheckLogPas}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629abf55fc79f036ce4fea8eeb35a8a13b88}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Success\+Check\+Log\+Pas&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kFailureCheckLogPas@{kFailureCheckLogPas}!event.h@{event.h}}\index{event.h@{event.h}!kFailureCheckLogPas@{kFailureCheckLogPas}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a99078108fbdab303d1febe2a321b4a80}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Failure\+Check\+Log\+Pas&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAvatarsDataReady@{kAvatarsDataReady}!event.h@{event.h}}\index{event.h@{event.h}!kAvatarsDataReady@{kAvatarsDataReady}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629ab320da4595b495406a9749bad2e43732}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Avatars\+Data\+Ready&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUserLogPasServerRequest@{kUserLogPasServerRequest}!event.h@{event.h}}\index{event.h@{event.h}!kUserLogPasServerRequest@{kUserLogPasServerRequest}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a8a3b745541ef250c792de692a54af116}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+User\+Log\+Pas\+Server\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAvatarListIsReady@{kAvatarListIsReady}!event.h@{event.h}}\index{event.h@{event.h}!kAvatarListIsReady@{kAvatarListIsReady}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a5fc8ee48c0c56b8e0c5e24bc88c400c4}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Avatar\+List\+Is\+Ready&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kStartGameServerResponseSucsses@{kStartGameServerResponseSucsses}!event.h@{event.h}}\index{event.h@{event.h}!kStartGameServerResponseSucsses@{kStartGameServerResponseSucsses}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a53cd1486a2b1d100642e2bda017dc5a6}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Start\+Game\+Server\+Response\+Sucsses&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kExitGameResponse@{kExitGameResponse}!event.h@{event.h}}\index{event.h@{event.h}!kExitGameResponse@{kExitGameResponse}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a91b38dfbdf306af957c0ba22fb5cf436}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Exit\+Game\+Response&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUserLogPasClientResponse@{kUserLogPasClientResponse}!event.h@{event.h}}\index{event.h@{event.h}!kUserLogPasClientResponse@{kUserLogPasClientResponse}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629aebae12d7c937b743dcc14615c89d15af}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+User\+Log\+Pas\+Client\+Response&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUsersAvatarListClientRequest@{kUsersAvatarListClientRequest}!event.h@{event.h}}\index{event.h@{event.h}!kUsersAvatarListClientRequest@{kUsersAvatarListClientRequest}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a3e9f7058dc7c25fe1c5286a7da7ba767}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Users\+Avatar\+List\+Client\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kGetAvatarsData@{kGetAvatarsData}!event.h@{event.h}}\index{event.h@{event.h}!kGetAvatarsData@{kGetAvatarsData}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a50e515120f9b7e010dd1f6c3d13a7d1a}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Get\+Avatars\+Data&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAddItemInInventory@{kAddItemInInventory}!event.h@{event.h}}\index{event.h@{event.h}!kAddItemInInventory@{kAddItemInInventory}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629abc7535d303037ff917effe7d6cb333a7}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Add\+Item\+In\+Inventory&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSaveGame@{kSaveGame}!event.h@{event.h}}\index{event.h@{event.h}!kSaveGame@{kSaveGame}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a5db6b6ab6b584b35aee715796431c8d3}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Save\+Game&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kExitGameRequest@{kExitGameRequest}!event.h@{event.h}}\index{event.h@{event.h}!kExitGameRequest@{kExitGameRequest}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a8ffcf14f9269e2cdc8f086caed5e14e8}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Exit\+Game\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kStartGameClientRequest@{kStartGameClientRequest}!event.h@{event.h}}\index{event.h@{event.h}!kStartGameClientRequest@{kStartGameClientRequest}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a248c0d18c59730fb232512cf5797423c}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Start\+Game\+Client\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kBroadcastMessage@{kBroadcastMessage}!event.h@{event.h}}\index{event.h@{event.h}!kBroadcastMessage@{kBroadcastMessage}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629abf5b639c245ebb59f065e7418413f0db}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Broadcast\+Message&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDisconnectSession@{kDisconnectSession}!event.h@{event.h}}\index{event.h@{event.h}!kDisconnectSession@{kDisconnectSession}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629aeaff67467eed443cd69d52fe5ca8d152}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+Disconnect\+Session&!! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEnd@{kEnd}!event.h@{event.h}}\index{event.h@{event.h}!kEnd@{kEnd}}}\Hypertarget{event_8h_a921bea877914e2bf0856fa61313d2629a374bf9ba57a441a600d65b212cf9d13c}\label{event_8h_a921bea877914e2bf0856fa61313d2629} 
+k\+End&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{event_8h_source_l00033}{33}} of file \mbox{\hyperlink{event_8h_source}{event.\+h}}.
+

@@ -1,0 +1,221 @@
+\doxysection{parser.\+cpp}
+\hypertarget{parser_8cpp_source}{}\label{parser_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/parser.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/parser.cpp}}
+\mbox{\hyperlink{parser_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parser_8h}{parser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texts_8h}{texts.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }b\_po\ =\ boost::program\_options;}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacetext__p}{text\_p}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00008}\mbox{\hyperlink{class_parser_a12234f6cd36b61af4b50c94a179422c1}{00008}}\ \mbox{\hyperlink{class_parser_a12234f6cd36b61af4b50c94a179422c1}{Parser::Parser}}()}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00009}00009\ \ \ \ \ :desc\_\{kOptDescription\},\ pos\_desc\_\{\},\ args\_t\_\{\},\ arg\_t\_\{\}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00011}00011\ \ \ \ \ Init();}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00014}\mbox{\hyperlink{class_parser_a3e658b5917a93a3ef648050d060e3a93}{00014}}\ \mbox{\hyperlink{class_parser_a3e658b5917a93a3ef648050d060e3a93}{Parser::\string~Parser}}()}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00018}00018\ \textcolor{keywordtype}{void}\ Parser::Init()}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00021}00021\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00022}00022\ \{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00023}00023\ \ \ \ \ desc\_.add\_options()}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ (kCommandKey,\ b\_po::value<std::string>(),\ kCommandKeyDescription)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ (kArgsKey,\ b\_po::value<std::vector<std::string>>()-\/>multitoken(),\ kArgsKeyDescription);\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{int}\ first\_position\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{int}\ second\_pos\_unlimited\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00030}00030\ \ \ \ \ pos\_desc\_.add(kCommandKey,\ first\_position);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00031}00031\ \ \ \ \ pos\_desc\_.add(kArgsKey,\ second\_pos\_unlimited);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00033}00033\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00036}00036\ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00037}00037\ \}\ \textcolor{comment}{/*\ Init\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00040}00040\ \textcolor{comment}{/*\ thread\ StartGame\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00041}\mbox{\hyperlink{class_parser_a037d2aa8877c6fcfeeb60146e81f6364}{00041}}\ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ \mbox{\hyperlink{class_parser_a037d2aa8877c6fcfeeb60146e81f6364}{Parser::GetUserCommand}}(std::string\&\ user\_input)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00043}00043\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00044}00044\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00045}00045\ \ \ \ \ b\_po::variables\_map\ vm;}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00046}00046\ \ \ \ \ ParseAndNotify(vm,\ user\_input);\ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{return}\ ConvertToEnum(vm);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00050}00050\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00056}00056\ \}\ \textcolor{comment}{/*\ HandleCommandVariant\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00059}00059\ \textcolor{comment}{/*\ thread\ StartGame\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00060}00060\ \textcolor{keywordtype}{void}\ Parser::ParseAndNotify(b\_po::variables\_map\&\ vm,\ std::string\&\ \mbox{\hyperlink{namespacecommand__str}{command\_str}})}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00061}00061\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00063}00063\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00064}00064\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00065}00065\ \ \ \ \ args\_t\_.clear();}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00066}00066\ \ \ \ \ arg\_t\_.clear();}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00067}00067\ \ \ \ \ std::istringstream\ iss\{\mbox{\hyperlink{namespacecommand__str}{command\_str}}\};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ arg\_t\_)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ args\_t\_.push\_back(arg\_t\_);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00074}00074\ \ \ \ \ b\_po::store(b\_po::command\_line\_parser(args\_t\_).options(desc\_).positional(pos\_desc\_).run(),\ vm);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00075}00075\ \ \ \ \ b\_po::notify(vm);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00077}00077\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00078}00078\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00081}00081\ \}\ \textcolor{comment}{/*\ ParseAndNotify\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00084}00084\ \textcolor{comment}{/*\ thread\ StartGame\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00085}00085\ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ Parser::ConvertToEnum(b\_po::variables\_map\&\ vm)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00086}00086\ \{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00087}00087\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00088}00088\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (!vm.count(kCommandKey))}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*пустое\ !!!*/}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00095}00095\ \ \ \ \ std::string\ command\ =\ vm[kCommandKey].as<std::string>();}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ command\_str::kMenu)\ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a3ff3255763404f286cc75aa78972601c}{CommandList::kMenu}};\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ command\_str::kSpeak)\ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a7f9bec1a0304f1444d684aed5eddf0f8}{CommandList::kSpeak}};\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ command\_str::kChat)\ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ std::move(ParseChatMessage(vm));\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ command\_str::kMap)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1afb5397a5037cdaeda0a604dcbfe8c01f}{CommandList::kMap}};\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ command\_str::kLocation)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1acd1750f89d2eda82b0212e859686d62b}{CommandList::kCurrentLocation}};\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ command\_str::kGo)\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ std::move(ParseGo(vm));\ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00108}00108\ \}\ \textcolor{comment}{/*\ try\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00109}00109\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00110}00110\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00112}00112\ \}\textcolor{comment}{/*\ catch\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00115}00115\ \}\textcolor{comment}{/*\ ConvertToEnum\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00117}00117\ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ Parser::ParseChatMessage(b\_po::variables\_map\&\ vm)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00118}00118\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keyword}{using\ }pair\ =\ std::pair<CommandList,\ ChatMessage>;}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00120}00120\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00121}00121\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (!vm.count(kArgsKey))}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00123}00123\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*пустое\ !!!*/}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keyword}{auto}\ args\ =\ vm[kArgsKey].as<std::vector<std::string>>();}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{if}\ (args.size()\ <\ command\_str::kChatMinArgsSize)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*ошибка\ !!!*/}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00135}00135\ \ \ \ \ \mbox{\hyperlink{struct_chat_message}{ChatMessage}}\ сhat\_message\{args[0],\ args[1]\};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 2;\ i\ <\ args.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ сhat\_message.\mbox{\hyperlink{struct_chat_message_a667910b13603ee95b81ba7ad1d289ef1}{text}}\ +=\ \textcolor{stringliteral}{"{}\ "{}}\ +\ args[i];}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00140}00140\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00142}00142\ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<pair>(\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1aea2a1104b7cd82f7f248e61cd6700f80}{CommandList::kChat}},\ std::move(сhat\_message));}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00144}00144\ \}\ \textcolor{comment}{/*\ try\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00145}00145\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00146}00146\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00149}00149\ \}\textcolor{comment}{/*\ catch\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00153}00153\ \}\textcolor{comment}{/*\ ParseChatMessage\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00156}00156\ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ Parser::ParseGo(b\_po::variables\_map\&\ vm)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00157}00157\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{using\ }pair\ =\ std::pair<CommandList,\ GoCommand>;}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00159}00159\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00160}00160\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (!vm.count(kArgsKey))}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00162}00162\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*пустое\ !!!*/}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{auto}\ args\ =\ vm[kArgsKey].as<std::vector<std::string>>();}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (args.size()\ <\ command\_str::kGoMinArgsSize)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00170}00170\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*ошибка\ !!!*/}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00175}00175\ \ \ \ \ \mbox{\hyperlink{struct_go_command}{GoCommand}}\ go\_command\{\};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00176}00176\ \ \ \ \ std::string\ direction\ =\ args[0];}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00177}00177\ \ \ \ \ go\_command.\mbox{\hyperlink{struct_go_command_ab7a6d4a67a81880a81833469a34e03e1}{steps}}\ =\ std::stoi(args[1]);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ ==\ command\_str::kNorth\ ||\ direction\ ==\ command\_str::kN)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00180}00180\ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ go\_command.direction\ =\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fac1079db2ce4428bb7b1f7ce7288c887c}{DirectionsList::kNorth}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<pair>(\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a44502fe4915d471b71350f3371066aac}{CommandList::kGo}},\ go\_command);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ command\_str::kSouth\ ||\ direction\ ==\ command\_str::kS)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00185}00185\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ go\_command.direction\ =\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127faa71b63644c9f83d8f5a14cce40f0e53c}{DirectionsList::kSouth}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<pair>(\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a44502fe4915d471b71350f3371066aac}{CommandList::kGo}},\ go\_command);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ command\_str::kWest\ ||\ direction\ ==\ command\_str::kW)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00190}00190\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ go\_command.direction\ =\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fa3bd54bab29f3403de0f8b50a02967b23}{DirectionsList::kWest}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<pair>(\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a44502fe4915d471b71350f3371066aac}{CommandList::kGo}},\ go\_command);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00194}00194\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ command\_str::kEast\ ||\ direction\ ==\ command\_str::kE)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00195}00195\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ go\_command.direction\ =\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fae9deb5248e8d61eed4f3ac200c83991b}{DirectionsList::kEast}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<pair>(\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a44502fe4915d471b71350f3371066aac}{CommandList::kGo}},\ go\_command);}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00200}00200\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*TODO:\ error*/}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00205}00205\ \}\ \textcolor{comment}{/*\ try\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00206}00206\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00207}00207\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00208}00208\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00210}00210\ \}\textcolor{comment}{/*\ catch\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{CommandList::kNone}};}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00214}00214\ \}\textcolor{comment}{/*\ ParseChatMessage\ */}}
+\DoxyCodeLine{\Hypertarget{parser_8cpp_source_l00215}00215\ }
+
+\end{DoxyCode}

@@ -1,0 +1,123 @@
+\doxysection{controller.\+cpp}
+\hypertarget{controller_8cpp_source}{}\label{controller_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/controller.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/controller.cpp}}
+\mbox{\hyperlink{controller_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{controller_8h}{controller.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00004}\mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{00004}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\_message}}\ =\ ProtoMessage::GameMessage;}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00005}\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{00005}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ =\ std::unique\_ptr<const\ proto\_message>;}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00007}\mbox{\hyperlink{class_controller_aafd5844f245e083d65a7124805c31ffb}{00007}}\ \mbox{\hyperlink{class_controller_aafd5844f245e083d65a7124805c31ffb}{Controller::Controller}}(\mbox{\hyperlink{class_view}{View}}\&\ v,\ \mbox{\hyperlink{class_database_handler}{DatabaseHandler}}\&\ m)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00008}00008\ \ \ \ \ :\ view\_\{v\},\ net\_handler\_\{\},\ game\_logic\_\{v,\ m,\ *this,\ *this\}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00012}\mbox{\hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{00012}}\ \mbox{\hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{Controller::\string~Controller}}()}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00014}00014\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00017}\mbox{\hyperlink{class_controller_a0d1dbb7a39dfc1cd3d2162cf084189c6}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_a0d1dbb7a39dfc1cd3d2162cf084189c6}{Controller::Start}}()}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00020}00020\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{auto}\ send\_message\_to\_model\ =\ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\_message}}\&\ message)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ game\_logic\_.\mbox{\hyperlink{class_game_logic_a380f5abdc7bcbaf20d1bfe92713fce34}{SelectFunction}}(message);}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{auto}\ send\_message\_to\_net\_handler\ =\ [\textcolor{keyword}{this}](\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ message)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ net\_handler\_.\mbox{\hyperlink{class_network_handler_a64f06a1352133b5a0385c6b25b8c50d8}{Send}}(std::move(message));}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00032}00032\ \ \ \ \ net\_handler\_.\mbox{\hyperlink{class_network_handler_a7e973865376e76d33d2a06ea10511fed}{RegisterSingleObserver}}(send\_message\_to\_model);}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00033}00033\ \ \ \ \ game\_logic\_.\mbox{\hyperlink{class_game_logic_ad47b0b6e586dad746528317d1aaada1f}{RegisterSingleObserver}}(send\_message\_to\_net\_handler);}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00035}00035\ \ \ \ \ net\_handler\_.\mbox{\hyperlink{class_network_handler_a243dce273b64311a96326755b98de6a7}{ConnectToServer}}();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00036}00036\ \ \ \ \ net\_handler\_.\mbox{\hyperlink{class_network_handler_a389ddf7dcd90417dd83c66daa1a8fb01}{StartListening}}();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00038}00038\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00041}00041\ \}\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00042}00042\ \}\textcolor{comment}{/*\ Start\ */}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00044}\mbox{\hyperlink{class_controller_ae9a1c34ff8d28693830fbff435d3f87b}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_controller_ae9a1c34ff8d28693830fbff435d3f87b}{Controller::StopGame}}()}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00046}00046\ \ \ \ \ net\_handler\_.\mbox{\hyperlink{class_network_handler_aad176ac5a8154c0614220fd874d1f7ce}{StopListening}}();\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00051}\mbox{\hyperlink{class_controller_a26f1430e3f19c4a95d30b00c35ba41b1}{00051}}\ std::string\ \mbox{\hyperlink{class_controller_a26f1430e3f19c4a95d30b00c35ba41b1}{Controller::GetString}}(std::function<\textcolor{keywordtype}{void}()>\ original\_req)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ correct\_input\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00054}00054\ \ \ \ \ std::string\ str\{\};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!correct\_input)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(std::cin,\ str);}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ str.empty()}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ std::all\_of(str.begin(),\ str.end(),\ isspace))}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ view\_.\mbox{\hyperlink{class_view_aae1124bd00c398e525d86300458b695e}{ShowErrorInput}}();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ original\_req();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ correct\_input\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ str;\ \textcolor{comment}{/*\ NRVO\ */}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00082}00082\ \}\textcolor{comment}{/*\ GetString\ */}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00085}\mbox{\hyperlink{class_controller_a20d3047d5a7bc2d13458d072b5e8b4f0}{00085}}\ uint16\_t\ \mbox{\hyperlink{class_controller_a20d3047d5a7bc2d13458d072b5e8b4f0}{Controller::GetInt}}(std::function<\textcolor{keywordtype}{void}()>\ original\_req,\ uint16\_t\ max\_number)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00086}00086\ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ correct\_input\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00088}00088\ \ \ \ \ uint16\_t\ number\{\};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!correct\_input)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ number;}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ number\ >\ max\_number)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ view\_.\mbox{\hyperlink{class_view_aae1124bd00c398e525d86300458b695e}{ShowErrorInput}}();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ original\_req();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ correct\_input\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{return}\ number;}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00116}00116\ \}\textcolor{comment}{/*\ GetInt\ */}}
+\DoxyCodeLine{\Hypertarget{controller_8cpp_source_l00117}00117\ }
+
+\end{DoxyCode}

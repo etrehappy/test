@@ -1,0 +1,187 @@
+\doxysection{game\+\_\+logic.\+ipp}
+\hypertarget{game__logic_8ipp_source}{}\label{game__logic_8ipp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/game\_logic.ipp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/game\_logic.ipp}}
+\mbox{\hyperlink{game__logic_8ipp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__logic_8h}{game\_logic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texts_8h}{texts.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00005}\mbox{\hyperlink{game__logic_8ipp_abf1da8fbde664a11a2cef30aaa467407}{00005}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{controller_8cpp_abf1da8fbde664a11a2cef30aaa467407}{proto\_message}}\ =\ ProtoMessage::GameMessage;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00006}\mbox{\hyperlink{game__logic_8ipp_a5351de698117b0f89eb84f22a897ec8f}{00006}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ =\ std::unique\_ptr<const\ proto\_message>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00007}\mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{00007}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\_ptr}}\ =\ std::unique\_ptr<proto\_message>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00008}\mbox{\hyperlink{game__logic_8ipp_a88a2557c91d352aad8b2e203560c55ec}{00008}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{game__logic_8ipp_a88a2557c91d352aad8b2e203560c55ec}{command\_type}}\ =\ ProtoMessage::CommandType;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00009}\mbox{\hyperlink{game__logic_8ipp_abe5ff4d0a6200969350e761250f09183}{00009}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{game__logic_8ipp_abe5ff4d0a6200969350e761250f09183}{chat\_pair\_ptr}}\ =\ std::unique\_ptr<std::pair<CommandList,\ ChatMessage>>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00010}\mbox{\hyperlink{game__logic_8ipp_a885ad4e20ececbed10dd991c8ca4556a}{00010}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{game__logic_8ipp_a885ad4e20ececbed10dd991c8ca4556a}{go\_pair\_ptr}}\ =\ std::unique\_ptr<std::pair<CommandList,\ GoCommand>>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00012}00012\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00013}\mbox{\hyperlink{game__logic_8ipp_a49fdc2328988dd1d335e912caa923aa7}{00013}}\ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ GameLogic::PrepareMessage<command\_type::kLoginPasResponse>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00014}00014\ \ \ \ \ (\textcolor{keyword}{const}\ std::string\&\ login,\ \textcolor{keyword}{const}\ std::string\&\ password)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00016}00016\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00017}00017\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\_ptr}}\ message\ =\ std::make\_unique<proto\_message>();}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00019}00019\ \ \ \ \ message-\/>set\_command(command\_type::kLoginPasResponse);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00020}00020\ \ \ \ \ message-\/>mutable\_auth\_data()-\/>mutable\_login\_response()-\/>set\_login(login);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00021}00021\ \ \ \ \ message-\/>mutable\_auth\_data()-\/>mutable\_login\_response()-\/>set\_password(password);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ message;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00025}00025\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00032}00032\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00033}\mbox{\hyperlink{game__logic_8ipp_ab666f6a4391a6af15a1250e05d5619ba}{00033}}\ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ GameLogic::PrepareMessage<command\_type::kUsersAvatarListClientRequest>()}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00035}00035\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\_ptr}}\ message\ =\ std::make\_unique<proto\_message>();}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00038}00038\ \ \ \ \ message-\/>set\_command(command\_type::kUsersAvatarListClientRequest);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ message;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00042}00042\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00049}00049\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00050}\mbox{\hyperlink{game__logic_8ipp_a12b251bfac5d355925f1edc3ec4bba06}{00050}}\ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ GameLogic::PrepareMessage<command\_type::kStartGameClientRequest>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00051}00051\ \ \ \ \ (\textcolor{keyword}{const}\ uint32\_t\&\ avatar\_id)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00053}00053\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\_ptr}}\ message\ =\ std::make\_unique<proto\_message>();}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00056}00056\ \ \ \ \ message-\/>set\_command(command\_type::kStartGameClientRequest);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00057}00057\ \ \ \ \ message-\/>mutable\_start\_game()-\/>set\_id\_selected\_avatar(avatar\_id);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{return}\ message;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00061}00061\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00062}00062\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00068}00068\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00069}\mbox{\hyperlink{game__logic_8ipp_aaebf47d31635a685abb7c87b41284979}{00069}}\ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ GameLogic::PrepareMessage<command\_type::kExitGameClientRequest>()}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00070}00070\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00071}00071\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00072}00072\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\_ptr}}\ message\ =\ std::make\_unique<proto\_message>();}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00074}00074\ \ \ \ \ message-\/>set\_command(command\_type::kExitGameClientRequest);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{auto}\ message\_avatar\ =\ message-\/>mutable\_exit\_game()-\/>mutable\_avatar();}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00078}00078\ \ \ \ \ message\_avatar-\/>set\_level(current\_avatar\_-\/>GetLevel());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00079}00079\ \ \ \ \ message\_avatar-\/>set\_experience(current\_avatar\_-\/>GetExperience());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00080}00080\ \ \ \ \ message\_avatar-\/>set\_health(current\_avatar\_-\/>GetHealth());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00081}00081\ \ \ \ \ message\_avatar-\/>set\_mana(current\_avatar\_-\/>GetMana());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00082}00082\ \ \ \ \ message\_avatar-\/>set\_strength(current\_avatar\_-\/>GetStrength());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00083}00083\ \ \ \ \ message\_avatar-\/>set\_dexterity(current\_avatar\_-\/>GetDexterity());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00084}00084\ \ \ \ \ message\_avatar-\/>set\_intelligence(current\_avatar\_-\/>GetIntelligence());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00085}00085\ \ \ \ \ message\_avatar-\/>set\_location\_id(current\_avatar\_-\/>GetLocationId());}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00086}00086\ \ \ \ \ message\_avatar-\/>set\_pos\_x(current\_avatar\_-\/>GetPosition().first);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00087}00087\ \ \ \ \ message\_avatar-\/>set\_pos\_y(current\_avatar\_-\/>GetPosition().second);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ message;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00091}00091\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00095}00095\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00098}00098\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00099}\mbox{\hyperlink{game__logic_8ipp_a46c7b1408d662399b189e0ef5dca6108}{00099}}\ \mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}}\ GameLogic::PrepareMessage<command\_type::kSendToCommonChat>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00100}00100\ \ \ \ \ (\textcolor{keyword}{const}\ std::string\&\ text\_message)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00102}00102\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00103}00103\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{game__logic_8ipp_a0a10df1cb6d0d4487ffddc076cd31352}{proto\_ptr}}\ message\ =\ std::make\_unique<proto\_message>();}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00106}00106\ \ \ \ \ message-\/>set\_command(ProtoMessage::CommandType::kSendToCommonChat);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00107}00107\ \ \ \ \ message-\/>mutable\_chat\_data()-\/>set\_text\_message(text\_message);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{return}\ message;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00111}00111\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00112}00112\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00120}00120\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00121}\mbox{\hyperlink{game__logic_8ipp_ad9f53e10d1f8487ea050f9ec7b33f675}{00121}}\ \textcolor{keywordtype}{void}\ GameLogic::HandleCommand<CommandList::kMenu>()}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00122}00122\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00123}00123\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00124}00124\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{auto}\ if\_input\_error\ =\ [\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00126}00126\ \ \ \ \ \ \ \ \ view\_.ShowTextWithNewLine(text\_v::kMenuNumber);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00127}00127\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00128}00128\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ offset\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ max\_number\ =\ \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(\mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1a374bf9ba57a441a600d65b212cf9d13c}{EMainMenu::kEnd}})\ -\/\ offset;}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00131}00131\ \ \ \ \ view\_.ShowMenu(main\_menu\_);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00132}00132\ \ \ \ \ view\_.ShowTextWithNewLine(text\_v::kMenuNumber);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00134}00134\ \ \ \ \ \mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1}{EMainMenu}}\ user\_input\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1}{EMainMenu}}\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00135}00135\ \ \ \ \ \ \ \ \ data\_provider\_.GetInt(if\_input\_error,\ max\_number));}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{switch}\ (user\_input)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1a0934649098e93cc6cd277da4b900fe69}{EMainMenu::kSaveAndExit}}:\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00140}00140\ \ \ \ \ \ \ \ \ NotifyNewMessage(std::move(}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{game__logic_8ipp_aaebf47d31635a685abb7c87b41284979}{PrepareMessage<command\_type::kExitGameClientRequest>}}()));}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00142}00142\ \ \ \ \ \ \ \ \ stop\_get\_command\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1a374bf9ba57a441a600d65b212cf9d13c}{EMainMenu::kEnd}}:}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00150}00150\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00151}00151\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00152}00152\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00153}00153\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00156}00156\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00157}\mbox{\hyperlink{game__logic_8ipp_a8c3719c6df4457491448ec9b4a320352}{00157}}\ \textcolor{keywordtype}{void}\ GameLogic::HandleCommand<CommandList::kMap>()}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00158}00158\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00159}00159\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00160}00160\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00161}00161\ \ \ \ \ current\_location\_-\/>UpdateSymbolsOnMap(*current\_avatar\_);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00162}00162\ \ \ \ \ view\_.ShowMap(*current\_avatar\_,\ *current\_location\_,\ avatar\_and\_location\_);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00163}00163\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00164}00164\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00165}00165\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00166}00166\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00167}00167\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00168}00168\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00170}00170\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00171}\mbox{\hyperlink{game__logic_8ipp_ab36a7a3f918d4129b477fa90abd84d55}{00171}}\ \textcolor{keywordtype}{void}\ GameLogic::HandleCommand<CommandList::kCurrentLocation>()}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00172}00172\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00173}00173\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00174}00174\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00175}00175\ \ \ \ \ view\_.ShowLocDescription(*current\_location\_,\ avatar\_and\_location\_);}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00176}00176\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00177}00177\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00178}00178\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00179}00179\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00180}00180\ \}}
+\DoxyCodeLine{\Hypertarget{game__logic_8ipp_source_l00181}00181\ \}}
+
+\end{DoxyCode}

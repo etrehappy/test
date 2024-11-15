@@ -1,0 +1,102 @@
+\doxysection{game\+\_\+logic.\+h}
+\hypertarget{game__logic_8h_source}{}\label{game__logic_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/game\_logic.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/game\_logic.h}}
+\mbox{\hyperlink{game__logic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__elements_8h}{game\_elements.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}messages.pb.h"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2db__handler_8h}{db\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{view_8h}{view.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parser_8h}{parser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i__inputdata_8h}{i\_inputdata.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menus_8h}{menus.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00015}00015\ \textcolor{comment}{/*\ Macro\ is\ used\ in\ GetInt\ to\ clear\ std::cin\ */}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00016}00016\ \textcolor{comment}{//\#define\ MAX\_USER\_INPUT\_NUMBER\_TYPE\ uint32\_t}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00022}\mbox{\hyperlink{class_game_logic}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_logic}{GameLogic}}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00024}00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00025}\mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{00025}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\ =\ ProtoMessage::GameMessage;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00026}\mbox{\hyperlink{class_game_logic_a1adf9ef40d1861d3f75d64a4203cde70}{00026}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_game_logic_a1adf9ef40d1861d3f75d64a4203cde70}{const\_proto\_ptr}}\ =\ std::unique\_ptr<const\ proto\_message>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00027}\mbox{\hyperlink{class_game_logic_a8baab68a61441bc0d3b9b00f05a219a7}{00027}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_game_logic_a8baab68a61441bc0d3b9b00f05a219a7}{proto\_ptr}}\ =\ std::unique\_ptr<proto\_message>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00028}\mbox{\hyperlink{class_game_logic_ab9d7f7e95ae92f7afb34eb8447932747}{00028}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_game_logic_ab9d7f7e95ae92f7afb34eb8447932747}{chat\_pair\_ptr}}\ =\ std::unique\_ptr<std::pair<CommandList,\ ChatMessage>>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00029}\mbox{\hyperlink{class_game_logic_a0cd99dfc6609311aefff12248e08f897}{00029}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_game_logic_a0cd99dfc6609311aefff12248e08f897}{go\_pair\_ptr}}\ =\ std::unique\_ptr<std::pair<CommandList,\ GoCommand>>;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_game_logic_af7ffc6935ebc38648ebc66f9a7b0017e}{GameLogic}}(\mbox{\hyperlink{class_view}{View}}\&,\ \mbox{\hyperlink{class_database_handler}{DatabaseHandler}}\&,\ \mbox{\hyperlink{class_i_input_data_provider}{IInputDataProvider}}\&,\ \mbox{\hyperlink{class_i_exit}{IExit}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{class_game_logic_a63a7acf778535b5f74d469de2cd39b16}{\string~GameLogic}}();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_logic_ad47b0b6e586dad746528317d1aaada1f}{RegisterSingleObserver}}(std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_game_logic_a1adf9ef40d1861d3f75d64a4203cde70}{const\_proto\_ptr}})>);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_logic_a380f5abdc7bcbaf20d1bfe92713fce34}{SelectFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00041}00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00043}00043\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00044}00044\ \textcolor{comment}{/*\ 1.\ Authentication\ */}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ SendLogPasResponse();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00047}00047\ \ \ \ \ std::pair<const\ std::string,\ const\ std::string>\ GetCredentials();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ AuthSuccess();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ AuthFailure();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00050}00050\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00051}00051\ \textcolor{comment}{/*\ 2.\ Сhoose\ an\ avatar\ */}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ HandlerChooseAvatar(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00054}00054\ \ \ \ \ uint32\_t\ GetChoisedAvatarId(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00055}00055\ \ \ \ \ uint32\_t\ FindAvatarId(uint16\_t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ CreateAvatar();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00062}00062\ \textcolor{comment}{/*\ 3.\ Start\ a\ game\ */}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ SetAvatar(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ HandlerStartGame(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ StartGame();\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00067}00067\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleCommandVariant(\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{CommandList}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleCommandVariant(\mbox{\hyperlink{class_game_logic_ab9d7f7e95ae92f7afb34eb8447932747}{chat\_pair\_ptr}}\&);\ \ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleCommandVariant(\mbox{\hyperlink{class_game_logic_a0cd99dfc6609311aefff12248e08f897}{go\_pair\_ptr}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{template}\ <CommandList>}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleCommand();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ HandlerCommonMessage(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game_logic_a597aaf891749956706107606f3b99511}{proto\_message}}\&);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveX(int32\_t\ steps);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveY(int32\_t\ steps);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00086}00086\ \textcolor{comment}{/*\ Everything\ else\ */}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ StopGame();}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ NotifyNewMessage(\mbox{\hyperlink{class_game_logic_a1adf9ef40d1861d3f75d64a4203cde70}{const\_proto\_ptr}}\ );}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{template}<ProtoMessage::CommandType\ T,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{class_game_logic_a1adf9ef40d1861d3f75d64a4203cde70}{const\_proto\_ptr}}\ PrepareMessage(Args\&\&...\ args);}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00094}00094\ \ \ \ \ std::string\ uuid\_\{\};}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00095}00095\ \ \ \ \ std::shared\_ptr<Avatar>\ current\_avatar\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00096}00096\ \ \ \ \ std::shared\_ptr<Location>\ current\_location\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{class_view}{View}}\&\ view\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{class_database_handler}{DatabaseHandler}}\&\ model\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{class_i_input_data_provider}{IInputDataProvider}}\&\ data\_provider\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{class_i_exit}{IExit}}\&\ exit\_;\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00101}00101\ \ \ \ \ std::mutex\ avatar\_and\_location\_\{\};}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00103}00103\ \ \ \ \ std::function<void(\mbox{\hyperlink{controller_8cpp_a5351de698117b0f89eb84f22a897ec8f}{const\_proto\_ptr}})>\ net\_notify\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00104}00104\ \ \ \ \ std::thread\ game\_thread\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Parser>\ parser\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ stop\_get\_command\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{class_main_menu}{MainMenu}}\ main\_menu\_;}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00111}00111\ \};}
+\DoxyCodeLine{\Hypertarget{game__logic_8h_source_l00112}00112\ }
+
+\end{DoxyCode}

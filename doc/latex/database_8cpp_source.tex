@@ -1,0 +1,373 @@
+\doxysection{database.\+cpp}
+\hypertarget{database_8cpp_source}{}\label{database_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/database.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/database.cpp}}
+\mbox{\hyperlink{database_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{database_8h}{database.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00003}\mbox{\hyperlink{class_database_a4703c80e6969d33565ea340f768fdadf}{00003}}\ \mbox{\hyperlink{class_database_a4703c80e6969d33565ea340f768fdadf}{Database::Database}}()}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{class_database_aa912e8f78a47a961efbaea41cf208a4a}{Create}}();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//OpenToRead();}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00007}00007\ \ \ \ \ OpenToReadAndWrite();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00010}\mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{00010}}\ \mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{Database::\string~Database}}()}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00014}\mbox{\hyperlink{class_database_aa912e8f78a47a961efbaea41cf208a4a}{00014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_database_aa912e8f78a47a961efbaea41cf208a4a}{Database::Create}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00015}00015\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::exists(settings::kFilesDir))\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::filesystem::create\_directories(settings::kFilesDir))\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Ошибка\ при\ создании\ директории:\ "{}}\ <<\ settings::kFilesDir\ <<\ std::endl;\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::exists(settings::server::kDatabaseFile))}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ \ The\ MVP-\/version\ hasn't\ difficult\ rules\ to\ check\ database's\ tables.\ }}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00030}00030\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00032}00032\ \ \ \ \ SQLite::Database\ db\{settings::server::kDatabaseFile,\ SQLite::OPEN\_READWRITE\ |\ SQLite::OPEN\_CREATE\};}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00034}00034\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}PRAGMA\ synchronous\ =\ NORMAL;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00035}00035\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}PRAGMA\ journal\_mode\ =\ WAL;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00036}00036\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}PRAGMA\ cache\_size\ =\ 10000;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00037}00037\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}PRAGMA\ temp\_store\ =\ MEMORY;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00039}00039\ \ \ \ \ CreateTables(db);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00040}00040\ \ \ \ \ SetTestData(db);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00042}00042\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00045}00045\ \}\ \ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00048}00048\ \textcolor{comment}{//std::shared\_ptr<SQLite::Database>\ Database::GetToRead()\ const}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00049}00049\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00050}00050\ \textcolor{comment}{//\ \ \ \ return\ db\_read\_;}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00051}00051\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00053}\mbox{\hyperlink{class_database_a2c54c73fa95bc873bcb09eb9275a4890}{00053}}\ std::shared\_ptr<SQLite::Database>\ \mbox{\hyperlink{class_database_a2c54c73fa95bc873bcb09eb9275a4890}{Database::GetToReadAndWrite}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00054}00054\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ db\_read\_write\_;}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00058}00058\ \textcolor{keywordtype}{void}\ Database::CreateTables(SQLite::Database\&\ db)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00059}00059\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{comment}{/*\ user\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00061}00061\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ user"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(uuid\ \ \ \ \ \ \ \ \ \ TEXT\ PRIMARY\ KEY"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},login\ \ \ \ \ \ \ \ \ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},password\ \ \ \ \ \ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},created\_at\ \ \ \ TIMESTAMP\ DEFAULT\ CURRENT\_TIMESTAMP"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00067}00067\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{comment}{/*\ avatar\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00069}00069\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ avatar"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}\ \textcolor{comment}{/*\ unique\ avatar\ identifier\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},user\_uuid\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},name\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},race\_id\ INTEGER\ NOT\ NULL"{}}\ \textcolor{comment}{/*\ e.g.\ human,\ elf\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},class\_id\ INTEGER\ NOT\ NULL"{}}\ \textcolor{comment}{/*\ e.g.\ warrior,\ mage\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},level\ INTEGER\ DEFAULT\ 1"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},experience\ INTEGER\ DEFAULT\ 0"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},health\ INTEGER\ DEFAULT\ 100"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},mana\ INTEGER\ DEFAULT\ 100"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},strength\ INTEGER\ DEFAULT\ 10"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},dexterity\ INTEGER\ DEFAULT\ 10"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},intelligence\ INTEGER\ DEFAULT\ 10"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},location\_id\ INTEGER\ NOT\ NULL"{}}\ \textcolor{comment}{/*\ avatar's\ current\ location\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},pos\_x\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},pos\_y\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},created\_at\ TIMESTAMP\ DEFAULT\ CURRENT\_TIMESTAMP"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(user\_uuid)\ REFERENCES\ user(uuid)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(location\_id)\ REFERENCES\ location(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(race\_id)\ REFERENCES\ race(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(class\_id)\ REFERENCES\ class(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{comment}{/*\ location\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00093}00093\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ location"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},name\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},description\ TEXT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},x\ INTEGER"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},y\ INTEGER"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},z\ INTEGER"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},is\_safe\_zone\ BOOLEAN\ DEFAULT\ 0"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{comment}{/*\ item\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00104}00104\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ item"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},name\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},description\ TEXT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},type\ TEXT\ NOT\ NULL"{}}\ \textcolor{comment}{/*\ e.g.\ weapon,\ armour,\ potion\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},rarity\ TEXT\ NOT\ NULL"{}}\ \textcolor{comment}{/*\ e.g.\ common,\ rare\ */}\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},price\ INTEGER\ DEFAULT\ 0"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},weight\ INTEGER\ DEFAULT\ 0"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{comment}{/*\ inventory\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00115}00115\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ inventory"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},avatar\_id\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},item\_id\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},quantity\ INTEGER\ DEFAULT\ 0"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},is\_equipped\ BOOLEAN\ DEFAULT\ 0"{}}\ \textcolor{comment}{/*\ if\ the\ item\ is\ worn\ (e.g.\ weapon)\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(avatar\_id)\ REFERENCES\ avatar(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(item\_id)\ REFERENCES\ item(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{comment}{/*\ npc\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00127}00127\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ npc"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},name\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},race\_id\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},description\ TEXT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},health\ INTEGER\ DEFAULT\ 100"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},location\_id\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},pos\_x\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},pos\_y\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(location\_id)\ REFERENCES\ location(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(race\_id)\ REFERENCES\ race(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{comment}{/*\ race\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00141}00141\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ race"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},name\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},description\ TEXT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{comment}{/*\ class\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00148}00148\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ class"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},name\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},description\ TEXT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{comment}{/*\ npc\_dialogue\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00155}00155\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ npc\_dialogue"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},npc\_id\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},dialogue\_type\_id\ INTEGER\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},dialogue\_text\ TEXT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(npc\_id)\ REFERENCES\ npc(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},FOREIGN\ KEY(dialogue\_type\_id)\ REFERENCES\ dialogue\_type(id)"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{comment}{/*\ dialogue\_type\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00165}00165\ \ \ \ \ db.exec(\textcolor{stringliteral}{"{}CREATE\ TABLE\ dialogue\_type"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},type\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00172}00172\ \textcolor{keywordtype}{void}\ Database::SetTestData(SQLite::Database\&\ db)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00173}00173\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{comment}{/*\ test\_user\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00175}00175\ \ \ \ \ SQLite::Statement\ query\_test\_user(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ user\ (uuid,\ login,\ password)\ VALUES\ (?,\ ?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00176}00176\ \ \ \ \ query\_test\_user.bind(1,\ \textcolor{stringliteral}{"{}1user"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00177}00177\ \ \ \ \ query\_test\_user.bind(2,\ \textcolor{stringliteral}{"{}user1"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00178}00178\ \ \ \ \ query\_test\_user.bind(3,\ \textcolor{stringliteral}{"{}123"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00179}00179\ \ \ \ \ query\_test\_user.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00180}00180\ \ \ \ \ query\_test\_user.reset();\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00181}00181\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00182}00182\ \ \ \ \ query\_test\_user.bind(1,\ \textcolor{stringliteral}{"{}2user"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00183}00183\ \ \ \ \ query\_test\_user.bind(2,\ \textcolor{stringliteral}{"{}user2"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00184}00184\ \ \ \ \ query\_test\_user.bind(3,\ \textcolor{stringliteral}{"{}123"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00185}00185\ \ \ \ \ query\_test\_user.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00186}00186\ \ \ \ \ query\_test\_user.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{comment}{/*\ test\_location\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00189}00189\ \ \ \ \ SQLite::Statement\ query\_test\_location(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ location\ (name,\ x,\ y,\ is\_safe\_zone,\ description)\ VALUES\ (?,\ ?,\ ?,\ ?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00190}00190\ \ \ \ \ query\_test\_location.bind(1,\ \textcolor{stringliteral}{"{}Таверна"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00191}00191\ \ \ \ \ query\_test\_location.bind(2,\ 16);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00192}00192\ \ \ \ \ query\_test\_location.bind(3,\ 8);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00193}00193\ \ \ \ \ query\_test\_location.bind(4,\ \textcolor{stringliteral}{"{}true"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00194}00194\ \ \ \ \ query\_test\_location.bind(5,\ \textcolor{stringliteral}{"{}Это\ уютное\ место\ в\ центре\ города.Здесь\ всегда\ пахнет\ свежим\ хлебом\ и\ жареным\ мясом,\ а\ каждого\ вошедшого\ встречает\ добродушная\ Хозяйка.Массивные\ деревянные\ столы\ и\ скамьи\ расставлены\ по\ всему\ залу,\ а\ в\ углу\ у\ камина\ всегда\ можно\ найти\ свободное\ место,\ чтобы\ отдохнуть\ от\ мирских\ забот.В\ таверне\ можно\ встретить\ самых\ разных\ людей\ —\ от\ местных\ жителей\ до\ странствующих\ приключенцев."{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00195}00195\ \ \ \ \ query\_test\_location.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00196}00196\ \ \ \ \ query\_test\_location.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{comment}{/*\ test\_race\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00199}00199\ \ \ \ \ SQLite::Statement\ query\_test\_race(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ race\ (name)\ VALUES\ (?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{comment}{//query\_test\_race.bind(1,\ "{}Человек"{});}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00201}00201\ \ \ \ \ \textcolor{comment}{//query\_test\_race.exec();}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{comment}{//query\_test\_race.reset();}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{comment}{//query\_test\_race.bind(1,\ "{}Эльф"{});}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{comment}{//query\_test\_race.exec();}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{comment}{//query\_test\_race.reset();}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{comment}{//query\_test\_race.bind(1,\ "{}Гном"{});}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00207}00207\ \ \ \ \ \textcolor{comment}{//query\_test\_race.exec();}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{comment}{//query\_test\_race.reset();}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00210}00210\ \ \ \ \ std::vector<std::string>\ races\ =\ \{\textcolor{stringliteral}{"{}Человек"{}},\ \textcolor{stringliteral}{"{}Эльф"{}},\ \textcolor{stringliteral}{"{}Гном"{}}\};}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keyword}{auto}\ insert\_class\ =\ [\&db,\ \&query\_test\_race](\textcolor{keyword}{const}\ std::string\&\ race\_name)\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00213}00213\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ query\_test\_race.bind(1,\ race\_name);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ query\_test\_race.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ query\_test\_race.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00217}00217\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ race\_name\ :\ races)\ \{\ insert\_class(race\_name);\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{comment}{/*\ test\_class\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00223}00223\ \ \ \ \ SQLite::Statement\ query\_test\_class(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ class\ (name)\ VALUES\ (?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00224}00224\ \ \ \ \ query\_test\_class.bind(1,\ \textcolor{stringliteral}{"{}Воин"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00225}00225\ \ \ \ \ query\_test\_class.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00226}00226\ \ \ \ \ query\_test\_class.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00227}00227\ \ \ \ \ query\_test\_class.bind(1,\ \textcolor{stringliteral}{"{}Маг"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00228}00228\ \ \ \ \ query\_test\_class.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00229}00229\ \ \ \ \ query\_test\_class.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00232}00232\ \ \ \ \ \textcolor{comment}{/*\ test\_avatar\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00233}00233\ \ \ \ \ SQLite::Statement\ query\_test\_avatar(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ avatar\ (user\_uuid,\ name,\ race\_id,\ class\_id,\ location\_id,\ pos\_x,\ pos\_y)\ VALUES\ (?,\ ?,\ ?,\ ?,\ ?,\ ?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00234}00234\ \ \ \ \ query\_test\_avatar.bind(1,\ \textcolor{stringliteral}{"{}1user"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00235}00235\ \ \ \ \ query\_test\_avatar.bind(2,\ \textcolor{stringliteral}{"{}human\_avatar"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00236}00236\ \ \ \ \ query\_test\_avatar.bind(3,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00237}00237\ \ \ \ \ query\_test\_avatar.bind(4,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00238}00238\ \ \ \ \ query\_test\_avatar.bind(5,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00239}00239\ \ \ \ \ query\_test\_avatar.bind(6,\ 13);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00240}00240\ \ \ \ \ query\_test\_avatar.bind(7,\ 2);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00241}00241\ \ \ \ \ query\_test\_avatar.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00242}00242\ \ \ \ \ query\_test\_avatar.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00244}00244\ \ \ \ \ query\_test\_avatar.bind(1,\ \textcolor{stringliteral}{"{}2user"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00245}00245\ \ \ \ \ query\_test\_avatar.bind(2,\ \textcolor{stringliteral}{"{}elf\_avatar"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00246}00246\ \ \ \ \ query\_test\_avatar.bind(3,\ 2);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00247}00247\ \ \ \ \ query\_test\_avatar.bind(4,\ 2);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00248}00248\ \ \ \ \ query\_test\_avatar.bind(5,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00249}00249\ \ \ \ \ query\_test\_avatar.bind(6,\ 13);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00250}00250\ \ \ \ \ query\_test\_avatar.bind(7,\ 2);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00251}00251\ \ \ \ \ query\_test\_avatar.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00252}00252\ \ \ \ \ query\_test\_avatar.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{comment}{/*\ test\_npc\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00255}00255\ \ \ \ \ SQLite::Statement\ query\_test\_npc(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ npc\ (name,\ race\_id,\ location\_id,\ description,\ pos\_x,\ pos\_y)\ VALUES\ (?,\ ?,\ ?,\ ?,\ ?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00256}00256\ \ \ \ \ query\_test\_npc.bind(1,\ \textcolor{stringliteral}{"{}Хозяйка\ Лора"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00257}00257\ \ \ \ \ query\_test\_npc.bind(2,\ 3);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00258}00258\ \ \ \ \ query\_test\_npc.bind(3,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00259}00259\ \ \ \ \ query\_test\_npc.bind(4,\ \textcolor{stringliteral}{"{}Лора\ —\ гном,\ владелица\ таверны.\ Она\ энергична\ и\ всегда\ в\ движении,\ приветствует\ каждого\ посетителя\ с\ широкой\ улыбкой.\ Хозяйка\ знает\ всё\ и\ всех\ в\ округе,\ готова\ поделиться\ новостями\ и\ помочь\ советом.\ Ее\ радушие\ и\ добродушие\ сделали\ таверну\ любимым\ местом\ для\ всех,\ кто\ желает\ отдохнуть.\ Лора\ также\ умело\ справляется\ с\ трудностями\ и\ не\ стесняется\ устанавливать\ порядок,\ когда\ это\ необходимо."{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00260}00260\ \ \ \ \ query\_test\_npc.bind(5,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00261}00261\ \ \ \ \ query\_test\_npc.bind(6,\ 4);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00262}00262\ \ \ \ \ query\_test\_npc.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00263}00263\ \ \ \ \ query\_test\_npc.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00265}00265\ \ \ \ \ query\_test\_npc.bind(1,\ \textcolor{stringliteral}{"{}Помощник\ Адрик"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00266}00266\ \ \ \ \ query\_test\_npc.bind(2,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00267}00267\ \ \ \ \ query\_test\_npc.bind(3,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00268}00268\ \ \ \ \ query\_test\_npc.bind(4,\ \textcolor{stringliteral}{"{}Адрик\ —\ подросток,\ помощник\ Лоры.\ Он\ всегда\ готов\ помочь\ с\ любой\ задачей,\ будь\ то\ обслуживание\ столов\ или\ растопка\ камина.\ Адрик\ мечтает\ стать\ великим\ воином\ и\ с\ удовольствием\ слушает\ рассказы\ гостей\ о\ приключениях\ и\ подвигах.\ Несмотря\ на\ юный\ возраст,\ он\ весьма\ трудолюбив\ и\ ответственен,\ всегда\ стремится\ угодить\ посетителям\ и\ учиться\ у\ Лоры\ мастерству\ управления\ таверной."{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00269}00269\ \ \ \ \ query\_test\_npc.bind(5,\ 14);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00270}00270\ \ \ \ \ query\_test\_npc.bind(6,\ 7);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00271}00271\ \ \ \ \ query\_test\_npc.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00272}00272\ \ \ \ \ query\_test\_npc.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{comment}{/*\ test\_dialogue\_type\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00275}00275\ \ \ \ \ SQLite::Statement\ query\_test\_dialogue\_type(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ dialogue\_type\ (type)\ VALUES\ (?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00276}00276\ \ \ \ \ query\_test\_dialogue\_type.bind(1,\ \textcolor{stringliteral}{"{}greeting"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00277}00277\ \ \ \ \ query\_test\_dialogue\_type.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00278}00278\ \ \ \ \ query\_test\_dialogue\_type.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00280}00280\ \ \ \ \ query\_test\_dialogue\_type.bind(1,\ \textcolor{stringliteral}{"{}task"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00281}00281\ \ \ \ \ query\_test\_dialogue\_type.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00282}00282\ \ \ \ \ query\_test\_dialogue\_type.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00284}00284\ \ \ \ \ query\_test\_dialogue\_type.bind(1,\ \textcolor{stringliteral}{"{}respons"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00285}00285\ \ \ \ \ query\_test\_dialogue\_type.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00286}00286\ \ \ \ \ query\_test\_dialogue\_type.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00288}00288\ \ \ \ \ \textcolor{comment}{/*\ test\_npc\_dialogue\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00289}00289\ \ \ \ \ SQLite::Statement\ query\_test\_npc\_dialogue(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ npc\_dialogue\ (npc\_id,\ dialogue\_type\_id,\ dialogue\_text)\ VALUES\ (?,\ ?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00290}00290\ \ \ \ \ query\_test\_npc\_dialogue.bind(1,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00291}00291\ \ \ \ \ query\_test\_npc\_dialogue.bind(2,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00292}00292\ \ \ \ \ query\_test\_npc\_dialogue.bind(3,\ \textcolor{stringliteral}{"{}Добро\ пожаловать\ в\ таверну!"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00293}00293\ \ \ \ \ query\_test\_npc\_dialogue.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00294}00294\ \ \ \ \ query\_test\_npc\_dialogue.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00296}00296\ \ \ \ \ query\_test\_npc\_dialogue.bind(1,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00297}00297\ \ \ \ \ query\_test\_npc\_dialogue.bind(2,\ 2);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00298}00298\ \ \ \ \ query\_test\_npc\_dialogue.bind(3,\ \textcolor{stringliteral}{"{}Ты\ можешь\ помочь\ мне\ собрать\ ингредиенты\ для\ супа?"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00299}00299\ \ \ \ \ query\_test\_npc\_dialogue.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00300}00300\ \ \ \ \ query\_test\_npc\_dialogue.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00302}00302\ \ \ \ \ query\_test\_npc\_dialogue.bind(1,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00303}00303\ \ \ \ \ query\_test\_npc\_dialogue.bind(2,\ 3);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00304}00304\ \ \ \ \ query\_test\_npc\_dialogue.bind(3,\ \textcolor{stringliteral}{"{}Нет,\ я\ очень\ занят"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00305}00305\ \ \ \ \ query\_test\_npc\_dialogue.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00306}00306\ \ \ \ \ query\_test\_npc\_dialogue.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00308}00308\ \ \ \ \ query\_test\_npc\_dialogue.bind(1,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00309}00309\ \ \ \ \ query\_test\_npc\_dialogue.bind(2,\ 3);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00310}00310\ \ \ \ \ query\_test\_npc\_dialogue.bind(3,\ \textcolor{stringliteral}{"{}Да,\ что\ нужно\ собрать?"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00311}00311\ \ \ \ \ query\_test\_npc\_dialogue.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00312}00312\ \ \ \ \ query\_test\_npc\_dialogue.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00314}00314\ \ \ \ \ query\_test\_npc\_dialogue.bind(1,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00315}00315\ \ \ \ \ query\_test\_npc\_dialogue.bind(2,\ 2);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00316}00316\ \ \ \ \ query\_test\_npc\_dialogue.bind(3,\ \textcolor{stringliteral}{"{}Возьми\ этот\ ключ,\ чтобы\ открыть\ дверь,\ и\ принеси\ мне\ 10\ томатов"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00317}00317\ \ \ \ \ query\_test\_npc\_dialogue.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00318}00318\ \ \ \ \ query\_test\_npc\_dialogue.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00320}00320\ \ \ \ \ query\_test\_npc\_dialogue.bind(1,\ 2);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00321}00321\ \ \ \ \ query\_test\_npc\_dialogue.bind(2,\ 1);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00322}00322\ \ \ \ \ query\_test\_npc\_dialogue.bind(3,\ \textcolor{stringliteral}{"{}Привет!\ Хочешь\ узнать\ последние\ новости?"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00323}00323\ \ \ \ \ query\_test\_npc\_dialogue.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00324}00324\ \ \ \ \ query\_test\_npc\_dialogue.reset();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00326}00326\ \ \ \ \ \textcolor{comment}{/*\ test\_item\ */}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00327}00327\ \ \ \ \ SQLite::Statement\ query\_test\_item(db,\ \textcolor{stringliteral}{"{}INSERT\ INTO\ item\ (name,\ type,\ rarity)\ VALUES\ (?,\ ?,\ ?)"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00328}00328\ \ \ \ \ query\_test\_item.bind(1,\ \textcolor{stringliteral}{"{}door\_key"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00329}00329\ \ \ \ \ query\_test\_item.bind(2,\ \textcolor{stringliteral}{"{}other"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00330}00330\ \ \ \ \ query\_test\_item.bind(3,\ \textcolor{stringliteral}{"{}common"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00331}00331\ \ \ \ \ query\_test\_item.exec();}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00332}00332\ \ \ \ \ query\_test\_item.reset();\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00333}00333\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00335}00335\ \textcolor{comment}{//void\ Database::OpenToRead()}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00336}00336\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00337}00337\ \textcolor{comment}{//try}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00338}00338\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00339}00339\ \textcolor{comment}{//\ \ \ \ db\_read\_\ =\ std::make\_shared<SQLite::Database>(settings::kDatabaseFile,\ SQLite::OPEN\_READONLY\ |\ SQLite::OPEN\_SHAREDCACHE);}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00340}00340\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00341}00341\ \textcolor{comment}{//\ \ \ \ db\_read\_-\/>exec("{}PRAGMA\ synchronous\ =\ NORMAL;"{});}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00342}00342\ \textcolor{comment}{//\ \ \ \ db\_read\_-\/>exec("{}PRAGMA\ journal\_mode\ =\ WAL;"{});}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00343}00343\ \textcolor{comment}{//\ \ \ \ db\_read\_-\/>exec("{}PRAGMA\ cache\_size\ =\ 10000;"{});}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00344}00344\ \textcolor{comment}{//\ \ \ \ db\_read\_-\/>exec("{}PRAGMA\ temp\_store\ =\ MEMORY;"{});}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00345}00345\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00346}00346\ \textcolor{comment}{//catch\ (const\ std::exception\&\ e)}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00347}00347\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00348}00348\ \textcolor{comment}{//\ \ \ \ MVP\_LOG\_EXEPTION(e)}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00349}00349\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00350}00350\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00352}00352\ \textcolor{keywordtype}{void}\ Database::OpenToReadAndWrite()}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00353}00353\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00354}00354\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00355}00355\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00356}00356\ \ \ \ \ db\_read\_write\_\ =\ std::make\_shared<SQLite::Database>(settings::server::kDatabaseFile,\ SQLite::OPEN\_READWRITE\ |\ SQLite::OPEN\_SHAREDCACHE);}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00358}00358\ \ \ \ \ db\_read\_write\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ synchronous\ =\ NORMAL;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00359}00359\ \ \ \ \ db\_read\_write\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ journal\_mode\ =\ WAL;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00360}00360\ \ \ \ \ db\_read\_write\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ cache\_size\ =\ 10000;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00361}00361\ \ \ \ \ db\_read\_write\_-\/>exec(\textcolor{stringliteral}{"{}PRAGMA\ temp\_store\ =\ MEMORY;"{}});}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00362}00362\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00363}00363\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00364}00364\ \{}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00365}00365\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00366}00366\ \}}
+\DoxyCodeLine{\Hypertarget{database_8cpp_source_l00367}00367\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,71 @@
+\doxysection{C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/logger.h File Reference}
+\hypertarget{client_2logger_8h}{}\label{client_2logger_8h}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/logger.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/logger.h}}
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$boost/log/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/trivial.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/expressions.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sources/severity\+\_\+logger.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sources/record\+\_\+ostream.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/utility/setup/file.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/utility/setup/common\+\_\+attributes.\+hpp$>$}\newline
+Include dependency graph for logger.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{client_2logger_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{client_2logger_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelogger}{logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\+\_\+\+LOG\+\_\+\+EXEPTION}}(e)~\mbox{\hyperlink{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}{logger\+::\+Error\+Exeption}}(e, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+);
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacelogger_ac4b04d59bf5b627debbf948715166a01}{logger\+::\+Init\+Logging}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_ae50385011581a054a35def027b9110d6}{logger\+::\+Connect}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}{logger\+::\+Error\+Exeption}} (const std\+::exception \&, const std\+::string \&, int line)
+\item 
+void \mbox{\hyperlink{namespacelogger_ab80cd0d48f8972fda5e3408a16adce11}{logger\+::\+Error\+Read\+Some}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_af491f8c33b8b62a331440db7da255952}{logger\+::\+Error\+Message\+Callback\+Not\+Set}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_aed6bc256815ab842f45bcd2a94c94260}{logger\+::\+Error\+Parsing\+Message}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_a69691f0db7ff978606e2ae6a6b0dd161}{logger\+::\+Error\+Serialize\+To\+String}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_adfffb0eec43913c6c4e59e1bfc0bd849}{logger\+::\+Error\+Send}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_ad1eb168a08aa05b956bcff5e5ce832c0}{logger\+::\+Error\+Locatin\+Read\+Db}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}\index{logger.h@{logger.h}!MVP\_LOG\_EXEPTION@{MVP\_LOG\_EXEPTION}}
+\index{MVP\_LOG\_EXEPTION@{MVP\_LOG\_EXEPTION}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{MVP\_LOG\_EXEPTION}{MVP\_LOG\_EXEPTION}}
+{\footnotesize\ttfamily \label{client_2logger_8h_a912cd05d1f12828d44a543a32c147660} 
+\#define MVP\+\_\+\+LOG\+\_\+\+EXEPTION(\begin{DoxyParamCaption}\item[{}]{e}{}\end{DoxyParamCaption})~\mbox{\hyperlink{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}{logger\+::\+Error\+Exeption}}(e, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+);}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8h_source_l00014}{14}} of file \mbox{\hyperlink{client_2logger_8h_source}{logger.\+h}}.
+

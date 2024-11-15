@@ -1,0 +1,26 @@
+var dir_daa51d7d6865972151199510749bf109 =
+[
+    [ "argparse.hpp", "argparse_8hpp.html", "argparse_8hpp" ],
+    [ "client_settings.h", "client__settings_8h.html", null ],
+    [ "controller.cpp", "controller_8cpp.html", "controller_8cpp" ],
+    [ "controller.h", "controller_8h.html", "controller_8h" ],
+    [ "db_handler.cpp", "client_2db__handler_8cpp.html", null ],
+    [ "db_handler.h", "client_2db__handler_8h.html", "client_2db__handler_8h" ],
+    [ "game_logic.cpp", "game__logic_8cpp.html", null ],
+    [ "game_logic.h", "game__logic_8h.html", "game__logic_8h" ],
+    [ "game_logic.ipp", "game__logic_8ipp.html", "game__logic_8ipp" ],
+    [ "i_inputdata.h", "i__inputdata_8h.html", "i__inputdata_8h" ],
+    [ "logger.cpp", "client_2logger_8cpp.html", null ],
+    [ "logger.h", "client_2logger_8h.html", "client_2logger_8h" ],
+    [ "main.cpp", "client_2main_8cpp.html", "client_2main_8cpp" ],
+    [ "main.h", "client_2main_8h.html", null ],
+    [ "menus.cpp", "menus_8cpp.html", null ],
+    [ "menus.h", "menus_8h.html", "menus_8h" ],
+    [ "network_handler.cpp", "client_2network__handler_8cpp.html", "client_2network__handler_8cpp" ],
+    [ "network_handler.h", "client_2network__handler_8h.html", "client_2network__handler_8h" ],
+    [ "parser.cpp", "parser_8cpp.html", null ],
+    [ "parser.h", "parser_8h.html", "parser_8h" ],
+    [ "texts.h", "texts_8h.html", null ],
+    [ "view.cpp", "view_8cpp.html", null ],
+    [ "view.h", "view_8h.html", "view_8h" ]
+];

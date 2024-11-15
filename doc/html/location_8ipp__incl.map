@@ -1,0 +1,17 @@
+<map id="C:/Users/etreh/Documents/Programming/Otus/C++_Developer/Professional/Project/hw14/source/common/location.ipp" name="C:/Users/etreh/Documents/Programming/Otus/C++_Developer/Professional/Project/hw14/source/common/location.ipp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="7,5,238,80"/>
+<area shape="rect" id="Node000002" href="$location_8h.html" title=" " alt="" coords="84,128,161,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,80,125,112,120,112,120,80"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="182,277,236,304"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="84,157,52,170,25,187,15,197,9,207,9,217,14,228,28,244,46,256,86,274,128,284,167,287,166,293,127,289,84,279,43,261,25,248,9,231,3,218,4,205,11,194,21,183,50,166,82,152"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="23,203,70,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="111,157,72,194,68,190,107,153"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="94,203,151,229"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="125,155,125,187,120,187,120,155"/>
+<area shape="rect" id="Node000006" href="$avatar_8h.html" title=" " alt="" coords="175,203,243,229"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="139,153,184,191,181,195,136,157"/>
+<area shape="rect" id="Node000007" href="$npc_8h.html" title=" " alt="" coords="268,203,321,229"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="153,153,255,195,253,200,151,158"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="212,230,212,262,206,262,206,230"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="281,232,237,269,233,265,278,228"/>
+</map>

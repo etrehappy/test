@@ -1,0 +1,78 @@
+\doxysection{main.\+cpp}
+\hypertarget{server_2main_8cpp_source}{}\label{server_2main_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/main.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/main.cpp}}
+\mbox{\hyperlink{server_2main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2main_8h}{main.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00004}\mbox{\hyperlink{server_2main_8cpp_a28f3cb674d080ee34686fabb4b695fd5}{00004}}\ boost::asio::awaitable<void>\ \mbox{\hyperlink{server_2main_8cpp_a28f3cb674d080ee34686fabb4b695fd5}{ListenConnect}}(\mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ q,\ \mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ d)}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{auto}\ executor\ =\ \textcolor{keyword}{co\_await}\ boost::asio::this\_coro::executor;}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{server_2network__handler_8h_a460a11bd04cf7b1d3e9a73034dafa7c1}{b\_tcp\_acceptor}}\ acceptor(executor,\ \{tcp::v4(),\ settings::server::kPort\});}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ socket\ =\ std::make\_shared<b\_tcp\_socket>(\textcolor{keyword}{co\_await}\ acceptor.async\_accept());}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ session\ =\ std::make\_shared<ClientSession>(socket,\ q,\ d);}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(executor,\ session-\/>Start(),\ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00029}\mbox{\hyperlink{server_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00029}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{server_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00031}00031\ \ \ \ \ std::locale::global(std::locale(\textcolor{stringliteral}{"{}ru\_RU.utf8"{}}));}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{namespacelogger_ac4b04d59bf5b627debbf948715166a01}{logger::InitLogging}}();}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ boost::asio::io\_context\ io\_context\{\};}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Создаем\ очередь\ событий}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_queue}{EventQueue}}\ event\_queue\{io\_context\};}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Создаем\ диспетчер\ событий}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\ dispatcher\{\};}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_database}{Database}}\ database\{\};}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ DatabaseHandler\ db\_handler\{database,\ event\_queue\};}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ db\_handler.RegisterInDispatcher(dispatcher);*/}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ db\_handler\ =\ std::make\_shared<DatabaseHandler>(database,\ event\_queue);}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Регистрация\ обработчиков}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ db\_handler-\/>RegisterInDispatcher(dispatcher);}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Запускаем\ диспетчеризацию\ событий\ (асинхронно,\ без\ отдельного\ потока)}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(io\_context,\ dispatcher.Dispatch(event\_queue),\ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(io\_context,\ \mbox{\hyperlink{server_2main_8cpp_a28f3cb674d080ee34686fabb4b695fd5}{ListenConnect}}(event\_queue,\ dispatcher),\ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelogger_a7bef1e2869c1fb86c6577c20847e91c5}{logger::ServerStart}}();}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ io\_context.run();}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00063}00063\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00067}00067\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{server_2main_8cpp_source_l00072}00072\ }
+
+\end{DoxyCode}

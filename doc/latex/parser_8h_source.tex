@@ -1,0 +1,82 @@
+\doxysection{parser.\+h}
+\hypertarget{parser_8h_source}{}\label{parser_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/parser.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/parser.h}}
+\mbox{\hyperlink{parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <boost/program\_options.hpp>}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00008}\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{00008}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{CommandList}}\ :\ uint32\_t}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{kNone}}\ =\ 0}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00011}00011\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00012}00012\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a3ff3255763404f286cc75aa78972601c}{kMenu}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00013}00013\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a7f9bec1a0304f1444d684aed5eddf0f8}{kSpeak}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00014}00014\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1aea2a1104b7cd82f7f248e61cd6700f80}{kChat}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00015}00015\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1afb5397a5037cdaeda0a604dcbfe8c01f}{kMap}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00016}00016\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1acd1750f89d2eda82b0212e859686d62b}{kCurrentLocation}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00017}00017\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a44502fe4915d471b71350f3371066aac}{kGo}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00019}00019\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a374bf9ba57a441a600d65b212cf9d13c}{kEnd}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00020}00020\ \};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00022}\mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127f}{00022}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127f}{DirectionsList}}\ :\ uint16\_t}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{kNone}}\ =\ 0}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00026}00026\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fac1079db2ce4428bb7b1f7ce7288c887c}{kNorth}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00027}00027\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127faa71b63644c9f83d8f5a14cce40f0e53c}{kSouth}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00028}00028\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fa3bd54bab29f3403de0f8b50a02967b23}{kWest}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00029}00029\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fae9deb5248e8d61eed4f3ac200c83991b}{kEast}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00031}00031\ \ \ \ \ ,\ \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a374bf9ba57a441a600d65b212cf9d13c}{kEnd}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00032}00032\ \};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00034}\mbox{\hyperlink{struct_chat_message}{00034}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_chat_message}{ChatMessage}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00036}\mbox{\hyperlink{struct_chat_message_a15ebb6dc6a62bba3acd52f37106dfc91}{00036}}\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_chat_message_a15ebb6dc6a62bba3acd52f37106dfc91}{recipient}}\{\};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00037}\mbox{\hyperlink{struct_chat_message_a667910b13603ee95b81ba7ad1d289ef1}{00037}}\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_chat_message_a667910b13603ee95b81ba7ad1d289ef1}{text}}\{\};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00038}00038\ \};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00040}\mbox{\hyperlink{struct_go_command}{00040}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_go_command}{GoCommand}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00042}\mbox{\hyperlink{struct_go_command_a7effce5d4363dad4e112dd481bee4cc7}{00042}}\ \ \ \ \ \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127f}{DirectionsList}}\ \mbox{\hyperlink{struct_go_command_a7effce5d4363dad4e112dd481bee4cc7}{direction}}\{\mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fa35c3ace1970663a16e5c65baa5941b13}{DirectionsList::kNone}}\};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00043}\mbox{\hyperlink{struct_go_command_ab7a6d4a67a81880a81833469a34e03e1}{00043}}\ \ \ \ \ int32\_t\ \mbox{\hyperlink{struct_go_command_ab7a6d4a67a81880a81833469a34e03e1}{steps}}\{0\};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00044}00044\ \};}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00046}\mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{00046}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ =\ std::variant<\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{CommandList}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00047}00047\ \ \ \ \ ,\ std::unique\_ptr<std::pair<CommandList,\ ChatMessage>>}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00048}00048\ \ \ \ \ ,\ std::unique\_ptr<std::pair<CommandList,\ GoCommand>>}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00049}00049\ >;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00052}\mbox{\hyperlink{class_parser}{00052}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parser}{Parser}}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00053}00053\ \{}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00054}00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00055}00055\ \ \ \ \ \textcolor{comment}{/*namespace\ boost::program\_options\ =\ boost::program\_options;*/}}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_parser_a12234f6cd36b61af4b50c94a179422c1}{Parser}}();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{class_parser_a3e658b5917a93a3ef648050d060e3a93}{\string~Parser}}();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ \mbox{\hyperlink{class_parser_a037d2aa8877c6fcfeeb60146e81f6364}{GetUserCommand}}(std::string\&);}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00063}00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ Init();}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ ParseAndNotify(boost::program\_options::variables\_map\&,\ std::string\&\ );}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ ConvertToEnum(boost::program\_options::variables\_map\&);}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ ParseChatMessage(boost::program\_options::variables\_map\&);}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{CommandVariant}}\ ParseGo(boost::program\_options::variables\_map\&);}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00071}00071\ \ \ \ \ boost::program\_options::options\_description\ desc\_;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00072}00072\ \ \ \ \ boost::program\_options::positional\_options\_description\ pos\_desc\_;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00074}00074\ \ \ \ \ std::vector<std::string>\ args\_t\_;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00075}00075\ \ \ \ \ std::string\ arg\_t\_;}
+\DoxyCodeLine{\Hypertarget{parser_8h_source_l00076}00076\ \};}
+
+\end{DoxyCode}

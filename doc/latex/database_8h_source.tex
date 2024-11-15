@@ -1,0 +1,39 @@
+\doxysection{database.\+h}
+\hypertarget{database_8h_source}{}\label{database_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/database.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/database.h}}
+\mbox{\hyperlink{database_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SQLiteCpp/SQLiteCpp.h>}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__elements_8h}{game\_elements.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00011}\mbox{\hyperlink{class_database}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_database}{Database}}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_database_a4703c80e6969d33565ea340f768fdadf}{Database}}();}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{\string~Database}}();}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_database_aa912e8f78a47a961efbaea41cf208a4a}{Create}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00018}\mbox{\hyperlink{class_database_a744247f9615c176ef1c7abf5c4b28277}{00018}}\ \ \ \ \ std::shared\_ptr<SQLite::Database>\ \mbox{\hyperlink{class_database_a744247f9615c176ef1c7abf5c4b28277}{GetToRead}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00019}00019\ \ \ \ \ std::shared\_ptr<SQLite::Database>\ \mbox{\hyperlink{class_database_a2c54c73fa95bc873bcb09eb9275a4890}{GetToReadAndWrite}}()\ \textcolor{keyword}{const};\ \ \ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00021}00021\ \textcolor{keyword}{private}:\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ CreateTables(SQLite::Database\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ SetTestData(SQLite::Database\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//void\ OpenToRead();}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ OpenToReadAndWrite();}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//std::shared\_ptr<SQLite::Database>\ db\_read\_\{\};}}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00034}00034\ \ \ \ \ std::shared\_ptr<SQLite::Database>\ db\_read\_write\_\{\};}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00035}00035\ \};}
+\DoxyCodeLine{\Hypertarget{database_8h_source_l00036}00036\ }
+
+\end{DoxyCode}

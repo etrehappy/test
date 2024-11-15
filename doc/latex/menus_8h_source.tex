@@ -1,0 +1,45 @@
+\doxysection{menus.\+h}
+\hypertarget{menus_8h_source}{}\label{menus_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/menus.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/menus.h}}
+\mbox{\hyperlink{menus_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00007}\mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1}{00007}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1}{EMainMenu}}\ :\ uint16\_t}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1a0934649098e93cc6cd277da4b900fe69}{kSaveAndExit}}\ =\ 1}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00011}00011\ \ \ \ \ ,\ \mbox{\hyperlink{menus_8h_a494692dfc81f25fb2a82eef07a5115d1a374bf9ba57a441a600d65b212cf9d13c}{kEnd}}}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00012}00012\ \};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00014}00014\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00015}\mbox{\hyperlink{class_menu}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu}{Menu}}}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00018}\mbox{\hyperlink{class_menu_a6b457fc073d46abb94972ac9a006eb31}{00018}}\ \ \ \ \ \mbox{\hyperlink{class_menu_a6b457fc073d46abb94972ac9a006eb31}{Menu}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00019}\mbox{\hyperlink{class_menu_ad53b359df84a4560452ba5602b29d436}{00019}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_menu_ad53b359df84a4560452ba5602b29d436}{\string~Menu}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00021}\mbox{\hyperlink{class_menu_a721f0e9a7c3fe8dc9e75c9c4e7e35e11}{00021}}\ \ \ \ \ \textcolor{keyword}{const}\ std::map<T,\ const\ char*>\&\ \mbox{\hyperlink{class_menu_a721f0e9a7c3fe8dc9e75c9c4e7e35e11}{GetMap}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_menu_ad2ee01cb8b3346afe722b0076e74cf86}{map\_}};\ \}}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00023}00023\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00024}\mbox{\hyperlink{class_menu_ad2ee01cb8b3346afe722b0076e74cf86}{00024}}\ \ \ \ \ std::map<EMainMenu,\ const\ char*>\ \mbox{\hyperlink{class_menu_ad2ee01cb8b3346afe722b0076e74cf86}{map\_}}\{\};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00025}00025\ \};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00027}\mbox{\hyperlink{class_main_menu}{00027}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu}{MainMenu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_menu}{Menu}}<EMainMenu>}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}{MainMenu}}();}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00031}\mbox{\hyperlink{class_main_menu_a3d3862e2675018556d5c0fd4ad1984fd}{00031}}\ \ \ \ \ \mbox{\hyperlink{class_main_menu_a3d3862e2675018556d5c0fd4ad1984fd}{\string~MainMenu}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00032}00032\ \};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00034}\mbox{\hyperlink{class_i_exit}{00034}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_exit}{IExit}}\ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00036}00036\ \textcolor{keyword}{public}:\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00037}\mbox{\hyperlink{class_i_exit_a994e762d5e3d9567a6bedb423c791c4b}{00037}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_exit_a994e762d5e3d9567a6bedb423c791c4b}{\string~IExit}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00038}\mbox{\hyperlink{class_i_exit_aa0dc39eb13e3ca7aaf10633fc34b2af8}{00038}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_exit_aa0dc39eb13e3ca7aaf10633fc34b2af8}{StopGame}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{menus_8h_source_l00039}00039\ \};}
+
+\end{DoxyCode}

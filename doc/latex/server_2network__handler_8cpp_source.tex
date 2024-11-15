@@ -1,0 +1,231 @@
+\doxysection{network\+\_\+handler.\+cpp}
+\hypertarget{server_2network__handler_8cpp_source}{}\label{server_2network__handler_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/network\_handler.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/network\_handler.cpp}}
+\mbox{\hyperlink{server_2network__handler_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{session_8h}{session.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2network__handler_8h}{network\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{network__handler_8ipp}{network\_handler.ipp}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00008}\mbox{\hyperlink{class_network_handler_a1942a7922a54bb47201eb22808c1f639}{00008}}\ \mbox{\hyperlink{class_network_handler_a22605e83fa247d9b772d0c5488c71943}{NetworkHandler::NetworkHandler}}(std::shared\_ptr<b\_tcp\_socket>\ s,\ \mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ q,\ \textcolor{keyword}{const}\ std::string\&\ session\_id)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00009}00009\ \ \ \ \ :socket\_\{s\},\ event\_queue\_\{q\},\ event\_routing\_key\_\{session\_id\}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00013}00013\ \mbox{\hyperlink{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba}{NetworkHandler::\string~NetworkHandler}}()}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (socket\_\ \&\&\ socket\_-\/>is\_open())\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ socket\_-\/>close();}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00021}\mbox{\hyperlink{class_network_handler_a22300a872e946ca346a13c6d60abb487}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_handler_a22300a872e946ca346a13c6d60abb487}{NetworkHandler::RegisterInDispatcher}}(\mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ d)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{auto}\ register\_handler\ =\ [\textcolor{keyword}{this},\ \&d](\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type)\ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_event_dispatcher_ac68fbc2bc0961a36d22b710f4f6969e1}{RegisterHandler}}(type,\ shared\_from\_this(),\ event\_routing\_key\_);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00027}00027\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8a3b745541ef250c792de692a54af116}{EventType::kUserLogPasServerRequest}});}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00028}00028\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf55fc79f036ce4fea8eeb35a8a13b88}{EventType::kSuccessCheckLogPas}});}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00029}00029\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a99078108fbdab303d1febe2a321b4a80}{EventType::kFailureCheckLogPas}});}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00030}00030\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5fc8ee48c0c56b8e0c5e24bc88c400c4}{EventType::kAvatarListIsReady}});\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00031}00031\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a53cd1486a2b1d100642e2bda017dc5a6}{EventType::kStartGameServerResponseSucsses}});\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00032}00032\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf5b639c245ebb59f065e7418413f0db}{EventType::kBroadcastMessage}});}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00033}00033\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a91b38dfbdf306af957c0ba22fb5cf436}{EventType::kExitGameResponse}});}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00037}00037\ \textcolor{keywordtype}{void}\ NetworkHandler::ClientSessionDisconnect()}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{/*Stop\ Game*/}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00040}00040\ \ \ \ \ socket\_-\/>close();}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00043}\mbox{\hyperlink{class_network_handler_ab92d420b85e06665d35b927a8b9d4ea8}{00043}}\ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_network_handler_ab92d420b85e06665d35b927a8b9d4ea8}{NetworkHandler::GetClientResponse}}(std::shared\_ptr<ClientSession>\ session)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00044}00044\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{auto}\ executor\ =\ \textcolor{keyword}{co\_await}\ boost::asio::this\_coro::executor;}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{auto}\ self\ =\ shared\_from\_this();\ \textcolor{comment}{//\ !!!\ нужно\ ли}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (session-\/>IsActive())}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ data[settings::kBufferSize];}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ length\ =\ \textcolor{keyword}{co\_await}\ socket\_-\/>async\_read\_some(boost::asio::buffer(data));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ std::string\ received\_data(data,\ length);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ std::shared\_ptr<ProtoMessage::GameMessage>\ message\ =\ std::make\_shared<ProtoMessage::GameMessage>();}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ message-\/>ParseFromString(received\_data);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }pt\ =\ ProtoMessage::CommandType;}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (message-\/>command())}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ pt::kLoginPasResponse:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<LogPasClientResponse>(message,\ event\_routing\_key\_));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ pt::kUsersAvatarListClientRequest:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<AvatarListClientRequest>(event\_routing\_key\_,\ *uuid\_));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ pt::kStartGameClientRequest:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<GetAvatarsData>(event\_routing\_key\_,\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message-\/>start\_game().id\_selected\_avatar()));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<StartGameClientRequest>(event\_routing\_key\_));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ pt::kAddItemInInventory:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<AddItemInInventory>(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{game__elements_8h_a40760495e5ae271c586f8c9f5e758868}{ItemType}}\textcolor{keyword}{>}(message-\/>item()),\ current\_avatar\_-\/>GetId())}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ pt::kSendToCommonChat:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<BroadcastMessage>(message,\ event\_routing\_key\_));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ pt::kExitGameClientRequest:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<ExitGameRequest>(message,\ event\_routing\_key\_));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00094}00094\ \ \ \ \ \}\textcolor{comment}{/*try*/}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ boost::system::system\_error\&\ e)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.code()\ ==\ boost::asio::error::eof\ ||\ e.code()\ ==\ boost::asio::error::connection\_reset)\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ client\_ip\{socket\_-\/>remote\_endpoint().address().to\_string()}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(socket\_-\/>remote\_endpoint().port())\};\ \textcolor{comment}{/*\ !!!\ Можно\ из\ session\ взять?\ */}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelogger_a234f3a2f1cbb2c0707b03172c3686721}{logger::ClientDisconnect}}(client\_ip);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ session-\/>SetInactive();}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00113}00113\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00117}00117\ \ \ \ \ \}\textcolor{comment}{/*while*/}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00122}\mbox{\hyperlink{class_network_handler_a65b72688cefee1e25873c6ebe8769345}{00122}}\ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_network_handler_a65b72688cefee1e25873c6ebe8769345}{NetworkHandler::ForwardEventToHandler}}(\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\ event)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{auto}\ executor\ =\ \textcolor{keyword}{co\_await}\ boost::asio::this\_coro::executor;}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{auto}\ self\ =\ shared\_from\_this();\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{switch}\ (event-\/>GetType())}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00129}00129\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8a3b745541ef250c792de692a54af116}{EventType::kUserLogPasServerRequest}}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(executor,\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ HandleEvent(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8a3b745541ef250c792de692a54af116}{EventType::kUserLogPasServerRequest}},\ ProtoMessage::CommandType::kLoginPasRequest),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf55fc79f036ce4fea8eeb35a8a13b88}{EventType::kSuccessCheckLogPas}}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00137}00137\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<SuccessCheckLogPas>}}(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&NetworkHandler::HandleClassedEvent<SuccessCheckLogPas>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf55fc79f036ce4fea8eeb35a8a13b88}{EventType::kSuccessCheckLogPas}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a99078108fbdab303d1febe2a321b4a80}{EventType::kFailureCheckLogPas}}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(executor,\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ HandleEvent(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf55fc79f036ce4fea8eeb35a8a13b88}{EventType::kSuccessCheckLogPas}},\ ProtoMessage::CommandType::kAuthFailure),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5fc8ee48c0c56b8e0c5e24bc88c400c4}{EventType::kAvatarListIsReady}}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00155}00155\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<AvatarListIsReady>}}(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&NetworkHandler::HandleClassedEvent<AvatarListIsReady>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5fc8ee48c0c56b8e0c5e24bc88c400c4}{EventType::kAvatarListIsReady}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a53cd1486a2b1d100642e2bda017dc5a6}{EventType::kStartGameServerResponseSucsses}}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00167}00167\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<StartGameServerResponseSucsses>}}(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&NetworkHandler::HandleClassedEvent<StartGameServerResponseSucsses>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a53cd1486a2b1d100642e2bda017dc5a6}{EventType::kStartGameServerResponseSucsses}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf5b639c245ebb59f065e7418413f0db}{EventType::kBroadcastMessage}}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00179}00179\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<BroadcastMessage>}}(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&NetworkHandler::HandleClassedEvent<BroadcastMessage>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf5b639c245ebb59f065e7418413f0db}{EventType::kBroadcastMessage}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a91b38dfbdf306af957c0ba22fb5cf436}{EventType::kExitGameResponse}}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00190}00190\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<ExitGameResponse>}}(}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&NetworkHandler::HandleClassedEvent<ExitGameResponse>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a91b38dfbdf306af957c0ba22fb5cf436}{EventType::kExitGameResponse}}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00204}00204\ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00207}00207\ boost::asio::awaitable<void>\ NetworkHandler::HandleEvent(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type,\ ProtoMessage::CommandType\ command)}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00208}00208\ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00209}00209\ \ \ \ \ ProtoMessage::GameMessage\ message\{\};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00211}00211\ \ \ \ \ message.set\_command(command);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00213}00213\ \ \ \ \ std::string\ serialized\_message;}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{if}\ (!message.SerializeToString(\&serialized\_message))}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00215}00215\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelogger_a7b4ce8ddbe27e1585a163e6a267ea074}{logger::ErrorSerrialisation}}(type);}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{keyword}{co\_await}\ boost::asio::async\_write(*socket\_,\ boost::asio::buffer(serialized\_message));}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00222}00222\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00223}00223\ \textcolor{comment}{//boost::asio::awaitable<void>\ DatabaseHandler::GetAvatarList(std::shared\_ptr<AvatarListClientRequest>\ event)}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00224}00224\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{server_2network__handler_8cpp_source_l00226}00226\ \textcolor{comment}{//\}}}
+
+\end{DoxyCode}

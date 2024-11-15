@@ -1,0 +1,292 @@
+\doxysection{event.\+h}
+\hypertarget{event_8h_source}{}\label{event_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event.h}}
+\mbox{\hyperlink{event_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}messages.pb.h"{}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__elements_8h}{game\_elements.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00010}\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{00010}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{EventPriority}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613a35c3ace1970663a16e5c65baa5941b13}{kNone}}\ =\ 0}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00014}00014\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00015}00015\ \textcolor{comment}{\ \ \ \ *\ Events\ with\ thise\ priority\ are\ handled\ last.}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00016}00016\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//-\/-\/}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00019}00019\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00020}00020\ \textcolor{comment}{\ \ \ \ *\ Events\ with\ these\ priority\ are\ handled\ the\ faster\ the\ high\ EventPriority.}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00021}00021\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00022}00022\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613acd8fe42741a3bbc973bbf1d404afeff4}{kLow}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00023}00023\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613a3ce9d817402b59f65fb01ea044bb1ee9}{kMedium}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00024}00024\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613aa022f15e910eb36278094efb6e808a07}{kHigh}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00026}00026\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00027}00027\ \textcolor{comment}{\ \ \ \ *\ Events\ with\ thise\ priority\ are\ handled\ first.}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00028}00028\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00029}00029\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613ae3587c730cc1aa530fa4ddc9c4204e97}{kError}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00030}00030\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613a84e433ab4609f1c798e455b2523c2a98}{kEndGame}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00033}\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{00033}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613a35c3ace1970663a16e5c65baa5941b13}{kNone}}\ =\ 0}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00037}00037\ \ \ \ \ \textcolor{comment}{/*\ UserHandler\ handles\ these\ events\ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00038}00038\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a0aecc0adfa4e90597339a8a8441778ba}{kFirstConnect}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00039}00039\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf55fc79f036ce4fea8eeb35a8a13b88}{kSuccessCheckLogPas}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00040}00040\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a99078108fbdab303d1febe2a321b4a80}{kFailureCheckLogPas}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00041}00041\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629ab320da4595b495406a9749bad2e43732}{kAvatarsDataReady}}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{/*\ NetworkHandler\ handles\ these\ events\ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00044}00044\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8a3b745541ef250c792de692a54af116}{kUserLogPasServerRequest}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00045}00045\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5fc8ee48c0c56b8e0c5e24bc88c400c4}{kAvatarListIsReady}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00046}00046\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a53cd1486a2b1d100642e2bda017dc5a6}{kStartGameServerResponseSucsses}}\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00047}00047\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a91b38dfbdf306af957c0ba22fb5cf436}{kExitGameResponse}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00049}00049\ \ \ \ \ \textcolor{comment}{/*\ DatabaseHandler\ handles\ these\ events\ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00050}00050\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aebae12d7c937b743dcc14615c89d15af}{kUserLogPasClientResponse}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00051}00051\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a3e9f7058dc7c25fe1c5286a7da7ba767}{kUsersAvatarListClientRequest}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00052}00052\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a50e515120f9b7e010dd1f6c3d13a7d1a}{kGetAvatarsData}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00053}00053\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abc7535d303037ff917effe7d6cb333a7}{kAddItemInInventory}}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00054}00054\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5db6b6ab6b584b35aee715796431c8d3}{kSaveGame}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00056}00056\ \ \ \ \ \textcolor{comment}{/*\ GameHandler\ handles\ these\ events\ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00057}00057\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8ffcf14f9269e2cdc8f086caed5e14e8}{kExitGameRequest}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00059}00059\ \ \ \ \ \textcolor{comment}{/*\ Few\ handlers\ handle\ these\ events\ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00060}00060\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a248c0d18c59730fb232512cf5797423c}{kStartGameClientRequest}}\ \textcolor{comment}{/*DatabaseHandler\ +\ GameHandler*/}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00062}00062\ \ \ \ \ \textcolor{comment}{/*\ EventDispatcher\ routing\ these\ events\ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00063}00063\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf5b639c245ebb59f065e7418413f0db}{kBroadcastMessage}}\ \textcolor{comment}{/*\ to\ the\ NetworkHandler\ */}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00064}00064\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aeaff67467eed443cd69d52fe5ca8d152}{kDisconnectSession}}\ \textcolor{comment}{/*\ to\ the\ session\ */}\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00066}00066\ \ \ \ \ ,\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a374bf9ba57a441a600d65b212cf9d13c}{kEnd}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00067}00067\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00072}\mbox{\hyperlink{class_event}{00072}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event}{Event}}\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00073}00073\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00074}00074\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{class_event_ab1ec91d7ec3d4f11b8b965a440347d3b}{Event}}(\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{EventPriority}},\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}},\ \textcolor{keyword}{const}\ std::string\&);\ \textcolor{comment}{//\ !!!\ нужен\ ли\ shared}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00077}\mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{00077}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\string~Event}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//virtual\ std::string\ GetType()\ const\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//virtual\ void\ Execute()\ =\ 0;\ //\ Метод\ для\ выполнения\ конкретных\ событий}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{EventPriority}}\ \mbox{\hyperlink{class_event_addc69178c85be30b729eac46efc3adf0}{GetPriority}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ \mbox{\hyperlink{class_event_ada67f712274ef1a5f95df22bde85fc48}{GetType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_event_ac0e57b1c12e8579aa9d56504ff35d27f}{GetRoutingKey}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00091}00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{EventPriority}}\ priority\_;\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type\_;\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//std::shared\_ptr<ClientSession>\ session\_;}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ event\_routing\_key\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00096}00096\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00099}\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{00099}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\ =\ std::shared\_ptr<Event>;\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00100}00100\ \textcolor{comment}{//using\ shrd\_event\ =\ std::unique\_ptr<Event>;}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00110}\mbox{\hyperlink{class_first_connect}{00110}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_first_connect}{FirstConnect}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00111}00111\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00112}00112\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{class_first_connect_a35bfb373ea595133dac24ff2c3420bb5}{FirstConnect}}(\textcolor{keyword}{const}\ std::string\&\textcolor{comment}{/*,\ std::shared\_ptr<ClientSession>\ s*/});}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00115}00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00116}00116\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00117}00117\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00123}\mbox{\hyperlink{class_login_request}{00123}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_login_request}{LoginRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00124}00124\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00125}00125\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{class_login_request_a5655d5a0cdd552a3e746620003d63081}{LoginRequest}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00128}00128\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00130}00130\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00137}\mbox{\hyperlink{class_log_pas_client_response}{00137}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_log_pas_client_response}{LogPasClientResponse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00138}00138\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00139}00139\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{class_log_pas_client_response_a6397c2055c20ccfbdc95a9bab9eec5a2}{LogPasClientResponse}}(\textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>,\ \textcolor{keyword}{const}\ std::string\&\ session\_id);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00141}00141\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>\ \mbox{\hyperlink{class_log_pas_client_response_a37df75279fcb53495f13445463728b2b}{GetEventMessage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00146}00146\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_log_pas_client_response_acedfab94ad6b4cb489489b09e47b65b6}{GetSessionId}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00147}00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>\ message\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00149}00149\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ session\_id\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00150}00150\ \};\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00157}\mbox{\hyperlink{class_success_check_log_pas}{00157}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_success_check_log_pas}{SuccessCheckLogPas}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00158}00158\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00159}00159\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00160}00160\ \ \ \ \ \mbox{\hyperlink{class_success_check_log_pas_a4d0b1775d37cd4a33698d2aba1cc9c09}{SuccessCheckLogPas}}(\textcolor{keyword}{const}\ std::string\&\ session\_id,\ std::shared\_ptr<const\ std::string>\ uuid);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00161}00161\ \ \ \ \ std::shared\_ptr<const\ std::string>\ \mbox{\hyperlink{class_success_check_log_pas_a9375206a2f69afbe1a14b4b4e13baa3e}{GetUuid}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00162}00162\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00163}00163\ \ \ \ \ std::shared\_ptr<const\ std::string>\ uuid\_\{\};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00164}00164\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00170}\mbox{\hyperlink{class_failure_check_log_pas}{00170}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_failure_check_log_pas}{FailureCheckLogPas}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00171}00171\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00172}00172\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00173}00173\ \ \ \ \ \mbox{\hyperlink{class_failure_check_log_pas_a0bea26a9751043b28c3ac2dfa54dadc1}{FailureCheckLogPas}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00175}00175\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00177}00177\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00183}\mbox{\hyperlink{class_avatar_list_client_request}{00183}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_avatar_list_client_request}{AvatarListClientRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00184}00184\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00185}00185\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00186}00186\ \ \ \ \ \mbox{\hyperlink{class_avatar_list_client_request_a089f3bffeec4a6d239750142aeb4d924}{AvatarListClientRequest}}(\textcolor{keyword}{const}\ std::string\&\ session\_id,\ \textcolor{keyword}{const}\ std::string\&\ uuid);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00191}00191\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_avatar_list_client_request_a4497a534dd8075a7a738edde23423d21}{GetSessionId}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00192}00192\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_avatar_list_client_request_a6c2297633eb4934b422cef54e6e81028}{GetUuid}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00193}00193\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00194}00194\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ session\_id\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00195}00195\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ uuid\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00196}00196\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00202}\mbox{\hyperlink{class_avatar_list_is_ready}{00202}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_avatar_list_is_ready}{AvatarListIsReady}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00203}00203\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00204}00204\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00205}\mbox{\hyperlink{class_avatar_list_is_ready_a063c7e991d6fde18548939e5e76c67bc}{00205}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_avatar_list_is_ready_a063c7e991d6fde18548939e5e76c67bc}{pair}}\ =\ std::pair<int32\_t,\ std::string>;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00207}00207\ \ \ \ \ \mbox{\hyperlink{class_avatar_list_is_ready_a50b2b666889158dfabed8b60df70dfbf}{AvatarListIsReady}}(\textcolor{keyword}{const}\ std::shared\_ptr<std::vector<pair>>,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00208}00208\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<std::vector<pair>>\ \mbox{\hyperlink{class_avatar_list_is_ready_a1cdbf3bcb89d9cdb7a600c97b81dd9c3}{GetAvatars}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00209}00209\ \ \ \ \ \textcolor{comment}{//const\ std::shared\_ptr<ProtoMessage::GameMessage>\ GetEventMessage()\ const;}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00211}00211\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00212}00212\ \ \ \ \ \textcolor{comment}{//const\ std::shared\_ptr<ProtoMessage::GameMessage>\ message\_;}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00213}00213\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00214}00214\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<std::vector<pair>>\ avatars;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00216}00216\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00222}\mbox{\hyperlink{class_start_game_client_request}{00222}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_start_game_client_request}{StartGameClientRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00223}00223\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00224}00224\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00225}00225\ \ \ \ \ \mbox{\hyperlink{class_start_game_client_request_ab42a8dc933c022e8df41b0c2e199f461}{StartGameClientRequest}}(\textcolor{keyword}{const}\ std::string\&\ session\_id);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00226}00226\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00227}00227\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00228}00228\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00229}00229\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00235}\mbox{\hyperlink{class_avatars_data_ready}{00235}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_avatars_data_ready}{AvatarsDataReady}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00236}00236\ \{\ \textcolor{comment}{//\ !!!\ Готовы\ данные\ конкретного\ аватара}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00237}00237\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00238}00238\ \ \ \ \ \mbox{\hyperlink{class_avatars_data_ready_ab2f3721737b622b667cc8908e459c774}{AvatarsDataReady}}(\textcolor{keyword}{const}\ std::string\&,\ std::shared\_ptr<Avatar>);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00240}00240\ \ \ \ \ std::shared\_ptr<Avatar>\ \mbox{\hyperlink{class_avatars_data_ready_a0c411af04ea2e998cbb6c89180052b6d}{MoveAvatar}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00241}00241\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00242}00242\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Avatar>\ avatar\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00243}00243\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00249}\mbox{\hyperlink{class_get_avatars_data}{00249}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_get_avatars_data}{GetAvatarsData}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00250}00250\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00251}00251\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00252}00252\ \ \ \ \ \mbox{\hyperlink{class_get_avatars_data_ab247aa9dd0bc1fba6a0aed7c00f72573}{GetAvatarsData}}(\textcolor{keyword}{const}\ std::string\&\ session\_id,\ \textcolor{keyword}{const}\ uint32\_t\ id\_selected\_avatar);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00253}00253\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_get_avatars_data_a3722d8c6b4fc769c8d85ba207120ce79}{GetIdSelectedAvatar}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00254}00254\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_get_avatars_data_aa9303737d2711ca705dd738c4bec6132}{GetSessionId}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00255}00255\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00256}00256\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ avatar\_id\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00257}00257\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ session\_id\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00258}00258\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00264}\mbox{\hyperlink{class_start_game_server_response_sucsses}{00264}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_start_game_server_response_sucsses}{StartGameServerResponseSucsses}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00265}00265\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00266}00266\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00267}00267\ \ \ \ \ \mbox{\hyperlink{class_start_game_server_response_sucsses_ac38a2cb39b38b4f1c2202ab4e1167b0e}{StartGameServerResponseSucsses}}(\textcolor{keyword}{const}\ std::string\&\ session\_id,\ \textcolor{keyword}{const}\ std::shared\_ptr<Avatar>);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00269}00269\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<const\ Avatar>\ \mbox{\hyperlink{class_start_game_server_response_sucsses_add3457b94b69996ae6b994e4928f3d4e}{GetConstAvatar}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00271}00271\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00272}00272\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<const\ Avatar>\ avatar\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00273}00273\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00279}\mbox{\hyperlink{class_add_item_in_inventory}{00279}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_add_item_in_inventory}{AddItemInInventory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00280}00280\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00281}00281\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00282}00282\ \ \ \ \ \mbox{\hyperlink{class_add_item_in_inventory_a889c59e07f8001a714efb9b875aff626}{AddItemInInventory}}(\mbox{\hyperlink{game__elements_8h_a40760495e5ae271c586f8c9f5e758868}{ItemType}},\ uint32\_t\ avatar\_id);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00283}00283\ \ \ \ \ \mbox{\hyperlink{game__elements_8h_a40760495e5ae271c586f8c9f5e758868}{ItemType}}\ \mbox{\hyperlink{class_add_item_in_inventory_a9f6509c5a30855df2996ec9a6eb0d368}{GetItem}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00284}00284\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_add_item_in_inventory_aa809f10a57139c2643eecafe9af1c8e4}{GetAvatarId}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00285}00285\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00286}00286\ \ \ \ \ \mbox{\hyperlink{game__elements_8h_a40760495e5ae271c586f8c9f5e758868}{ItemType}}\ item\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00287}00287\ \ \ \ \ uint32\_t\ avatar\_id\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00288}00288\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00294}\mbox{\hyperlink{class_broadcast_message}{00294}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_broadcast_message}{BroadcastMessage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00295}00295\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00296}00296\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00300}00300\ \ \ \ \ \mbox{\hyperlink{class_broadcast_message_a547fc8f62fd77a79d0f2f4615556f2a3}{BroadcastMessage}}(\textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>,\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ session\_id);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00303}00303\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>\ \mbox{\hyperlink{class_broadcast_message_af5ab272adfc046f218ba30cf901c1766}{GetEventMessage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00304}00304\ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00305}00305\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00306}00306\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>\ message\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00307}00307\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00313}\mbox{\hyperlink{class_exit_game_request}{00313}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_exit_game_request}{ExitGameRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00314}00314\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00315}00315\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00316}00316\ \ \ \ \ \mbox{\hyperlink{class_exit_game_request_a04a8d4cf41a68bd1e5d27ee003f5457d}{ExitGameRequest}}(\textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>,\ \ \textcolor{keyword}{const}\ std::string\&\ session\_id);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00318}00318\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>\ \mbox{\hyperlink{class_exit_game_request_a221e73a10567b496419183bbe108f600}{GetEventMessage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00320}00320\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00321}00321\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<ProtoMessage::GameMessage>\ message\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00322}00322\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00328}\mbox{\hyperlink{class_save_game}{00328}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_save_game}{SaveGame}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00329}00329\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00330}00330\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00331}00331\ \ \ \ \ \mbox{\hyperlink{class_save_game_a5d4c13fb8e0a28491e2aa7a8f2bf030c}{SaveGame}}(\textcolor{keyword}{const}\ std::string\&\ session\_id,\ \textcolor{keyword}{const}\ std::shared\_ptr<Avatar>,\ \textcolor{keywordtype}{bool}\ exit\_game\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00333}00333\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_save_game_aa3898ac13c48f26cbb6540c9b0b5737c}{GetSessionId}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00334}00334\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<const\ Avatar>\ \mbox{\hyperlink{class_save_game_a1d55d870de0d2b53f6537e654be8326c}{GetConstAvatar}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00335}00335\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_save_game_ab183f9bfd2277e00038ae331d83ca8e2}{IsExitGame}}();}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00336}00336\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00337}00337\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ session\_id\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00338}00338\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<const\ Avatar>\ avatar\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00339}00339\ \ \ \ \ \textcolor{keywordtype}{bool}\ exit\_game\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00340}00340\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00346}\mbox{\hyperlink{class_exit_game_response}{00346}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_exit_game_response}{ExitGameResponse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00347}00347\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00348}00348\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00349}00349\ \ \ \ \ \mbox{\hyperlink{class_exit_game_response_adf475dadbbf1d6bd4d801d5f97c7303b}{ExitGameResponse}}(\textcolor{keyword}{const}\ std::string\&\ session\_id);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00350}00350\ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00352}00352\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00353}00353\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00354}00354\ \};}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00360}\mbox{\hyperlink{class_disconnect_session}{00360}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_disconnect_session}{DisconnectSession}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00361}00361\ \{}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00362}00362\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00363}00363\ \ \ \ \ \mbox{\hyperlink{class_disconnect_session_aa83b9cbe002ba70999992b6f4b41f1dc}{DisconnectSession}}(\textcolor{keyword}{const}\ std::string\ session\_id);}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00366}00366\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00367}00367\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ session\_id\_;}
+\DoxyCodeLine{\Hypertarget{event_8h_source_l00368}00368\ \};}
+
+\end{DoxyCode}

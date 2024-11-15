@@ -1,0 +1,20 @@
+<map id="C:/Users/etreh/Documents/Programming/Otus/C++_Developer/Professional/Project/hw14/source/client/i_inputdata.h" name="C:/Users/etreh/Documents/Programming/Otus/C++_Developer/Professional/Project/hw14/source/client/i_inputdata.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="236,5,466,80"/>
+<area shape="rect" id="Node000002" href="$controller_8h.html" title=" " alt="" coords="160,251,390,325"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,95,303,129,287,193,280,251,274,250,282,192,298,127,315,92"/>
+<area shape="rect" id="Node000006" href="$game__logic_8h.html" title=" " alt="" coords="312,128,542,203"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="385,92,406,126,402,129,380,95"/>
+<area shape="rect" id="Node000003" href="$controller_8cpp.html" title=" " alt="" coords="5,373,236,448"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,337,169,375,166,371,214,333"/>
+<area shape="rect" id="Node000004" href="$client_2main_8h.html" title=" " alt="" coords="260,373,490,448"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="317,336,347,371,343,375,313,339"/>
+<area shape="rect" id="Node000005" href="$client_2main_8cpp.html" title=" " alt="" coords="260,496,490,571"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="378,464,378,496,372,496,372,464"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="371,215,323,252,320,248,367,211"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="424,218,404,326,391,374,385,372,399,325,418,217"/>
+<area shape="rect" id="Node000007" href="$game__logic_8cpp.html" title=" " alt="" coords="515,373,745,448"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="446,216,470,271,486,298,505,324,532,349,562,371,559,375,529,353,501,327,482,301,465,273,441,218"/>
+<area shape="rect" id="Node000008" href="$game__logic_8ipp.html" title=" " alt="" coords="515,251,745,325"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="504,209,569,248,567,252,501,213"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="632,341,632,373,627,373,627,341"/>
+</map>

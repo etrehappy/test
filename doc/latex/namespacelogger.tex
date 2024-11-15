@@ -1,0 +1,236 @@
+\doxysection{logger Namespace Reference}
+\hypertarget{namespacelogger}{}\label{namespacelogger}\index{logger@{logger}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacelogger_ac4b04d59bf5b627debbf948715166a01}{Init\+Logging}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_ae50385011581a054a35def027b9110d6}{Connect}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}{Error\+Exeption}} (const std\+::exception \&, const std\+::string \&, int line)
+\item 
+void \mbox{\hyperlink{namespacelogger_ab80cd0d48f8972fda5e3408a16adce11}{Error\+Read\+Some}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_af491f8c33b8b62a331440db7da255952}{Error\+Message\+Callback\+Not\+Set}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_aed6bc256815ab842f45bcd2a94c94260}{Error\+Parsing\+Message}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_a69691f0db7ff978606e2ae6a6b0dd161}{Error\+Serialize\+To\+String}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_adfffb0eec43913c6c4e59e1bfc0bd849}{Error\+Send}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_ad1eb168a08aa05b956bcff5e5ce832c0}{Error\+Locatin\+Read\+Db}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_a7bef1e2869c1fb86c6577c20847e91c5}{Server\+Start}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_a5f27878e3fd93a63f529c671b8f34e10}{Client\+Connect}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_a6d733557f3b7b36393e92decd5a4be10}{Authenticate\+Attempt}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_a234f3a2f1cbb2c0707b03172c3686721}{Client\+Disconnect}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{namespacelogger_aacdf57edd32d17509e1e663efd98bfac}{Error\+Fatal}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_a3916392b9404771cbe9915aa28d57273}{Error\+Empty\+Queue}} ()
+\item 
+void \mbox{\hyperlink{namespacelogger_a84a29a3f51917f63cc4c00d24d6fee49}{Error\+Handler\+Not\+Found}} (\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\item 
+void \mbox{\hyperlink{namespacelogger_a7b4ce8ddbe27e1585a163e6a267ea074}{Error\+Serrialisation}} (\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\item 
+void \mbox{\hyperlink{namespacelogger_a64f22af420728574a2b003e9452d774c}{Error\+Dynamic\+Pointer\+Cast}} (\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\item 
+void \mbox{\hyperlink{namespacelogger_ab7e846172186acb49df211a14130b9f3}{Error\+Sql\+Execute\+Step}} (\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacelogger_a6d733557f3b7b36393e92decd5a4be10}\index{logger@{logger}!AuthenticateAttempt@{AuthenticateAttempt}}
+\index{AuthenticateAttempt@{AuthenticateAttempt}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{AuthenticateAttempt()}{AuthenticateAttempt()}}
+{\footnotesize\ttfamily \label{namespacelogger_a6d733557f3b7b36393e92decd5a4be10} 
+void logger\+::\+Authenticate\+Attempt (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a5f27878e3fd93a63f529c671b8f34e10}\index{logger@{logger}!ClientConnect@{ClientConnect}}
+\index{ClientConnect@{ClientConnect}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ClientConnect()}{ClientConnect()}}
+{\footnotesize\ttfamily \label{namespacelogger_a5f27878e3fd93a63f529c671b8f34e10} 
+void logger\+::\+Client\+Connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a234f3a2f1cbb2c0707b03172c3686721}\index{logger@{logger}!ClientDisconnect@{ClientDisconnect}}
+\index{ClientDisconnect@{ClientDisconnect}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ClientDisconnect()}{ClientDisconnect()}}
+{\footnotesize\ttfamily \label{namespacelogger_a234f3a2f1cbb2c0707b03172c3686721} 
+void logger\+::\+Client\+Disconnect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_ae50385011581a054a35def027b9110d6}\index{logger@{logger}!Connect@{Connect}}
+\index{Connect@{Connect}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{Connect()}{Connect()}}
+{\footnotesize\ttfamily \label{namespacelogger_ae50385011581a054a35def027b9110d6} 
+void logger\+::\+Connect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a64f22af420728574a2b003e9452d774c}\index{logger@{logger}!ErrorDynamicPointerCast@{ErrorDynamicPointerCast}}
+\index{ErrorDynamicPointerCast@{ErrorDynamicPointerCast}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorDynamicPointerCast()}{ErrorDynamicPointerCast()}}
+{\footnotesize\ttfamily \label{namespacelogger_a64f22af420728574a2b003e9452d774c} 
+void logger\+::\+Error\+Dynamic\+Pointer\+Cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a3916392b9404771cbe9915aa28d57273}\index{logger@{logger}!ErrorEmptyQueue@{ErrorEmptyQueue}}
+\index{ErrorEmptyQueue@{ErrorEmptyQueue}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorEmptyQueue()}{ErrorEmptyQueue()}}
+{\footnotesize\ttfamily \label{namespacelogger_a3916392b9404771cbe9915aa28d57273} 
+void logger\+::\+Error\+Empty\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}\index{logger@{logger}!ErrorExeption@{ErrorExeption}}
+\index{ErrorExeption@{ErrorExeption}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorExeption()}{ErrorExeption()}}
+{\footnotesize\ttfamily \label{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846} 
+void logger\+::\+Error\+Exeption (\begin{DoxyParamCaption}\item[{const std\+::exception \&}]{}{, }\item[{const std\+::string \&}]{}{, }\item[{int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_aacdf57edd32d17509e1e663efd98bfac}\index{logger@{logger}!ErrorFatal@{ErrorFatal}}
+\index{ErrorFatal@{ErrorFatal}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorFatal()}{ErrorFatal()}}
+{\footnotesize\ttfamily \label{namespacelogger_aacdf57edd32d17509e1e663efd98bfac} 
+void logger\+::\+Error\+Fatal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a84a29a3f51917f63cc4c00d24d6fee49}\index{logger@{logger}!ErrorHandlerNotFound@{ErrorHandlerNotFound}}
+\index{ErrorHandlerNotFound@{ErrorHandlerNotFound}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorHandlerNotFound()}{ErrorHandlerNotFound()}}
+{\footnotesize\ttfamily \label{namespacelogger_a84a29a3f51917f63cc4c00d24d6fee49} 
+void logger\+::\+Error\+Handler\+Not\+Found (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_ad1eb168a08aa05b956bcff5e5ce832c0}\index{logger@{logger}!ErrorLocatinReadDb@{ErrorLocatinReadDb}}
+\index{ErrorLocatinReadDb@{ErrorLocatinReadDb}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorLocatinReadDb()}{ErrorLocatinReadDb()}}
+{\footnotesize\ttfamily \label{namespacelogger_ad1eb168a08aa05b956bcff5e5ce832c0} 
+void logger\+::\+Error\+Locatin\+Read\+Db (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_af491f8c33b8b62a331440db7da255952}\index{logger@{logger}!ErrorMessageCallbackNotSet@{ErrorMessageCallbackNotSet}}
+\index{ErrorMessageCallbackNotSet@{ErrorMessageCallbackNotSet}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorMessageCallbackNotSet()}{ErrorMessageCallbackNotSet()}}
+{\footnotesize\ttfamily \label{namespacelogger_af491f8c33b8b62a331440db7da255952} 
+void logger\+::\+Error\+Message\+Callback\+Not\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{function}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_aed6bc256815ab842f45bcd2a94c94260}\index{logger@{logger}!ErrorParsingMessage@{ErrorParsingMessage}}
+\index{ErrorParsingMessage@{ErrorParsingMessage}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorParsingMessage()}{ErrorParsingMessage()}}
+{\footnotesize\ttfamily \label{namespacelogger_aed6bc256815ab842f45bcd2a94c94260} 
+void logger\+::\+Error\+Parsing\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_ab80cd0d48f8972fda5e3408a16adce11}\index{logger@{logger}!ErrorReadSome@{ErrorReadSome}}
+\index{ErrorReadSome@{ErrorReadSome}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorReadSome()}{ErrorReadSome()}}
+{\footnotesize\ttfamily \label{namespacelogger_ab80cd0d48f8972fda5e3408a16adce11} 
+void logger\+::\+Error\+Read\+Some (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_adfffb0eec43913c6c4e59e1bfc0bd849}\index{logger@{logger}!ErrorSend@{ErrorSend}}
+\index{ErrorSend@{ErrorSend}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorSend()}{ErrorSend()}}
+{\footnotesize\ttfamily \label{namespacelogger_adfffb0eec43913c6c4e59e1bfc0bd849} 
+void logger\+::\+Error\+Send (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error\+\_\+text}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a69691f0db7ff978606e2ae6a6b0dd161}\index{logger@{logger}!ErrorSerializeToString@{ErrorSerializeToString}}
+\index{ErrorSerializeToString@{ErrorSerializeToString}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorSerializeToString()}{ErrorSerializeToString()}}
+{\footnotesize\ttfamily \label{namespacelogger_a69691f0db7ff978606e2ae6a6b0dd161} 
+void logger\+::\+Error\+Serialize\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a7b4ce8ddbe27e1585a163e6a267ea074}\index{logger@{logger}!ErrorSerrialisation@{ErrorSerrialisation}}
+\index{ErrorSerrialisation@{ErrorSerrialisation}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorSerrialisation()}{ErrorSerrialisation()}}
+{\footnotesize\ttfamily \label{namespacelogger_a7b4ce8ddbe27e1585a163e6a267ea074} 
+void logger\+::\+Error\+Serrialisation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_ab7e846172186acb49df211a14130b9f3}\index{logger@{logger}!ErrorSqlExecuteStep@{ErrorSqlExecuteStep}}
+\index{ErrorSqlExecuteStep@{ErrorSqlExecuteStep}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ErrorSqlExecuteStep()}{ErrorSqlExecuteStep()}}
+{\footnotesize\ttfamily \label{namespacelogger_ab7e846172186acb49df211a14130b9f3} 
+void logger\+::\+Error\+Sql\+Execute\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_ac4b04d59bf5b627debbf948715166a01}\index{logger@{logger}!InitLogging@{InitLogging}}
+\index{InitLogging@{InitLogging}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{InitLogging()}{InitLogging()}}
+{\footnotesize\ttfamily \label{namespacelogger_ac4b04d59bf5b627debbf948715166a01} 
+void logger\+::\+Init\+Logging (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2logger_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{client_2logger_8cpp_source}{logger.\+cpp}}.
+
+\Hypertarget{namespacelogger_a7bef1e2869c1fb86c6577c20847e91c5}\index{logger@{logger}!ServerStart@{ServerStart}}
+\index{ServerStart@{ServerStart}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{ServerStart()}{ServerStart()}}
+{\footnotesize\ttfamily \label{namespacelogger_a7bef1e2869c1fb86c6577c20847e91c5} 
+void logger\+::\+Server\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2logger_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{server_2logger_8cpp_source}{logger.\+cpp}}.
+

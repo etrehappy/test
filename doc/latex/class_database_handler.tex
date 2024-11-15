@@ -1,0 +1,243 @@
+\doxysection{Database\+Handler Class Reference}
+\hypertarget{class_database_handler}{}\label{class_database_handler}\index{DatabaseHandler@{DatabaseHandler}}
+
+
+There is one \doxylink{class_database_handler}{Database\+Handler} for all clients in the MVP version so the \doxylink{class_event_dispatcher}{Event\+Dispatcher} uses the k\+Database\+Client\+Id to find the handler.  
+
+
+
+
+{\ttfamily \#include $<$db\+\_\+handler.\+h$>$}
+
+
+
+Inheritance diagram for Database\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_database_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Database\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_database_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}{b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_database_handler_ac27357d3431faf4fd6810483a24a43fd}{Database\+Handler}} ()
+\item 
+\mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{\texorpdfstring{$\sim$}{\string~}\+Database\+Handler}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_location}{Location}} $>$ \mbox{\hyperlink{class_database_handler_a946354e8d12080390e0e6aaadebaf284}{Set\+Location}} (const uint32\+\_\+t, std\+::mutex \&)
+\item 
+\mbox{\hyperlink{class_database_handler_af4fa823ecb6e7395776cd379ca3e2715}{Database\+Handler}} (\mbox{\hyperlink{class_database}{Database}} \&, \mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&)
+\item 
+\mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{\texorpdfstring{$\sim$}{\string~}\+Database\+Handler}} ()
+\item 
+\mbox{\hyperlink{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}{b\+\_\+await\+\_\+void}} \mbox{\hyperlink{class_database_handler_af7d89bdb4ca0067634a0f2c3789dd711}{Forward\+Event\+To\+Handler}} (\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}) override
+\item 
+void \mbox{\hyperlink{class_database_handler_ae63b3fd50309f1a876f17f22d9f059e3}{Register\+In\+Dispatcher}} (\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&d) override
+\begin{DoxyCompactList}\small\item\em !! по ссылке? \end{DoxyCompactList}\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_database_handler_a936264a175493fa2d3b19b7bd93a36d5}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_database_handler_aa04a5a68831e5e06dc68eedd4b63b141}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_avatar_list_client_request}{Avatar\+List\+Client\+Request}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_database_handler_aabfa406976fda6f06e2a5144ed913fb6}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_get_avatars_data}{Get\+Avatars\+Data}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_database_handler_a68e40a25bf81807e55551ce074edc2c9}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_add_item_in_inventory}{Add\+Item\+In\+Inventory}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_database_handler_a5d9d63dac2b0af8afab011c5899ffedc}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_save_game}{Save\+Game}} $>$ event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_handler_affc1e076502a8be932a74952b7cdad87}{\texorpdfstring{$\sim$}{\string~}\+Event\+Handler}} ()=default
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{Pass\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$, std\+::function$<$ \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}}(std\+::shared\+\_\+ptr$<$ T $>$)$>$, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\begin{DoxyCompactList}\small\item\em Pass\+Classed\+Event uses dynamic\+\_\+pointer\+\_\+cast to convert the event into a derived class and pass it to a handler-\/function. \doxylink{class_event}{Event} conversion is used to get specific member functions of the event. For exapmle, event \doxylink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+There is one \doxylink{class_database_handler}{Database\+Handler} for all clients in the MVP version so the \doxylink{class_event_dispatcher}{Event\+Dispatcher} uses the k\+Database\+Client\+Id to find the handler. 
+
+Definition at line \mbox{\hyperlink{client_2db__handler_8h_source_l00009}{9}} of file \mbox{\hyperlink{client_2db__handler_8h_source}{db\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}\index{DatabaseHandler@{DatabaseHandler}!b\_await\_void@{b\_await\_void}}
+\index{b\_await\_void@{b\_await\_void}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{b\_await\_void}{b\_await\_void}}
+{\footnotesize\ttfamily \label{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e} 
+using \mbox{\hyperlink{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}{Database\+Handler\+::b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$}
+
+
+
+Definition at line \mbox{\hyperlink{server_2db__handler_8h_source_l00025}{25}} of file \mbox{\hyperlink{server_2db__handler_8h_source}{db\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_database_handler_ac27357d3431faf4fd6810483a24a43fd}\index{DatabaseHandler@{DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\index{DatabaseHandler@{DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{DatabaseHandler()}{DatabaseHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_database_handler_ac27357d3431faf4fd6810483a24a43fd} 
+Database\+Handler\+::\+Database\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2db__handler_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{client_2db__handler_8cpp_source}{db\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}\index{DatabaseHandler@{DatabaseHandler}!````~DatabaseHandler@{\texorpdfstring{$\sim$}{\string~}DatabaseHandler}}
+\index{````~DatabaseHandler@{\texorpdfstring{$\sim$}{\string~}DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DatabaseHandler()}{\string~DatabaseHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f} 
+Database\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Database\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2db__handler_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{client_2db__handler_8cpp_source}{db\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_database_handler_af4fa823ecb6e7395776cd379ca3e2715}\index{DatabaseHandler@{DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\index{DatabaseHandler@{DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{DatabaseHandler()}{DatabaseHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_database_handler_af4fa823ecb6e7395776cd379ca3e2715} 
+Database\+Handler\+::\+Database\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_database}{Database}} \&}]{db}{, }\item[{\mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&}]{q}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2db__handler_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{server_2db__handler_8cpp_source}{db\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}\index{DatabaseHandler@{DatabaseHandler}!````~DatabaseHandler@{\texorpdfstring{$\sim$}{\string~}DatabaseHandler}}
+\index{````~DatabaseHandler@{\texorpdfstring{$\sim$}{\string~}DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DatabaseHandler()}{\string~DatabaseHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f} 
+Database\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Database\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_database_handler_af7d89bdb4ca0067634a0f2c3789dd711}\index{DatabaseHandler@{DatabaseHandler}!ForwardEventToHandler@{ForwardEventToHandler}}
+\index{ForwardEventToHandler@{ForwardEventToHandler}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{ForwardEventToHandler()}{ForwardEventToHandler()}}
+{\footnotesize\ttfamily \label{class_database_handler_af7d89bdb4ca0067634a0f2c3789dd711} 
+boost\+::asio\+::awaitable$<$ void $>$ Database\+Handler\+::\+Forward\+Event\+To\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_abd451bda687f5b108ab5f03e28b77e01}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{server_2db__handler_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{server_2db__handler_8cpp_source}{db\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_database_handler_a68e40a25bf81807e55551ce074edc2c9}\index{DatabaseHandler@{DatabaseHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_database_handler_a68e40a25bf81807e55551ce074edc2c9} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Database\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_add_item_in_inventory}{Add\+Item\+In\+Inventory}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{db__handler_8ipp_source_l00151}{151}} of file \mbox{\hyperlink{db__handler_8ipp_source}{db\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_database_handler_aa04a5a68831e5e06dc68eedd4b63b141}\index{DatabaseHandler@{DatabaseHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{class_database_handler_aa04a5a68831e5e06dc68eedd4b63b141} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Database\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_avatar_list_client_request}{Avatar\+List\+Client\+Request}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{db__handler_8ipp_source_l00055}{55}} of file \mbox{\hyperlink{db__handler_8ipp_source}{db\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_database_handler_aabfa406976fda6f06e2a5144ed913fb6}\index{DatabaseHandler@{DatabaseHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_database_handler_aabfa406976fda6f06e2a5144ed913fb6} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Database\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_get_avatars_data}{Get\+Avatars\+Data}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{db__handler_8ipp_source_l00088}{88}} of file \mbox{\hyperlink{db__handler_8ipp_source}{db\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_database_handler_a936264a175493fa2d3b19b7bd93a36d5}\index{DatabaseHandler@{DatabaseHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{class_database_handler_a936264a175493fa2d3b19b7bd93a36d5} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Database\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{db__handler_8ipp_source_l00004}{4}} of file \mbox{\hyperlink{db__handler_8ipp_source}{db\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_database_handler_a5d9d63dac2b0af8afab011c5899ffedc}\index{DatabaseHandler@{DatabaseHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_database_handler_a5d9d63dac2b0af8afab011c5899ffedc} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Database\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_save_game}{Save\+Game}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{db__handler_8ipp_source_l00172}{172}} of file \mbox{\hyperlink{db__handler_8ipp_source}{db\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_database_handler_ae63b3fd50309f1a876f17f22d9f059e3}\index{DatabaseHandler@{DatabaseHandler}!RegisterInDispatcher@{RegisterInDispatcher}}
+\index{RegisterInDispatcher@{RegisterInDispatcher}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterInDispatcher()}{RegisterInDispatcher()}}
+{\footnotesize\ttfamily \label{class_database_handler_ae63b3fd50309f1a876f17f22d9f059e3} 
+void Database\+Handler\+::\+Register\+In\+Dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+!! по ссылке? 
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_aefcb4e30e42a09216701c52d43fe7694}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{server_2db__handler_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{server_2db__handler_8cpp_source}{db\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_database_handler_a946354e8d12080390e0e6aaadebaf284}\index{DatabaseHandler@{DatabaseHandler}!SetLocation@{SetLocation}}
+\index{SetLocation@{SetLocation}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{SetLocation()}{SetLocation()}}
+{\footnotesize\ttfamily \label{class_database_handler_a946354e8d12080390e0e6aaadebaf284} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_location}{Location}} $>$ Database\+Handler\+::\+Set\+Location (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{location\+\_\+id}{, }\item[{std\+::mutex \&}]{avatar\+\_\+and\+\_\+location}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2db__handler_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{client_2db__handler_8cpp_source}{db\+\_\+handler.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{client_2db__handler_8h}{db\+\_\+handler.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{server_2db__handler_8h}{db\+\_\+handler.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{client_2db__handler_8cpp}{db\+\_\+handler.\+cpp}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{server_2db__handler_8cpp}{db\+\_\+handler.\+cpp}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{db__handler_8ipp}{db\+\_\+handler.\+ipp}}\end{DoxyCompactItemize}

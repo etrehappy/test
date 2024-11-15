@@ -1,0 +1,101 @@
+\doxysection{argparse Namespace Reference}
+\hypertarget{namespaceargparse}{}\label{namespaceargparse}\index{argparse@{argparse}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceargparse_1_1details}{details}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classargparse_1_1_argument}{Argument}}
+\item 
+class \mbox{\hyperlink{classargparse_1_1_argument_parser}{Argument\+Parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59}{nargs\+\_\+pattern}} \{ \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59ad57c24f3fe52d16e7169b912dd647f0d}{optional}}
+, \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59a100b8cad7cf2a56f6df78f171f97a1ec}{any}}
+, \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59a3fe0284a7cd758589321a05f30353587}{at\+\_\+least\+\_\+one}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \+: unsigned int \{ \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea334c4a4c42fdb79d7ebc3e73b517e6f8}{none}} = 0
+, \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea657f8b8da628ef83cf69101b6817150a}{help}} = 1
+, \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea2af72f100c356273d46284f6fd1dfc08}{version}} = 2
+, \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adeaa181a603769c1f98ad927e7367c7aa51}{all}} = help \texorpdfstring{$\vert$}{|} version
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \mbox{\hyperlink{namespaceargparse_abc3251385718451a3df9f5c95ee17f12}{operator\&}} (const \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \&a, const \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}\index{argparse@{argparse}!default\_arguments@{default\_arguments}}
+\index{default\_arguments@{default\_arguments}!argparse@{argparse}}
+\doxysubsubsection{\texorpdfstring{default\_arguments}{default\_arguments}}
+{\footnotesize\ttfamily \label{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade} 
+enum class \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{argparse\+::default\+\_\+arguments}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!argparse@{argparse}}\index{argparse@{argparse}!none@{none}}}\Hypertarget{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea334c4a4c42fdb79d7ebc3e73b517e6f8}\label{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade} 
+none&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{help@{help}!argparse@{argparse}}\index{argparse@{argparse}!help@{help}}}\Hypertarget{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea657f8b8da628ef83cf69101b6817150a}\label{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade} 
+help&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{version@{version}!argparse@{argparse}}\index{argparse@{argparse}!version@{version}}}\Hypertarget{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea2af72f100c356273d46284f6fd1dfc08}\label{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade} 
+version&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{all@{all}!argparse@{argparse}}\index{argparse@{argparse}!all@{all}}}\Hypertarget{namespaceargparse_a172793a32b6bc1069cb87cad08e93adeaa181a603769c1f98ad927e7367c7aa51}\label{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade} 
+all&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00582}{582}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59}\index{argparse@{argparse}!nargs\_pattern@{nargs\_pattern}}
+\index{nargs\_pattern@{nargs\_pattern}!argparse@{argparse}}
+\doxysubsubsection{\texorpdfstring{nargs\_pattern}{nargs\_pattern}}
+{\footnotesize\ttfamily \label{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59} 
+enum class \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59}{argparse\+::nargs\+\_\+pattern}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{optional@{optional}!argparse@{argparse}}\index{argparse@{argparse}!optional@{optional}}}\Hypertarget{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59ad57c24f3fe52d16e7169b912dd647f0d}\label{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59} 
+optional&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{any@{any}!argparse@{argparse}}\index{argparse@{argparse}!any@{any}}}\Hypertarget{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59a100b8cad7cf2a56f6df78f171f97a1ec}\label{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59} 
+any&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{at\_least\_one@{at\_least\_one}!argparse@{argparse}}\index{argparse@{argparse}!at\_least\_one@{at\_least\_one}}}\Hypertarget{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59a3fe0284a7cd758589321a05f30353587}\label{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59} 
+at\+\_\+least\+\_\+one&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00580}{580}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceargparse_abc3251385718451a3df9f5c95ee17f12}\index{argparse@{argparse}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!argparse@{argparse}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily \label{namespaceargparse_abc3251385718451a3df9f5c95ee17f12} 
+\mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} argparse\+::operator\& (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \&}]{a}{, }\item[{const \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \&}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00589}{589}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+

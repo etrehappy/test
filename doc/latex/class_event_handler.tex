@@ -1,0 +1,109 @@
+\doxysection{Event\+Handler Class Reference}
+\hypertarget{class_event_handler}{}\label{class_event_handler}\index{EventHandler@{EventHandler}}
+
+
+{\ttfamily \#include $<$event\+\_\+handler.\+h$>$}
+
+
+
+Inheritance diagram for Event\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_event_handler__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_handler_affc1e076502a8be932a74952b7cdad87}{\texorpdfstring{$\sim$}{\string~}\+Event\+Handler}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} \mbox{\hyperlink{class_event_handler_abd451bda687f5b108ab5f03e28b77e01}{Forward\+Event\+To\+Handler}} (\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}})=0
+\item 
+virtual void \mbox{\hyperlink{class_event_handler_aefcb4e30e42a09216701c52d43fe7694}{Register\+In\+Dispatcher}} (\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&d)=0
+\begin{DoxyCompactList}\small\item\em !! по ссылке? \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{Pass\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$, std\+::function$<$ \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}}(std\+::shared\+\_\+ptr$<$ T $>$)$>$, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\begin{DoxyCompactList}\small\item\em Pass\+Classed\+Event uses dynamic\+\_\+pointer\+\_\+cast to convert the event into a derived class and pass it to a handler-\/function. \doxylink{class_event}{Event} conversion is used to get specific member functions of the event. For exapmle, event \doxylink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{event__handler_8h_source_l00015}{15}} of file \mbox{\hyperlink{event__handler_8h_source}{event\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}\index{EventHandler@{EventHandler}!b\_await\_void@{b\_await\_void}}
+\index{b\_await\_void@{b\_await\_void}!EventHandler@{EventHandler}}
+\doxysubsubsection{\texorpdfstring{b\_await\_void}{b\_await\_void}}
+{\footnotesize\ttfamily \label{class_event_handler_a45db47ed598254d69c921cb4e77feb3f} 
+using \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{Event\+Handler\+::b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$}
+
+
+
+Definition at line \mbox{\hyperlink{event__handler_8h_source_l00018}{18}} of file \mbox{\hyperlink{event__handler_8h_source}{event\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_handler_affc1e076502a8be932a74952b7cdad87}\index{EventHandler@{EventHandler}!````~EventHandler@{\texorpdfstring{$\sim$}{\string~}EventHandler}}
+\index{````~EventHandler@{\texorpdfstring{$\sim$}{\string~}EventHandler}!EventHandler@{EventHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EventHandler()}{\string~EventHandler()}}
+{\footnotesize\ttfamily \label{class_event_handler_affc1e076502a8be932a74952b7cdad87} 
+virtual Event\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Event\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_handler_abd451bda687f5b108ab5f03e28b77e01}\index{EventHandler@{EventHandler}!ForwardEventToHandler@{ForwardEventToHandler}}
+\index{ForwardEventToHandler@{ForwardEventToHandler}!EventHandler@{EventHandler}}
+\doxysubsubsection{\texorpdfstring{ForwardEventToHandler()}{ForwardEventToHandler()}}
+{\footnotesize\ttfamily \label{class_event_handler_abd451bda687f5b108ab5f03e28b77e01} 
+virtual \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} Event\+Handler\+::\+Forward\+Event\+To\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_database_handler_af7d89bdb4ca0067634a0f2c3789dd711}{Database\+Handler}}, \mbox{\hyperlink{class_game_handler_a2d660820da48be433caa0ba7f2a34b2f}{Game\+Handler}}, \mbox{\hyperlink{class_network_handler_a65b72688cefee1e25873c6ebe8769345}{Network\+Handler}}, and \mbox{\hyperlink{class_user_handler_a0ecd0cc04206cc4e82fcc0c86197b68f}{User\+Handler}}.
+
+\Hypertarget{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}\index{EventHandler@{EventHandler}!PassClassedEvent@{PassClassedEvent}}
+\index{PassClassedEvent@{PassClassedEvent}!EventHandler@{EventHandler}}
+\doxysubsubsection{\texorpdfstring{PassClassedEvent()}{PassClassedEvent()}}
+{\footnotesize\ttfamily \label{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f} 
+template$<$class T $>$ \\
+\mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} Event\+Handler\+::\+Pass\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$}]{event}{, }\item[{std\+::function$<$ \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}}(std\+::shared\+\_\+ptr$<$ T $>$)$>$}]{handler\+\_\+func}{, }\item[{\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Pass\+Classed\+Event uses dynamic\+\_\+pointer\+\_\+cast to convert the event into a derived class and pass it to a handler-\/function. \doxylink{class_event}{Event} conversion is used to get specific member functions of the event. For exapmle, event \doxylink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}. 
+
+
+
+Definition at line \mbox{\hyperlink{event__handler_8ipp_source_l00005}{5}} of file \mbox{\hyperlink{event__handler_8ipp_source}{event\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_event_handler_aefcb4e30e42a09216701c52d43fe7694}\index{EventHandler@{EventHandler}!RegisterInDispatcher@{RegisterInDispatcher}}
+\index{RegisterInDispatcher@{RegisterInDispatcher}!EventHandler@{EventHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterInDispatcher()}{RegisterInDispatcher()}}
+{\footnotesize\ttfamily \label{class_event_handler_aefcb4e30e42a09216701c52d43fe7694} 
+virtual void Event\+Handler\+::\+Register\+In\+Dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+!! по ссылке? 
+
+
+
+Implemented in \mbox{\hyperlink{class_database_handler_ae63b3fd50309f1a876f17f22d9f059e3}{Database\+Handler}}, \mbox{\hyperlink{class_game_handler_a96d24164f44d741193c383dbd0635413}{Game\+Handler}}, \mbox{\hyperlink{class_network_handler_a22300a872e946ca346a13c6d60abb487}{Network\+Handler}}, and \mbox{\hyperlink{class_user_handler_a59a5bbd46bd2fa883fe261693a2aae3a}{User\+Handler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event__handler_8h}{event\+\_\+handler.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event__handler_8ipp}{event\+\_\+handler.\+ipp}}\end{DoxyCompactItemize}

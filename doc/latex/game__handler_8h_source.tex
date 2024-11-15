@@ -1,0 +1,44 @@
+\doxysection{game\+\_\+handler.\+h}
+\hypertarget{game__handler_8h_source}{}\label{game__handler_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/game\_handler.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/game\_handler.h}}
+\mbox{\hyperlink{game__handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__handler_8h}{event\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__dispatcher_8h}{event\_dispatcher.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__queue_8h}{event\_queue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <boost/asio/experimental/awaitable\_operators.hpp>}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <boost/asio/awaitable.hpp>}\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00017}\mbox{\hyperlink{class_game_handler}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_handler}{GameHandler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event_handler}{EventHandler}},\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<GameHandler>}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{class_game_handler_aa072e07366db15f7ffcafa14e334608f}{GameHandler}}(\mbox{\hyperlink{class_event_queue}{EventQueue}}\&,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_game_handler_a37e9acdced835f48a2bb2a00cb322635}{\string~GameHandler}}();}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00023}00023\ \ \ \ \ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_game_handler_a2d660820da48be433caa0ba7f2a34b2f}{ForwardEventToHandler}}(\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_handler_a96d24164f44d741193c383dbd0635413}{RegisterInDispatcher}}(\mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ d)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00027}00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ event\_queue\_;}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ event\_routing\_key\_;}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00031}00031\ \ \ \ \ std::shared\_ptr<Avatar>\ current\_avatar\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00032}00032\ \ \ \ \ std::shared\_ptr<Location>\ current\_location\_\{\textcolor{keyword}{nullptr}\};\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00033}00033\ \ \ \ \ std::vector<Npc>\ npc\_container\_\{\};\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00036}00036\ \ \ \ \ boost::asio::awaitable<void>\ HandleClassedEvent(std::shared\_ptr<T>\ event);}
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8h_source_l00038}00038\ \};}
+
+\end{DoxyCode}

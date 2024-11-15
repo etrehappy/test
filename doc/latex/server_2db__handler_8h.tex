@@ -1,0 +1,34 @@
+\doxysection{C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/db\+\_\+handler.h File Reference}
+\hypertarget{server_2db__handler_8h}{}\label{server_2db__handler_8h}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/db\_handler.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/db\_handler.h}}
+{\ttfamily \#include $<$SQLite\+Cpp/\+SQLite\+Cpp.\+h$>$}\newline
+{\ttfamily \#include $<$boost/asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/asio/experimental/awaitable\+\_\+operators.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/asio/awaitable.\+hpp$>$}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include "{}settings.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+dispatcher.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+queue.\+h"{}}\newline
+{\ttfamily \#include "{}database.\+h"{}}\newline
+{\ttfamily \#include "{}game\+\_\+elements.\+h"{}}\newline
+Include dependency graph for db\+\_\+handler.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server_2db__handler_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server_2db__handler_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_database_handler}{Database\+Handler}}
+\begin{DoxyCompactList}\small\item\em There is one \doxylink{class_database_handler}{Database\+Handler} for all clients in the MVP version so the \doxylink{class_event_dispatcher}{Event\+Dispatcher} uses the k\+Database\+Client\+Id to find the handler. \end{DoxyCompactList}\end{DoxyCompactItemize}

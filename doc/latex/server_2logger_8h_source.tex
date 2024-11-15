@@ -1,0 +1,62 @@
+\doxysection{logger.\+h}
+\hypertarget{server_2logger_8h_source}{}\label{server_2logger_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/logger.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/logger.h}}
+\mbox{\hyperlink{server_2logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <boost/log/core.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <boost/log/trivial.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <boost/log/expressions.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <boost/log/sources/severity\_logger.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <boost/log/sources/record\_ostream.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <boost/log/utility/setup/file.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <boost/log/utility/setup/common\_attributes.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8h}{event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00017}\mbox{\hyperlink{server_2logger_8h_a912cd05d1f12828d44a543a32c147660}{00017}}\ \textcolor{preprocessor}{\#define\ MVP\_LOG\_EXEPTION(e)\ logger::ErrorExeption(e,\ \_\_func\_\_,\ \_\_LINE\_\_);}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00019}00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelogger}{logger}}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ac4b04d59bf5b627debbf948715166a01}{InitLogging}}();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a7bef1e2869c1fb86c6577c20847e91c5}{ServerStart}}();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a5f27878e3fd93a63f529c671b8f34e10}{ClientConnect}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a6d733557f3b7b36393e92decd5a4be10}{AuthenticateAttempt}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a234f3a2f1cbb2c0707b03172c3686721}{ClientDisconnect}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_aacdf57edd32d17509e1e663efd98bfac}{ErrorFatal}}();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}{ErrorExeption}}(\textcolor{keyword}{const}\ std::exception\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a3916392b9404771cbe9915aa28d57273}{ErrorEmptyQueue}}();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a84a29a3f51917f63cc4c00d24d6fee49}{ErrorHandlerNotFound}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}});}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a7b4ce8ddbe27e1585a163e6a267ea074}{ErrorSerrialisation}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}});}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a64f22af420728574a2b003e9452d774c}{ErrorDynamicPointerCast}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}});}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ab7e846172186acb49df211a14130b9f3}{ErrorSqlExecuteStep}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}});}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kInfoServerStart\ =\ \textcolor{stringliteral}{"{}Сервер\ запущен\ и\ ожидает\ подключения..."{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kInfoClientConnect\ =\ \textcolor{stringliteral}{"{}Клиент\ подключен:\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kInfoAuthenticateAttempt\ =\ \textcolor{stringliteral}{"{}Попытка\ аутентификации\ пользователя:\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00040}00040\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00042}00042\ \ \ \ \ \textcolor{comment}{/*GameHandler,\ NetworkHandler\ uses:*/}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrExeptEmptyVariable\ =\ \textcolor{stringliteral}{"{}не\ получены\ данные"{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00045}00045\ \ \ \ \ \textcolor{comment}{/*Logger\ uses:*/}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorFatal\ =\ \textcolor{stringliteral}{"{}Неизвестная\ ошибка"{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorExeption\ =\ \textcolor{stringliteral}{"{}Исключение\ в\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorEmptyQueue\ =\ \textcolor{stringliteral}{"{}Попытка\ извлечь\ событие\ из\ пустой\ очереди"{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorHandlerNotFound\ =\ \textcolor{stringliteral}{"{}Не\ найден\ обработчик\ события\ \#\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorSerrialisation\ =\ \textcolor{stringliteral}{"{}Не\ удалось\ сериализовать\ событие\ \#\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorDynamicPointerCast\ =\ \textcolor{stringliteral}{"{}Ошибка\ преобразования\ shared\_ptr"{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorSqlExecuteStep\ =\ \textcolor{stringliteral}{"{}Ошибка\ при\ чтении\ данных\ из\ таблицы\ по\ событию\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kClientDisconnect\ =\ \textcolor{stringliteral}{"{}Клиент\ отключен:\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8h_source_l00056}00056\ \}\textcolor{comment}{//logger}}
+
+\end{DoxyCode}

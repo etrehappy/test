@@ -1,0 +1,93 @@
+\doxysection{game\+\_\+handler.\+ipp}
+\hypertarget{game__handler_8ipp_source}{}\label{game__handler_8ipp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/game\_handler.ipp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/game\_handler.ipp}}
+\mbox{\hyperlink{game__handler_8ipp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00001}00001\ \textcolor{comment}{//template<>}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00002}00002\ \textcolor{comment}{//boost::asio::awaitable<void>\ GameHandler::HandleClassedEvent(std::shared\_ptr<StartGameClientRequest>\ event)}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00003}00003\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00004}00004\ \textcolor{comment}{//\ \ }}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00005}00005\ \textcolor{comment}{//\ \ //current\_avatar\_\ =\ std::make\_shared<Avatar>();}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00006}00006\ \textcolor{comment}{//\ \ co\_return;}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00007}00007\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00009}00009\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00010}\mbox{\hyperlink{class_game_handler_af5e597d8878f5fdce0d694b682713393}{00010}}\ boost::asio::awaitable<void>\ GameHandler::HandleClassedEvent(std::shared\_ptr<AvatarsDataReady>\ event)}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00012}00012\ \ \ \ \ current\_avatar\_\ =\ std::move(event-\/>MoveAvatar());}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00016}00016\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00017}\mbox{\hyperlink{class_game_handler_addb6567afabb24dd24dfb425e58fa8df}{00017}}\ boost::asio::awaitable<void>\ GameHandler::HandleClassedEvent(std::shared\_ptr<StartGameClientRequest>\ event)\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ executor\ =\ \textcolor{keyword}{co\_await}\ boost::asio::this\_coro::executor;}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ќжидаем событие с нужными данными, использу€\ цикл\ co\_await}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ attempt\_counter\{0\};}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!current\_avatar\_\ \textcolor{comment}{/*\&\&\ !current\_location\_\ \&\&\ !npc\_container\_.empty()*/})}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00026}00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ co\_await\ на таймер дл€\ снижени€\ нагрузки, провер€€\ каждые\ 50\ мс}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::steady\_timer\ timer(executor,\ std::chrono::milliseconds(500));}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{co\_await}\ timer.async\_wait(boost::asio::use\_awaitable);}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (++attempt\_counter\ >\ 10)}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument\{logger::kErrExeptEmptyVariable\};}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*TODO:\ error\ event\ for\ client*/}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00039}00039\ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_shared<StartGameServerResponseSucsses>(event-\/>GetRoutingKey()\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ current\_avatar\_)}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00042}00042\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00044}00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00050}00050\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00056}00056\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00057}\mbox{\hyperlink{class_game_handler_a8ddded135b71d5d2606d71a640146804}{00057}}\ boost::asio::awaitable<void>\ GameHandler::HandleClassedEvent(std::shared\_ptr<ExitGameRequest>\ event)}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ proto\_message\_avatar\ =\ (*\textcolor{keyword}{event}-\/>GetEventMessage()).exit\_game().avatar();}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00063}00063\ \ \ \ \ \ \ \ \ current\_avatar\_-\/>SetFewParametrs(proto\_message\_avatar.level()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.experience()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.health()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.mana()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.strength()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.dexterity()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.intelligence()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.location\_id()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.pos\_x()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ proto\_message\_avatar.pos\_y()}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00073}00073\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ exit\_game\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00076}00076\ \ \ \ \ \ \ \ \ event\_queue\_.\mbox{\hyperlink{class_event_queue_a4bb3f96273b0060ae0d7067df38776bf}{AddEvent}}(std::make\_shared<SaveGame>(event-\/>GetRoutingKey(),}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ current\_avatar\_,\ exit\_game}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00078}00078\ \ \ \ \ \ \ \ \ ));}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e);}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{game__handler_8ipp_source_l00087}00087\ \}}
+
+\end{DoxyCode}

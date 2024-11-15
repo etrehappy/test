@@ -1,0 +1,105 @@
+\doxysection{logger.\+cpp}
+\hypertarget{server_2logger_8cpp_source}{}\label{server_2logger_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/logger.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/logger.cpp}}
+\mbox{\hyperlink{server_2logger_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00004}00004\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ac4b04d59bf5b627debbf948715166a01}{logger::InitLogging}}()\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00006}00006\ \ \ \ \ std::filesystem::create\_directories(settings::kLoggsDir);}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ rotation\_size\ =\ 10\ *\ 1024\ *\ 1024;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ time\_based\_rotation\ =\ boost::log::sinks::file::rotation\_at\_time\_point(0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ text\_format\ =\ \textcolor{stringliteral}{"{}[\%TimeStamp\%]\ [\%Severity\%]\ \%Message\%"{}};}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//\ Логи\ для\ уровня\ info\ и\ выше}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00013}00013\ \ \ \ \ boost::log::add\_file\_log(}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ boost::log::keywords::file\_name\ =\ settings::kLoggsInfoFile,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ boost::log::keywords::rotation\_size\ =\ rotation\_size,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ boost::log::keywords::time\_based\_rotation\ =\ time\_based\_rotation,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ boost::log::keywords::format\ =\ text\_format,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ boost::log::keywords::open\_mode\ =\ std::ios::trunc,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ boost::log::keywords::filter\ =\ boost::log::trivial::severity\ <=\ boost::log::trivial::info}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00020}00020\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Логи\ для\ уровня\ warning\ и\ выше}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00023}00023\ \ \ \ \ boost::log::add\_file\_log(}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ boost::log::keywords::file\_name\ =\ settings::kLoggsWarningPlusFile,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ boost::log::keywords::rotation\_size\ =\ rotation\_size,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ boost::log::keywords::time\_based\_rotation\ =\ time\_based\_rotation,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ boost::log::keywords::format\ =\ text\_format,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ boost::log::keywords::open\_mode\ =\ std::ios::trunc,}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ boost::log::keywords::filter\ =\ boost::log::trivial::severity\ >=\ boost::log::trivial::warning}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00030}00030\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00032}00032\ \ \ \ \ boost::log::add\_common\_attributes();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00035}\mbox{\hyperlink{namespacelogger_a7bef1e2869c1fb86c6577c20847e91c5}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a7bef1e2869c1fb86c6577c20847e91c5}{logger::ServerStart}}()}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00037}00037\ \ \ \ \ BOOST\_LOG\_TRIVIAL(info)\ <<\ kInfoServerStart\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00038}00038\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00041}\mbox{\hyperlink{namespacelogger_a5f27878e3fd93a63f529c671b8f34e10}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a5f27878e3fd93a63f529c671b8f34e10}{logger::ClientConnect}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00043}00043\ \ \ \ \ BOOST\_LOG\_TRIVIAL(info)\ <<\ logger::kInfoClientConnect\ <<\ id;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00044}00044\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00047}\mbox{\hyperlink{namespacelogger_a234f3a2f1cbb2c0707b03172c3686721}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a234f3a2f1cbb2c0707b03172c3686721}{logger::ClientDisconnect}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00049}00049\ \ \ \ \ BOOST\_LOG\_TRIVIAL(info)\ <<\ logger::kClientDisconnect\ <<\ id;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00050}00050\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00053}\mbox{\hyperlink{namespacelogger_aacdf57edd32d17509e1e663efd98bfac}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_aacdf57edd32d17509e1e663efd98bfac}{logger::ErrorFatal}}()}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00055}00055\ \ \ \ \ BOOST\_LOG\_TRIVIAL(fatal)\ <<\ logger::kErrorFatal\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00056}00056\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00059}00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}{logger::ErrorExeption}}(\textcolor{keyword}{const}\ std::exception\&\ e,\ \textcolor{keyword}{const}\ std::string\&\ s,\ \textcolor{keywordtype}{int}\ l)}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00061}00061\ \ \ \ \ BOOST\_LOG\_TRIVIAL(error)\ <<\ logger::kErrorExeption\ <<\ s\ <<\ \textcolor{stringliteral}{"{}::"{}}\ <<\ l\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00062}00062\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00065}\mbox{\hyperlink{namespacelogger_a3916392b9404771cbe9915aa28d57273}{00065}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a3916392b9404771cbe9915aa28d57273}{logger::ErrorEmptyQueue}}()}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00066}00066\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00067}00067\ \ \ \ \ BOOST\_LOG\_TRIVIAL(error)\ <<\ logger::kErrorEmptyQueue\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00068}00068\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00071}\mbox{\hyperlink{namespacelogger_a84a29a3f51917f63cc4c00d24d6fee49}{00071}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a84a29a3f51917f63cc4c00d24d6fee49}{logger::ErrorHandlerNotFound}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ t)}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00072}00072\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00073}00073\ \ \ \ \ BOOST\_LOG\_TRIVIAL(error)\ <<\ logger::kErrorHandlerNotFound\ <<\ static\_cast<unsigned\ short\ >(t)\ <<std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00074}00074\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00077}\mbox{\hyperlink{namespacelogger_a7b4ce8ddbe27e1585a163e6a267ea074}{00077}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a7b4ce8ddbe27e1585a163e6a267ea074}{logger::ErrorSerrialisation}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ t)}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00078}00078\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00079}00079\ \ \ \ \ BOOST\_LOG\_TRIVIAL(error)\ <<\ logger::kErrorSerrialisation\ <<\ static\_cast<unsigned\ short>(t)\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00080}00080\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00083}\mbox{\hyperlink{namespacelogger_a6d733557f3b7b36393e92decd5a4be10}{00083}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a6d733557f3b7b36393e92decd5a4be10}{logger::AuthenticateAttempt}}(\textcolor{keyword}{const}\ std::string\&\ login)}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00084}00084\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00085}00085\ \ \ \ \ BOOST\_LOG\_TRIVIAL(info)\ <<\ logger::kInfoAuthenticateAttempt\ <<\ login;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00086}00086\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00089}\mbox{\hyperlink{namespacelogger_a64f22af420728574a2b003e9452d774c}{00089}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a64f22af420728574a2b003e9452d774c}{logger::ErrorDynamicPointerCast}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ t)}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00091}00091\ \ \ \ \ BOOST\_LOG\_TRIVIAL(error)\ <<\ logger::kErrorDynamicPointerCast\ <<\ static\_cast<unsigned\ short>(t)\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00092}00092\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00095}\mbox{\hyperlink{namespacelogger_ab7e846172186acb49df211a14130b9f3}{00095}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ab7e846172186acb49df211a14130b9f3}{logger::ErrorSqlExecuteStep}}(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ t)}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00096}00096\ \{}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00097}00097\ \ \ \ \ BOOST\_LOG\_TRIVIAL(error)\ <<\ logger::kErrorSqlExecuteStep\ <<\ static\_cast<unsigned\ short>(t)\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00098}00098\ \ \ \ \ boost::log::core::get()-\/>flush();}
+\DoxyCodeLine{\Hypertarget{server_2logger_8cpp_source_l00099}00099\ \}}
+
+\end{DoxyCode}

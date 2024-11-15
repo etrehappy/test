@@ -1,0 +1,51 @@
+\doxysection{logger.\+h}
+\hypertarget{client_2logger_8h_source}{}\label{client_2logger_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/logger.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/logger.h}}
+\mbox{\hyperlink{client_2logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <boost/log/core.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <boost/log/trivial.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <boost/log/expressions.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <boost/log/sources/severity\_logger.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <boost/log/sources/record\_ostream.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <boost/log/utility/setup/file.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <boost/log/utility/setup/common\_attributes.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00014}\mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{00014}}\ \textcolor{preprocessor}{\#define\ MVP\_LOG\_EXEPTION(e)\ logger::ErrorExeption(e,\ \_\_func\_\_,\ \_\_LINE\_\_);}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00016}\mbox{\hyperlink{namespacelogger}{00016}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelogger}{logger}}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ac4b04d59bf5b627debbf948715166a01}{InitLogging}}();}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ae50385011581a054a35def027b9110d6}{Connect}}();}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_aed26fa11a9dc1e81793a06780b3d4846}{ErrorExeption}}(\textcolor{keyword}{const}\ std::exception\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keywordtype}{int}\ line);}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ab80cd0d48f8972fda5e3408a16adce11}{ErrorReadSome}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_af491f8c33b8b62a331440db7da255952}{ErrorMessageCallbackNotSet}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_aed6bc256815ab842f45bcd2a94c94260}{ErrorParsingMessage}}();}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_a69691f0db7ff978606e2ae6a6b0dd161}{ErrorSerializeToString}}();}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_adfffb0eec43913c6c4e59e1bfc0bd849}{ErrorSend}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacelogger_ad1eb168a08aa05b956bcff5e5ce832c0}{ErrorLocatinReadDb}}();}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00029}00029\ \}\textcolor{comment}{//logger}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00032}00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelogger}{logger}}}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kInfoConnect\ =\ \textcolor{stringliteral}{"{}Клиент\ подключен\ к\ серверу"{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorFatal\ =\ \textcolor{stringliteral}{"{}Неизвестная\ ошибка"{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorExeption\ =\ \textcolor{stringliteral}{"{}Исключение\ в\ (функция::строка)\ "{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorReadSome\ =\ \textcolor{stringliteral}{"{}Ошибка\ чтения\ при\ подключении\ к\ серверу:\ "{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorMessageCallbackNotSet\ =\ \textcolor{stringliteral}{"{}Не\ установлен\ callback\ для\ обработки\ сообщений\ в\ функции:\ "{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorParsingMessage\ =\ \textcolor{stringliteral}{"{}Не\ удалось\ преобразовать\ ProtoMessage\ в\ string"{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorSerializeToString\ =\ \textcolor{stringliteral}{"{}Ошибка\ сериализации\ при\ отправке"{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorSend\ =\ \textcolor{stringliteral}{"{}Ошибка\ при\ отправке.\ Сообщение\ не\ отправлено:\ "{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kErrorLocatinReadDb\ =\ \textcolor{stringliteral}{"{}Ошибка\ при\ чтении\ локации."{}};}
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{client_2logger_8h_source_l00045}00045\ \}\textcolor{comment}{//logger}}
+
+\end{DoxyCode}

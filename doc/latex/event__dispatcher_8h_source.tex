@@ -1,0 +1,40 @@
+\doxysection{event\+\_\+dispatcher.\+h}
+\hypertarget{event__dispatcher_8h_source}{}\label{event__dispatcher_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event\_dispatcher.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event\_dispatcher.h}}
+\mbox{\hyperlink{event__dispatcher_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <boost/asio/experimental/awaitable\_operators.hpp>}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <boost/asio/awaitable.hpp>}\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8h}{event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__handler_8h}{event\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__queue_8h}{event\_queue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00017}\mbox{\hyperlink{class_event_dispatcher}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00018}00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//using\ EventHandler\ =\ std::function<void(shrd\_event)>;}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ Регистрация\ обработчика\ для\ определенного\ типа\ события}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_dispatcher_ac68fbc2bc0961a36d22b710f4f6969e1}{RegisterHandler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type,\ std::shared\_ptr<EventHandler>\ handler,\ \textcolor{keyword}{const}\ std::string\&\ event\_routing\_key);}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_dispatcher_aa6dcb31c239ddb4713f0f085d967f26d}{UnregisterHandlers}}(\textcolor{keyword}{const}\ std::string\&\ event\_routing\_key);}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Диспетчеризация\ события\ (выполнение\ всех\ связанных\ обработчиков)}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00026}00026\ \ \ \ \ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_event_dispatcher_a17c0aca42340b3a68d7251bd9b1ca2e3}{Dispatch}}(\mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ event\_queue);\ \textcolor{comment}{//\ !!!\ ссылка\ на\ event?\ \ \ }}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00029}00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//std::unordered\_map<EventType,\ std::vector<EventHandler>>\ handlers\_;\ //\ Таблица\ обработчиков}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00031}00031\ \ \ \ \textcolor{comment}{//\ std::unordered\_map<EventType,\ std::vector<std::shared\_ptr<EventHandler>>>\ handlers\_;\ //\ Таблица\ обработчиков}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00033}00033\ \ \ \ \ std::unordered\_map<std::string,\ std::unordered\_map<EventType,\ std::vector<std::shared\_ptr<EventHandler>>>>\ client\_handlers\_;}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8h_source_l00034}00034\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,161 @@
+\doxysection{Game\+Handler Class Reference}
+\hypertarget{class_game_handler}{}\label{class_game_handler}\index{GameHandler@{GameHandler}}
+
+
+{\ttfamily \#include $<$game\+\_\+handler.\+h$>$}
+
+
+
+Inheritance diagram for Game\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_game_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_game_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_handler_aa072e07366db15f7ffcafa14e334608f}{Game\+Handler}} (\mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&, const std\+::string \&)
+\item 
+\mbox{\hyperlink{class_game_handler_a37e9acdced835f48a2bb2a00cb322635}{\texorpdfstring{$\sim$}{\string~}\+Game\+Handler}} ()
+\item 
+boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_game_handler_a2d660820da48be433caa0ba7f2a34b2f}{Forward\+Event\+To\+Handler}} (\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}) override
+\item 
+void \mbox{\hyperlink{class_game_handler_a96d24164f44d741193c383dbd0635413}{Register\+In\+Dispatcher}} (\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&d) override
+\begin{DoxyCompactList}\small\item\em !! по ссылке? \end{DoxyCompactList}\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_game_handler_af5e597d8878f5fdce0d694b682713393}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_avatars_data_ready}{Avatars\+Data\+Ready}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_game_handler_addb6567afabb24dd24dfb425e58fa8df}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_start_game_client_request}{Start\+Game\+Client\+Request}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_game_handler_a8ddded135b71d5d2606d71a640146804}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_exit_game_request}{Exit\+Game\+Request}} $>$ event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_handler_affc1e076502a8be932a74952b7cdad87}{\texorpdfstring{$\sim$}{\string~}\+Event\+Handler}} ()=default
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{Pass\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$, std\+::function$<$ \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}}(std\+::shared\+\_\+ptr$<$ T $>$)$>$, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\begin{DoxyCompactList}\small\item\em Pass\+Classed\+Event uses dynamic\+\_\+pointer\+\_\+cast to convert the event into a derived class and pass it to a handler-\/function. \doxylink{class_event}{Event} conversion is used to get specific member functions of the event. For exapmle, event \doxylink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{game__handler_8h_source_l00017}{17}} of file \mbox{\hyperlink{game__handler_8h_source}{game\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_handler_aa072e07366db15f7ffcafa14e334608f}\index{GameHandler@{GameHandler}!GameHandler@{GameHandler}}
+\index{GameHandler@{GameHandler}!GameHandler@{GameHandler}}
+\doxysubsubsection{\texorpdfstring{GameHandler()}{GameHandler()}}
+{\footnotesize\ttfamily \label{class_game_handler_aa072e07366db15f7ffcafa14e334608f} 
+Game\+Handler\+::\+Game\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&}]{q}{, }\item[{const std\+::string \&}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__handler_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{game__handler_8cpp_source}{game\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_game_handler_a37e9acdced835f48a2bb2a00cb322635}\index{GameHandler@{GameHandler}!````~GameHandler@{\texorpdfstring{$\sim$}{\string~}GameHandler}}
+\index{````~GameHandler@{\texorpdfstring{$\sim$}{\string~}GameHandler}!GameHandler@{GameHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameHandler()}{\string~GameHandler()}}
+{\footnotesize\ttfamily \label{class_game_handler_a37e9acdced835f48a2bb2a00cb322635} 
+Game\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__handler_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{game__handler_8cpp_source}{game\+\_\+handler.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_handler_a2d660820da48be433caa0ba7f2a34b2f}\index{GameHandler@{GameHandler}!ForwardEventToHandler@{ForwardEventToHandler}}
+\index{ForwardEventToHandler@{ForwardEventToHandler}!GameHandler@{GameHandler}}
+\doxysubsubsection{\texorpdfstring{ForwardEventToHandler()}{ForwardEventToHandler()}}
+{\footnotesize\ttfamily \label{class_game_handler_a2d660820da48be433caa0ba7f2a34b2f} 
+boost\+::asio\+::awaitable$<$ void $>$ Game\+Handler\+::\+Forward\+Event\+To\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_abd451bda687f5b108ab5f03e28b77e01}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{game__handler_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{game__handler_8cpp_source}{game\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_game_handler_af5e597d8878f5fdce0d694b682713393}\index{GameHandler@{GameHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!GameHandler@{GameHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_game_handler_af5e597d8878f5fdce0d694b682713393} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Game\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_avatars_data_ready}{Avatars\+Data\+Ready}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__handler_8ipp_source_l00010}{10}} of file \mbox{\hyperlink{game__handler_8ipp_source}{game\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_game_handler_a8ddded135b71d5d2606d71a640146804}\index{GameHandler@{GameHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!GameHandler@{GameHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_game_handler_a8ddded135b71d5d2606d71a640146804} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Game\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_exit_game_request}{Exit\+Game\+Request}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__handler_8ipp_source_l00057}{57}} of file \mbox{\hyperlink{game__handler_8ipp_source}{game\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_game_handler_addb6567afabb24dd24dfb425e58fa8df}\index{GameHandler@{GameHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!GameHandler@{GameHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_game_handler_addb6567afabb24dd24dfb425e58fa8df} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Game\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_start_game_client_request}{Start\+Game\+Client\+Request}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game__handler_8ipp_source_l00017}{17}} of file \mbox{\hyperlink{game__handler_8ipp_source}{game\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_game_handler_a96d24164f44d741193c383dbd0635413}\index{GameHandler@{GameHandler}!RegisterInDispatcher@{RegisterInDispatcher}}
+\index{RegisterInDispatcher@{RegisterInDispatcher}!GameHandler@{GameHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterInDispatcher()}{RegisterInDispatcher()}}
+{\footnotesize\ttfamily \label{class_game_handler_a96d24164f44d741193c383dbd0635413} 
+void Game\+Handler\+::\+Register\+In\+Dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+!! по ссылке? 
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_aefcb4e30e42a09216701c52d43fe7694}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{game__handler_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{game__handler_8cpp_source}{game\+\_\+handler.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{game__handler_8h}{game\+\_\+handler.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{game__handler_8cpp}{game\+\_\+handler.\+cpp}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{game__handler_8ipp}{game\+\_\+handler.\+ipp}}\end{DoxyCompactItemize}

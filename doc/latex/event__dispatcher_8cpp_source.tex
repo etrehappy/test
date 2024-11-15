@@ -1,0 +1,89 @@
+\doxysection{event\+\_\+dispatcher.\+cpp}
+\hypertarget{event__dispatcher_8cpp_source}{}\label{event__dispatcher_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event\_dispatcher.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/event\_dispatcher.cpp}}
+\mbox{\hyperlink{event__dispatcher_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__dispatcher_8h}{event\_dispatcher.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00002}00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00004}\mbox{\hyperlink{class_event_dispatcher_ac68fbc2bc0961a36d22b710f4f6969e1}{00004}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_dispatcher_ac68fbc2bc0961a36d22b710f4f6969e1}{EventDispatcher::RegisterHandler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type,\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00005}00005\ \ \ \ \ std::shared\_ptr<EventHandler>\ handler,\ \textcolor{keyword}{const}\ std::string\&\ event\_routing\_key)}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00007}00007\ \ \ \ \ client\_handlers\_[event\_routing\_key][type].push\_back(handler);}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00010}\mbox{\hyperlink{class_event_dispatcher_aa6dcb31c239ddb4713f0f085d967f26d}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_dispatcher_aa6dcb31c239ddb4713f0f085d967f26d}{EventDispatcher::UnregisterHandlers}}(\textcolor{keyword}{const}\ std::string\&\ event\_routing\_key)}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00012}00012\ \ \ \ \ client\_handlers\_.erase(event\_routing\_key);}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00015}\mbox{\hyperlink{class_event_dispatcher_a17c0aca42340b3a68d7251bd9b1ca2e3}{00015}}\ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_event_dispatcher_a17c0aca42340b3a68d7251bd9b1ca2e3}{EventDispatcher::Dispatch}}(\mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ event\_queue)}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{auto}\ executor\ =\ \textcolor{keyword}{co\_await}\ boost::asio::this\_coro::executor;}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{for}\ (;;)\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Проверяем\ наличие\ события\ в\ очереди}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ \{}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ logger::ErrorEmptyQueue();\ //\ !!!}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00027}00027\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!event\_queue.\mbox{\hyperlink{class_event_queue_a0b78d4a8d8627ed5dafa76440b200da6}{IsEmpty}}())}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\ \textcolor{keyword}{event}\ =\ event\_queue.\mbox{\hyperlink{class_event_queue_ae154887e7c85db8e2fc4a5c0e2336f11}{ExtractTop}}();}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type\ =\ \textcolor{keyword}{event}-\/>GetType();}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ event\_routing\_key\ =\ \textcolor{keyword}{event}-\/>GetRoutingKey();}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abf5b639c245ebb59f065e7418413f0db}{EventType::kBroadcastMessage}})\ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [client\_id,\ handlers\_map]\ :\ client\_handlers\_)}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (client\_id\ !=\ event\_routing\_key\ \&\&\ client\_id\ !=\ settings::server::kDatabaseEventRoutingKey)}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ event\_handler\ :\ handlers\_map[type])\ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(executor,\ event\_handler-\/>ForwardEventToHandler(event),\ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aeaff67467eed443cd69d52fe5ca8d152}{EventType::kDisconnectSession}})}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client\_handlers\_.erase(event\_routing\_key);}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Находим\ соответствующие\ обработчики\ для\ данного\ типа\ события}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (client\_handlers\_.find(event\_routing\_key)\ ==\ client\_handlers\_.end()}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ client\_handlers\_[event\_routing\_key].find(type)\ ==\ client\_handlers\_[event\_routing\_key].end())}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelogger_a84a29a3f51917f63cc4c00d24d6fee49}{logger::ErrorHandlerNotFound}}(type);\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !!!\ TODO:\ если\ обработчика\ нет,\ удалить\ из\ очереди\ и\ показать\ ошибку}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ event\_handler\ :\ client\_handlers\_[event\_routing\_key][type])}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(executor,\ event\_handler-\/>ForwardEventToHandler(event),\ boost::asio::detached);\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Планируем\ следующий\ вызов\ через\ небольшую\ задержку}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ boost::asio::steady\_timer\ timer(executor,\ std::chrono::milliseconds(50));\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{co\_await}\ timer.async\_wait(boost::asio::use\_awaitable);}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{event__dispatcher_8cpp_source_l00083}00083\ }
+
+\end{DoxyCode}

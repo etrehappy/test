@@ -1,0 +1,94 @@
+\doxysection{Broadcast\+Message Class Reference}
+\hypertarget{class_broadcast_message}{}\label{class_broadcast_message}\index{BroadcastMessage@{BroadcastMessage}}
+
+
+Added\+: sender\textquotesingle{}s \doxylink{class_network_handler}{Network\+Handler}. Handles\+: all client\textquotesingle{}s \doxylink{class_network_handler}{Network\+Handler}.  
+
+
+
+
+{\ttfamily \#include $<$event.\+h$>$}
+
+
+
+Inheritance diagram for Broadcast\+Message\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_broadcast_message__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Broadcast\+Message\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_broadcast_message__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_broadcast_message_a547fc8f62fd77a79d0f2f4615556f2a3}{Broadcast\+Message}} (const std\+::shared\+\_\+ptr$<$ Proto\+Message\+::\+Game\+Message $>$, const std\+::string \&session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_event_dispatcher}{Event\+Dispatcher} uses the session\+\_\+id for filtering. \end{DoxyCompactList}\item 
+const std\+::shared\+\_\+ptr$<$ Proto\+Message\+::\+Game\+Message $>$ \mbox{\hyperlink{class_broadcast_message_af5ab272adfc046f218ba30cf901c1766}{Get\+Event\+Message}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_event_ab1ec91d7ec3d4f11b8b965a440347d3b}{Event}} (\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}}, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}, const std\+::string \&)
+\item 
+virtual \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\item 
+\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}} \mbox{\hyperlink{class_event_addc69178c85be30b729eac46efc3adf0}{Get\+Priority}} () const
+\item 
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}} \mbox{\hyperlink{class_event_ada67f712274ef1a5f95df22bde85fc48}{Get\+Type}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_event_ac0e57b1c12e8579aa9d56504ff35d27f}{Get\+Routing\+Key}} () const
+\begin{DoxyCompactList}\small\item\em event\+\_\+routing\+\_\+key\+\_\+ == client\textquotesingle{}s session\+\_\+id\+\_\+ for most events except those handled by the \doxylink{class_database_handler}{Database\+Handler}, because in the MVP-\/version the \doxylink{class_database_handler}{Database\+Handler} is one for all clients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Added\+: sender\textquotesingle{}s \doxylink{class_network_handler}{Network\+Handler}. Handles\+: all client\textquotesingle{}s \doxylink{class_network_handler}{Network\+Handler}. 
+
+Definition at line \mbox{\hyperlink{event_8h_source_l00294}{294}} of file \mbox{\hyperlink{event_8h_source}{event.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_broadcast_message_a547fc8f62fd77a79d0f2f4615556f2a3}\index{BroadcastMessage@{BroadcastMessage}!BroadcastMessage@{BroadcastMessage}}
+\index{BroadcastMessage@{BroadcastMessage}!BroadcastMessage@{BroadcastMessage}}
+\doxysubsubsection{\texorpdfstring{BroadcastMessage()}{BroadcastMessage()}}
+{\footnotesize\ttfamily \label{class_broadcast_message_a547fc8f62fd77a79d0f2f4615556f2a3} 
+Broadcast\+Message\+::\+Broadcast\+Message (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ Proto\+Message\+::\+Game\+Message $>$}]{m}{, }\item[{const std\+::string \&}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_event_dispatcher}{Event\+Dispatcher} uses the session\+\_\+id for filtering. 
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_broadcast_message_af5ab272adfc046f218ba30cf901c1766}\index{BroadcastMessage@{BroadcastMessage}!GetEventMessage@{GetEventMessage}}
+\index{GetEventMessage@{GetEventMessage}!BroadcastMessage@{BroadcastMessage}}
+\doxysubsubsection{\texorpdfstring{GetEventMessage()}{GetEventMessage()}}
+{\footnotesize\ttfamily \label{class_broadcast_message_af5ab272adfc046f218ba30cf901c1766} 
+const std\+::shared\+\_\+ptr$<$ Proto\+Message\+::\+Game\+Message $>$ Broadcast\+Message\+::\+Get\+Event\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event_8h}{event.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event_8cpp}{event.\+cpp}}\end{DoxyCompactItemize}

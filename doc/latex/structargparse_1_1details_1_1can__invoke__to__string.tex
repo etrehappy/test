@@ -1,0 +1,65 @@
+\doxysection{argparse\+::details\+::can\+\_\+invoke\+\_\+to\+\_\+string\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structargparse_1_1details_1_1can__invoke__to__string}{}\label{structargparse_1_1details_1_1can__invoke__to__string}\index{argparse::details::can\_invoke\_to\_string$<$ T $>$@{argparse::details::can\_invoke\_to\_string$<$ T $>$}}
+
+
+{\ttfamily \#include $<$argparse.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename U $>$ }\\static auto \mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string_acbcb7724f8cdbf0cfa0a01ef029fad0a}{test}} (int) -\/$>$ decltype(std\+::to\+\_\+string(std\+::declval$<$ U $>$()), std\+::true\+\_\+type\{\})
+\item 
+{\footnotesize template$<$typename U $>$ }\\static auto \mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string_af482100bc8e9c42a8f1a79009058be92}{test}} (...) -\/$>$ std\+::false\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string_ad0dab3fecc2983d41526ff39ac2ba26b}{value}} = decltype(\mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string_acbcb7724f8cdbf0cfa0a01ef029fad0a}{test}}$<$T$>$(0))\+::value
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct argparse\+::details\+::can\+\_\+invoke\+\_\+to\+\_\+string$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00520}{520}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structargparse_1_1details_1_1can__invoke__to__string_af482100bc8e9c42a8f1a79009058be92}\index{argparse::details::can\_invoke\_to\_string$<$ T $>$@{argparse::details::can\_invoke\_to\_string$<$ T $>$}!test@{test}}
+\index{test@{test}!argparse::details::can\_invoke\_to\_string$<$ T $>$@{argparse::details::can\_invoke\_to\_string$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structargparse_1_1details_1_1can__invoke__to__string_af482100bc8e9c42a8f1a79009058be92} 
+template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+static auto \mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string}{argparse\+::details\+::can\+\_\+invoke\+\_\+to\+\_\+string}}$<$ T $>$\+::test (\begin{DoxyParamCaption}\item[{}]{...}{}\end{DoxyParamCaption}) -\/$>$  std\+::false\+\_\+type\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{structargparse_1_1details_1_1can__invoke__to__string_acbcb7724f8cdbf0cfa0a01ef029fad0a}\index{argparse::details::can\_invoke\_to\_string$<$ T $>$@{argparse::details::can\_invoke\_to\_string$<$ T $>$}!test@{test}}
+\index{test@{test}!argparse::details::can\_invoke\_to\_string$<$ T $>$@{argparse::details::can\_invoke\_to\_string$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structargparse_1_1details_1_1can__invoke__to__string_acbcb7724f8cdbf0cfa0a01ef029fad0a} 
+template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+static auto \mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string}{argparse\+::details\+::can\+\_\+invoke\+\_\+to\+\_\+string}}$<$ T $>$\+::test (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption}) -\/$>$  decltype(std\+::to\+\_\+string(std\+::declval$<$ U $>$()), std\+::true\+\_\+type\{\})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structargparse_1_1details_1_1can__invoke__to__string_ad0dab3fecc2983d41526ff39ac2ba26b}\index{argparse::details::can\_invoke\_to\_string$<$ T $>$@{argparse::details::can\_invoke\_to\_string$<$ T $>$}!value@{value}}
+\index{value@{value}!argparse::details::can\_invoke\_to\_string$<$ T $>$@{argparse::details::can\_invoke\_to\_string$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{structargparse_1_1details_1_1can__invoke__to__string_ad0dab3fecc2983d41526ff39ac2ba26b} 
+template$<$typename T $>$ \\
+bool \mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string}{argparse\+::details\+::can\+\_\+invoke\+\_\+to\+\_\+string}}$<$ T $>$\+::value = decltype(\mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string_acbcb7724f8cdbf0cfa0a01ef029fad0a}{test}}$<$T$>$(0))\+::value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00527}{527}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{argparse_8hpp}{argparse.\+hpp}}\end{DoxyCompactItemize}

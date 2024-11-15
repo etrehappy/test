@@ -1,0 +1,79 @@
+\doxysection{game\+\_\+handler.\+cpp}
+\hypertarget{game__handler_8cpp_source}{}\label{game__handler_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/game\_handler.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/game\_handler.cpp}}
+\mbox{\hyperlink{game__handler_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__handler_8h}{game\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__handler_8ipp}{game\_handler.ipp}}"{}}\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00004}\mbox{\hyperlink{class_game_handler_aa072e07366db15f7ffcafa14e334608f}{00004}}\ \mbox{\hyperlink{class_game_handler_aa072e07366db15f7ffcafa14e334608f}{GameHandler::GameHandler}}(\mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ q,\ \textcolor{keyword}{const}\ std::string\&\ session\_id)}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00005}00005\ \ \ \ \ :event\_queue\_\{q\},\ event\_routing\_key\_\{session\_id\}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00006}00006\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00009}\mbox{\hyperlink{class_game_handler_a37e9acdced835f48a2bb2a00cb322635}{00009}}\ \mbox{\hyperlink{class_game_handler_a37e9acdced835f48a2bb2a00cb322635}{GameHandler::\string~GameHandler}}()}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00013}\mbox{\hyperlink{class_game_handler_a96d24164f44d741193c383dbd0635413}{00013}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_handler_a96d24164f44d741193c383dbd0635413}{GameHandler::RegisterInDispatcher}}(\mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ d)}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{auto}\ register\_handler\ =\ [\textcolor{keyword}{this},\ \&d](\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type)\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_event_dispatcher_ac68fbc2bc0961a36d22b710f4f6969e1}{RegisterHandler}}(type,\ shared\_from\_this(),\ event\_routing\_key\_);}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00019}00019\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a248c0d18c59730fb232512cf5797423c}{EventType::kStartGameClientRequest}});}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00020}00020\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629ab320da4595b495406a9749bad2e43732}{EventType::kAvatarsDataReady}});}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00021}00021\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8ffcf14f9269e2cdc8f086caed5e14e8}{EventType::kExitGameRequest}});}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00024}\mbox{\hyperlink{class_game_handler_a2d660820da48be433caa0ba7f2a34b2f}{00024}}\ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_game_handler_a2d660820da48be433caa0ba7f2a34b2f}{GameHandler::ForwardEventToHandler}}(\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\ event)}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{auto}\ executor\ =\ \textcolor{keyword}{co\_await}\ boost::asio::this\_coro::executor;}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{switch}\ (event-\/>GetType())}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a248c0d18c59730fb232512cf5797423c}{EventType::kStartGameClientRequest}}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<StartGameClientRequest>}}(}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&GameHandler::HandleClassedEvent<StartGameClientRequest>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a248c0d18c59730fb232512cf5797423c}{EventType::kStartGameClientRequest}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629ab320da4595b495406a9749bad2e43732}{EventType::kAvatarsDataReady}}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<AvatarsDataReady>}}(}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&GameHandler::HandleClassedEvent<AvatarsDataReady>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629ab320da4595b495406a9749bad2e43732}{EventType::kAvatarsDataReady}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8ffcf14f9269e2cdc8f086caed5e14e8}{EventType::kExitGameRequest}}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<ExitGameRequest>}}(}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&GameHandler::HandleClassedEvent<ExitGameRequest>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a8ffcf14f9269e2cdc8f086caed5e14e8}{EventType::kExitGameRequest}}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a35c3ace1970663a16e5c65baa5941b13}{EventType::kNone}}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a374bf9ba57a441a600d65b212cf9d13c}{EventType::kEnd}}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{game__handler_8cpp_source_l00073}00073\ \}}
+
+\end{DoxyCode}

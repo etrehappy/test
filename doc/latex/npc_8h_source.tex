@@ -1,0 +1,44 @@
+\doxysection{npc.\+h}
+\hypertarget{npc_8h_source}{}\label{npc_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/common/npc.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/common/npc.h}}
+\mbox{\hyperlink{npc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00008}\mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdf}{00008}}\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdf}{NpcName}}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00010}00010\ \ \ \ \ \textcolor{comment}{/*\ Npc\ from\ the\ Tavern\ (Таверна)\ */}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdfab1412602fcd7e24da1fba4f03af0dac7}{kLora}}\ =\ 1}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00012}00012\ \ \ \ \ ,\ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdfad0298e41bc09833dda9e68c9f374d370}{kAdrik}}\ =\ 2}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00014}00014\ \ \ \ \ ,\ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdfa374bf9ba57a441a600d65b212cf9d13c}{kEnd}}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00015}00015\ \};}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00017}\mbox{\hyperlink{class_npc}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_npc}{Npc}}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_npc_a5104c873fc272bce01060073b615cd3d}{Npc}}(\textcolor{keyword}{const}\ uint32\_t\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\ text\_name,\ \textcolor{keyword}{const}\ uint32\_t\ race\_id}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ ,\ \textcolor{keyword}{const}\ std::string\ descr,\ \textcolor{keyword}{const}\ uint32\_t\ health,\ \textcolor{keyword}{const}\ uint32\_t\ location\_id}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ ,\ \textcolor{keyword}{const}\ uint32\_t\ x,\ \textcolor{keyword}{const}\ uint32\_t\ y);}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00025}\mbox{\hyperlink{class_npc_a0a8a53b9da1534f2934fcf8f14379671}{00025}}\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_npc_a0a8a53b9da1534f2934fcf8f14379671}{GetTextName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ string\_name\_;\ \}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00026}\mbox{\hyperlink{class_npc_af23d01bed4673b3720261ab47d3d1e4c}{00026}}\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_npc_af23d01bed4673b3720261ab47d3d1e4c}{GetDescription}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ description\_;\ \}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00027}\mbox{\hyperlink{class_npc_a9ddcacac0c905eb3de1e773e4aad3393}{00027}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_npc_a9ddcacac0c905eb3de1e773e4aad3393}{GetLocationId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ location\_id\_;\ \}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00028}\mbox{\hyperlink{class_npc_ae539c7110ac5df000dcd9b2db3686dcd}{00028}}\ \ \ \ \ \textcolor{keyword}{const}\ std::pair<uint32\_t,\ uint32\_t>\&\ \mbox{\hyperlink{class_npc_ae539c7110ac5df000dcd9b2db3686dcd}{GetPosition}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ position\_;\ \}}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdf}{NpcName}}\ \mbox{\hyperlink{class_npc_af926bb0d89cabd14afdb96a175d45298}{GetEnumName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00032}00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ id\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ string\_name\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ race\_id\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ description\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00037}00037\ \ \ \ \ uint32\_t\ health\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ location\_id\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{const}\ std::pair<const\ uint32\_t,\ const\ uint32\_t>\ position\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{npc_8h_a557d4eb3d9c57854e638ede35eb6acdf}{NpcName}}\ name\_;}
+\DoxyCodeLine{\Hypertarget{npc_8h_source_l00041}00041\ \};}
+
+\end{DoxyCode}

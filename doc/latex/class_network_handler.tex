@@ -1,0 +1,314 @@
+\doxysection{Network\+Handler Class Reference}
+\hypertarget{class_network_handler}{}\label{class_network_handler}\index{NetworkHandler@{NetworkHandler}}
+
+
+{\ttfamily \#include $<$network\+\_\+handler.\+h$>$}
+
+
+
+Inheritance diagram for Network\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_network_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Network\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_network_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\+\_\+message}} = Proto\+Message\+::\+Game\+Message
+\item 
+using \mbox{\hyperlink{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}{const\+\_\+proto\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\+\_\+message}}$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_handler_a22605e83fa247d9b772d0c5488c71943}{Network\+Handler}} ()
+\item 
+\mbox{\hyperlink{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba}{\texorpdfstring{$\sim$}{\string~}\+Network\+Handler}} ()
+\item 
+void \mbox{\hyperlink{class_network_handler_a243dce273b64311a96326755b98de6a7}{Connect\+To\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_network_handler_a389ddf7dcd90417dd83c66daa1a8fb01}{Start\+Listening}} ()
+\item 
+void \mbox{\hyperlink{class_network_handler_aad176ac5a8154c0614220fd874d1f7ce}{Stop\+Listening}} ()
+\item 
+void \mbox{\hyperlink{class_network_handler_a7e973865376e76d33d2a06ea10511fed}{Register\+Single\+Observer}} (std\+::function$<$ void(const \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\+\_\+message}} \&)$>$)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_game_logic}{Game\+Logic} observes a new message from a server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_handler_a64f06a1352133b5a0385c6b25b8c50d8}{Send}} (\mbox{\hyperlink{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}{const\+\_\+proto\+\_\+ptr}})
+\item 
+\mbox{\hyperlink{class_network_handler_a1942a7922a54bb47201eb22808c1f639}{Network\+Handler}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{server_2network__handler_8h_af4e0e89164fb3480a9c6375b63be7b60}{b\+\_\+tcp\+\_\+socket}} $>$ s, \mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&, const std\+::string \&)
+\item 
+\mbox{\hyperlink{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba}{\texorpdfstring{$\sim$}{\string~}\+Network\+Handler}} ()
+\item 
+boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_network_handler_a65b72688cefee1e25873c6ebe8769345}{Forward\+Event\+To\+Handler}} (\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}) override
+\item 
+boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_network_handler_ab92d420b85e06665d35b927a8b9d4ea8}{Get\+Client\+Response}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_client_session}{Client\+Session}} $>$ session)
+\item 
+void \mbox{\hyperlink{class_network_handler_a22300a872e946ca346a13c6d60abb487}{Register\+In\+Dispatcher}} (\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&d) override
+\begin{DoxyCompactList}\small\item\em !! по ссылке? \end{DoxyCompactList}\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_network_handler_acb6e992576610f9a6b93f6dbffed4a69}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_success_check_log_pas}{Success\+Check\+Log\+Pas}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_network_handler_ac403a76c0e9d51c92a03fa8fe39daa2c}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_avatar_list_is_ready}{Avatar\+List\+Is\+Ready}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_network_handler_ad14647e56b5eaec8c7ee926b04d4befd}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_start_game_server_response_sucsses}{Start\+Game\+Server\+Response\+Sucsses}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_network_handler_aa8f572837228ab410c0aae5003af6731}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_broadcast_message}{Broadcast\+Message}} $>$ event)
+\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_network_handler_a644b24c80b5e4d93abe11c1fc093dbfb}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_exit_game_response}{Exit\+Game\+Response}} $>$ event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_handler_affc1e076502a8be932a74952b7cdad87}{\texorpdfstring{$\sim$}{\string~}\+Event\+Handler}} ()=default
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{Pass\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$, std\+::function$<$ \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}}(std\+::shared\+\_\+ptr$<$ T $>$)$>$, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\begin{DoxyCompactList}\small\item\em Pass\+Classed\+Event uses dynamic\+\_\+pointer\+\_\+cast to convert the event into a derived class and pass it to a handler-\/function. \doxylink{class_event}{Event} conversion is used to get specific member functions of the event. For exapmle, event \doxylink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8h_source_l00011}{11}} of file \mbox{\hyperlink{client_2network__handler_8h_source}{network\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}\index{NetworkHandler@{NetworkHandler}!const\_proto\_ptr@{const\_proto\_ptr}}
+\index{const\_proto\_ptr@{const\_proto\_ptr}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{const\_proto\_ptr}{const\_proto\_ptr}}
+{\footnotesize\ttfamily \label{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206} 
+using \mbox{\hyperlink{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}{Network\+Handler\+::const\+\_\+proto\+\_\+ptr}} = std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\+\_\+message}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8h_source_l00015}{15}} of file \mbox{\hyperlink{client_2network__handler_8h_source}{network\+\_\+handler.\+h}}.
+
+\Hypertarget{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}\index{NetworkHandler@{NetworkHandler}!proto\_message@{proto\_message}}
+\index{proto\_message@{proto\_message}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{proto\_message}{proto\_message}}
+{\footnotesize\ttfamily \label{class_network_handler_ae2943a13ee6475f86b0a445b718071c0} 
+using \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{Network\+Handler\+::proto\+\_\+message}} = Proto\+Message\+::\+Game\+Message}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8h_source_l00014}{14}} of file \mbox{\hyperlink{client_2network__handler_8h_source}{network\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_network_handler_a22605e83fa247d9b772d0c5488c71943}\index{NetworkHandler@{NetworkHandler}!NetworkHandler@{NetworkHandler}}
+\index{NetworkHandler@{NetworkHandler}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{NetworkHandler()}{NetworkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_network_handler_a22605e83fa247d9b772d0c5488c71943} 
+Network\+Handler\+::\+Network\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{client_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba}\index{NetworkHandler@{NetworkHandler}!````~NetworkHandler@{\texorpdfstring{$\sim$}{\string~}NetworkHandler}}
+\index{````~NetworkHandler@{\texorpdfstring{$\sim$}{\string~}NetworkHandler}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NetworkHandler()}{\string~NetworkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba} 
+Network\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Network\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{client_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_a1942a7922a54bb47201eb22808c1f639}\index{NetworkHandler@{NetworkHandler}!NetworkHandler@{NetworkHandler}}
+\index{NetworkHandler@{NetworkHandler}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{NetworkHandler()}{NetworkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_network_handler_a1942a7922a54bb47201eb22808c1f639} 
+Network\+Handler\+::\+Network\+Handler (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{server_2network__handler_8h_af4e0e89164fb3480a9c6375b63be7b60}{b\+\_\+tcp\+\_\+socket}} $>$}]{s}{, }\item[{\mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&}]{q}{, }\item[{const std\+::string \&}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2network__handler_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{server_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba}\index{NetworkHandler@{NetworkHandler}!````~NetworkHandler@{\texorpdfstring{$\sim$}{\string~}NetworkHandler}}
+\index{````~NetworkHandler@{\texorpdfstring{$\sim$}{\string~}NetworkHandler}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NetworkHandler()}{\string~NetworkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba} 
+Network\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Network\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_handler_a243dce273b64311a96326755b98de6a7}\index{NetworkHandler@{NetworkHandler}!ConnectToServer@{ConnectToServer}}
+\index{ConnectToServer@{ConnectToServer}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{ConnectToServer()}{ConnectToServer()}}
+{\footnotesize\ttfamily \label{class_network_handler_a243dce273b64311a96326755b98de6a7} 
+void Network\+Handler\+::\+Connect\+To\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{client_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_a65b72688cefee1e25873c6ebe8769345}\index{NetworkHandler@{NetworkHandler}!ForwardEventToHandler@{ForwardEventToHandler}}
+\index{ForwardEventToHandler@{ForwardEventToHandler}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{ForwardEventToHandler()}{ForwardEventToHandler()}}
+{\footnotesize\ttfamily \label{class_network_handler_a65b72688cefee1e25873c6ebe8769345} 
+boost\+::asio\+::awaitable$<$ void $>$ Network\+Handler\+::\+Forward\+Event\+To\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_abd451bda687f5b108ab5f03e28b77e01}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{server_2network__handler_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{server_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_ab92d420b85e06665d35b927a8b9d4ea8}\index{NetworkHandler@{NetworkHandler}!GetClientResponse@{GetClientResponse}}
+\index{GetClientResponse@{GetClientResponse}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{GetClientResponse()}{GetClientResponse()}}
+{\footnotesize\ttfamily \label{class_network_handler_ab92d420b85e06665d35b927a8b9d4ea8} 
+boost\+::asio\+::awaitable$<$ void $>$ Network\+Handler\+::\+Get\+Client\+Response (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_client_session}{Client\+Session}} $>$}]{session}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2network__handler_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{server_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_ac403a76c0e9d51c92a03fa8fe39daa2c}\index{NetworkHandler@{NetworkHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_network_handler_ac403a76c0e9d51c92a03fa8fe39daa2c} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Network\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_avatar_list_is_ready}{Avatar\+List\+Is\+Ready}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{network__handler_8ipp_source_l00033}{33}} of file \mbox{\hyperlink{network__handler_8ipp_source}{network\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_network_handler_aa8f572837228ab410c0aae5003af6731}\index{NetworkHandler@{NetworkHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{class_network_handler_aa8f572837228ab410c0aae5003af6731} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Network\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_broadcast_message}{Broadcast\+Message}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{network__handler_8ipp_source_l00120}{120}} of file \mbox{\hyperlink{network__handler_8ipp_source}{network\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_network_handler_a644b24c80b5e4d93abe11c1fc093dbfb}\index{NetworkHandler@{NetworkHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_network_handler_a644b24c80b5e4d93abe11c1fc093dbfb} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Network\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_exit_game_response}{Exit\+Game\+Response}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{network__handler_8ipp_source_l00152}{152}} of file \mbox{\hyperlink{network__handler_8ipp_source}{network\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_network_handler_ad14647e56b5eaec8c7ee926b04d4befd}\index{NetworkHandler@{NetworkHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{class_network_handler_ad14647e56b5eaec8c7ee926b04d4befd} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Network\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_start_game_server_response_sucsses}{Start\+Game\+Server\+Response\+Sucsses}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{network__handler_8ipp_source_l00067}{67}} of file \mbox{\hyperlink{network__handler_8ipp_source}{network\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_network_handler_acb6e992576610f9a6b93f6dbffed4a69}\index{NetworkHandler@{NetworkHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_network_handler_acb6e992576610f9a6b93f6dbffed4a69} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ Network\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_success_check_log_pas}{Success\+Check\+Log\+Pas}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{network__handler_8ipp_source_l00002}{2}} of file \mbox{\hyperlink{network__handler_8ipp_source}{network\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_network_handler_a22300a872e946ca346a13c6d60abb487}\index{NetworkHandler@{NetworkHandler}!RegisterInDispatcher@{RegisterInDispatcher}}
+\index{RegisterInDispatcher@{RegisterInDispatcher}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterInDispatcher()}{RegisterInDispatcher()}}
+{\footnotesize\ttfamily \label{class_network_handler_a22300a872e946ca346a13c6d60abb487} 
+void Network\+Handler\+::\+Register\+In\+Dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+!! по ссылке? 
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_aefcb4e30e42a09216701c52d43fe7694}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{server_2network__handler_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{server_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_a7e973865376e76d33d2a06ea10511fed}\index{NetworkHandler@{NetworkHandler}!RegisterSingleObserver@{RegisterSingleObserver}}
+\index{RegisterSingleObserver@{RegisterSingleObserver}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterSingleObserver()}{RegisterSingleObserver()}}
+{\footnotesize\ttfamily \label{class_network_handler_a7e973865376e76d33d2a06ea10511fed} 
+void Network\+Handler\+::\+Register\+Single\+Observer (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\+\_\+message}} \&)$>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_game_logic}{Game\+Logic} observes a new message from a server. 
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{client_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_a64f06a1352133b5a0385c6b25b8c50d8}\index{NetworkHandler@{NetworkHandler}!Send@{Send}}
+\index{Send@{Send}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{Send()}{Send()}}
+{\footnotesize\ttfamily \label{class_network_handler_a64f06a1352133b5a0385c6b25b8c50d8} 
+void Network\+Handler\+::\+Send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}{const\+\_\+proto\+\_\+ptr}}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{client_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_a389ddf7dcd90417dd83c66daa1a8fb01}\index{NetworkHandler@{NetworkHandler}!StartListening@{StartListening}}
+\index{StartListening@{StartListening}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{StartListening()}{StartListening()}}
+{\footnotesize\ttfamily \label{class_network_handler_a389ddf7dcd90417dd83c66daa1a8fb01} 
+void Network\+Handler\+::\+Start\+Listening (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{client_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_network_handler_aad176ac5a8154c0614220fd874d1f7ce}\index{NetworkHandler@{NetworkHandler}!StopListening@{StopListening}}
+\index{StopListening@{StopListening}!NetworkHandler@{NetworkHandler}}
+\doxysubsubsection{\texorpdfstring{StopListening()}{StopListening()}}
+{\footnotesize\ttfamily \label{class_network_handler_aad176ac5a8154c0614220fd874d1f7ce} 
+void Network\+Handler\+::\+Stop\+Listening (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2network__handler_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{client_2network__handler_8cpp_source}{network\+\_\+handler.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{client_2network__handler_8h}{network\+\_\+handler.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{server_2network__handler_8h}{network\+\_\+handler.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/\mbox{\hyperlink{client_2network__handler_8cpp}{network\+\_\+handler.\+cpp}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{server_2network__handler_8cpp}{network\+\_\+handler.\+cpp}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{network__handler_8ipp}{network\+\_\+handler.\+ipp}}\end{DoxyCompactItemize}

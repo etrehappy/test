@@ -1,0 +1,49 @@
+\doxysection{network\+\_\+handler.\+h}
+\hypertarget{client_2network__handler_8h_source}{}\label{client_2network__handler_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/network\_handler.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/network\_handler.h}}
+\mbox{\hyperlink{client_2network__handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}messages.pb.h"{}}}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00009}\mbox{\hyperlink{client_2network__handler_8h_a829b9050b5b45759db9fe3c58d9fcf4b}{00009}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{client_2network__handler_8h_a829b9050b5b45759db9fe3c58d9fcf4b}{b\_tcp}}\ =\ boost::asio::ip::tcp;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00011}\mbox{\hyperlink{class_network_handler}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_network_handler}{NetworkHandler}}}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00014}\mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{00014}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\_message}}\ =\ ProtoMessage::GameMessage;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00015}\mbox{\hyperlink{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}{00015}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}{const\_proto\_ptr}}\ =\ std::unique\_ptr<const\ proto\_message>;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_network_handler_a22605e83fa247d9b772d0c5488c71943}{NetworkHandler}}();}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_network_handler_afd2794c885d5c9ed46d9ec8ed2140eba}{\string~NetworkHandler}}();}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_handler_a243dce273b64311a96326755b98de6a7}{ConnectToServer}}();}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_handler_a389ddf7dcd90417dd83c66daa1a8fb01}{StartListening}}();}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_handler_aad176ac5a8154c0614220fd874d1f7ce}{StopListening}}();}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_handler_a7e973865376e76d33d2a06ea10511fed}{RegisterSingleObserver}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\_message}}\&)>);}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_handler_a64f06a1352133b5a0385c6b25b8c50d8}{Send}}(\mbox{\hyperlink{class_network_handler_a89c0aad3bbe52cad90ea8cdb84700206}{const\_proto\_ptr}});}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00030}00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ Listen();}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ NextFunction();}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00041}00041\ \ \ \ \ boost::asio::io\_context\ io\_context\_;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00042}00042\ \ \ \ \ b\_tcp::socket\ socket\_;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00043}00043\ \ \ \ \ b\_tcp::resolver\ resolver\_;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00045}00045\ \ \ \ \ std::atomic<bool>\ stop\_listen\_;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00046}00046\ \ \ \ \ std::thread\ listen\_thread\_;\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00047}00047\ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_network_handler_ae2943a13ee6475f86b0a445b718071c0}{proto\_message}}\&)>\ notify\_;}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00050}00050\ \};}
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{client_2network__handler_8h_source_l00052}00052\ }
+
+\end{DoxyCode}

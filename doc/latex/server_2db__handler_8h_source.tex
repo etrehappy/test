@@ -1,0 +1,46 @@
+\doxysection{db\+\_\+handler.\+h}
+\hypertarget{server_2db__handler_8h_source}{}\label{server_2db__handler_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/db\_handler.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/db\_handler.h}}
+\mbox{\hyperlink{server_2db__handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SQLiteCpp/SQLiteCpp.h>}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <boost/asio/experimental/awaitable\_operators.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <boost/asio/awaitable.hpp>}\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__handler_8h}{event\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__dispatcher_8h}{event\_dispatcher.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__queue_8h}{event\_queue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{database_8h}{database.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__elements_8h}{game\_elements.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00021}00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_database_handler}{DatabaseHandler}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00022}00022\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event_handler}{EventHandler}},\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<EventHandler>\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00024}00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00025}\mbox{\hyperlink{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}{00025}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}{b\_await\_void}}\ =\ boost::asio::awaitable<void>;}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_database_handler_ac27357d3431faf4fd6810483a24a43fd}{DatabaseHandler}}(\mbox{\hyperlink{class_database}{Database}}\&,\ \mbox{\hyperlink{class_event_queue}{EventQueue}}\&);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00028}\mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{00028}}\ \ \ \ \ \mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{\string~DatabaseHandler}}();}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00029}00029\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}{b\_await\_void}}\ \mbox{\hyperlink{class_database_handler_af7d89bdb4ca0067634a0f2c3789dd711}{ForwardEventToHandler}}(\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_database_handler_ae63b3fd50309f1a876f17f22d9f059e3}{RegisterInDispatcher}}(\mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ d)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00033}00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{class_database_handler_a58b9532f3d128953fd28a2185a38ea4e}{b\_await\_void}}\ HandleClassedEvent(std::shared\_ptr<T>\ event);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//boost::asio::awaitable<void>\ CheckLogPas(std::shared\_ptr<LogPasClientResponse>\ event);}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//boost::asio::awaitable<void>\ GetAvatarList(std::shared\_ptr<AvatarListClientRequest>\ event);}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ event\_queue\_;}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//std::shared\_ptr<SQLite::Database>\ db\_read\_;}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00043}00043\ \ \ \ \ std::shared\_ptr<SQLite::Database>\ db\_read\_write\_;}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8h_source_l00044}00044\ \};}
+
+\end{DoxyCode}

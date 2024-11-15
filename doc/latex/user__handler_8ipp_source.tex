@@ -1,0 +1,36 @@
+\doxysection{user\+\_\+handler.\+ipp}
+\hypertarget{user__handler_8ipp_source}{}\label{user__handler_8ipp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/user\_handler.ipp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/user\_handler.ipp}}
+\mbox{\hyperlink{user__handler_8ipp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00002}00002\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00003}\mbox{\hyperlink{class_user_handler_af03bf0276a623ed44dfb6cd7285d1197}{00003}}\ boost::asio::awaitable<void>\ UserHandler::HandleClassedEvent(std::shared\_ptr<SuccessCheckLogPas>\ event)}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00005}00005\ \ \ \ \ logged\_in\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00006}00006\ \ \ \ \ uuid\_\ =\ \textcolor{keyword}{event}-\/>GetUuid();}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00011}00011\ \textcolor{comment}{//template<>}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00012}00012\ \textcolor{comment}{//void\ NetworkHandler::HandleClassedEvent(std::shared\_ptr<FailureCheckLogPas>\ event)}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00013}00013\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00014}00014\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//void\ HandleClassedEvent(std::shared\_ptr<T>\ event);}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//case\ EventType::kFailureCheckLogPas:}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ \ boost::asio::co\_spawn(}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ executor,}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ PassClassedEvent<FailureCheckLogPas>(}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ event,}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::bind(\&NetworkHandler::HandleClassedEvent<FailureCheckLogPas>,\ this,\ std::placeholders::\_1),}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ EventType::kFailureCheckLogPas}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ ),}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ boost::asio::detached);}}
+\DoxyCodeLine{\Hypertarget{user__handler_8ipp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\}}}
+
+\end{DoxyCode}

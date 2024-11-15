@@ -1,0 +1,30 @@
+\doxysection{db\+\_\+handler.\+h}
+\hypertarget{client_2db__handler_8h_source}{}\label{client_2db__handler_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/db\_handler.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/db\_handler.h}}
+\mbox{\hyperlink{client_2db__handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <SQLiteCpp/SQLiteCpp.h>}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__elements_8h}{game\_elements.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00009}\mbox{\hyperlink{class_database_handler}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_database_handler}{DatabaseHandler}}}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00011}00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_database_handler_ac27357d3431faf4fd6810483a24a43fd}{DatabaseHandler}}();}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{\string~DatabaseHandler}}();}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00015}00015\ \ \ \ \ std::shared\_ptr<Location>\ \mbox{\hyperlink{class_database_handler_a946354e8d12080390e0e6aaadebaf284}{SetLocation}}(\textcolor{keyword}{const}\ uint32\_t,\ std::mutex\&);}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{void}\ OpenDb();}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00019}00019\ \ \ \ \ std::map<NpcName,\ Npc>\ GetNpcListData(\textcolor{keyword}{const}\ uint32\_t);}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00021}00021\ \ \ \ \ std::shared\_ptr\ <SQLite::Database>\ db\_read\_;}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00023}00023\ \};}
+\DoxyCodeLine{\Hypertarget{client_2db__handler_8h_source_l00024}00024\ }
+
+\end{DoxyCode}

@@ -1,0 +1,165 @@
+\doxysection{C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/parser.h File Reference}
+\hypertarget{parser_8h}{}\label{parser_8h}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/parser.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/parser.h}}
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for parser.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{parser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{parser_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_chat_message}{Chat\+Message}}
+\item 
+struct \mbox{\hyperlink{struct_go_command}{Go\+Command}}
+\item 
+class \mbox{\hyperlink{class_parser}{Parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{Command\+Variant}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{Command\+List}} \+: uint32\+\_\+t \{ \newline
+\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}{k\+None}} = 0
+, \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a3ff3255763404f286cc75aa78972601c}{k\+Menu}}
+, \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a7f9bec1a0304f1444d684aed5eddf0f8}{k\+Speak}}
+, \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1aea2a1104b7cd82f7f248e61cd6700f80}{k\+Chat}}
+, \newline
+\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1afb5397a5037cdaeda0a604dcbfe8c01f}{k\+Map}}
+, \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1acd1750f89d2eda82b0212e859686d62b}{k\+Current\+Location}}
+, \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a44502fe4915d471b71350f3371066aac}{k\+Go}}
+, \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a374bf9ba57a441a600d65b212cf9d13c}{k\+End}}
+ \}
+\item 
+enum class \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127f}{Directions\+List}} \+: uint16\+\_\+t \{ \newline
+\mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fa35c3ace1970663a16e5c65baa5941b13}{k\+None}} = 0
+, \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fac1079db2ce4428bb7b1f7ce7288c887c}{k\+North}}
+, \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127faa71b63644c9f83d8f5a14cce40f0e53c}{k\+South}}
+, \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fa3bd54bab29f3403de0f8b50a02967b23}{k\+West}}
+, \newline
+\mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fae9deb5248e8d61eed4f3ac200c83991b}{k\+East}}
+, \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127fa374bf9ba57a441a600d65b212cf9d13c}{k\+End}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}\index{parser.h@{parser.h}!CommandVariant@{CommandVariant}}
+\index{CommandVariant@{CommandVariant}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{CommandVariant}{CommandVariant}}
+{\footnotesize\ttfamily \label{parser_8h_a70d2a3f60204080eb79fe1ecac365d98} 
+using \mbox{\hyperlink{parser_8h_a70d2a3f60204080eb79fe1ecac365d98}{Command\+Variant}}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ std::variant<\mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{CommandList}}}
+\DoxyCodeLine{\ \ \ \ ,\ std::unique\_ptr<std::pair<CommandList,\ ChatMessage>>}
+\DoxyCodeLine{\ \ \ \ ,\ std::unique\_ptr<std::pair<CommandList,\ GoCommand>>}
+\DoxyCodeLine{>}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{parser_8h_source_l00046}{46}} of file \mbox{\hyperlink{parser_8h_source}{parser.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}\index{parser.h@{parser.h}!CommandList@{CommandList}}
+\index{CommandList@{CommandList}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{CommandList}{CommandList}}
+{\footnotesize\ttfamily \label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+enum class \mbox{\hyperlink{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1}{Command\+List}} \+: uint32\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNone@{kNone}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kNone@{kNone}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a35c3ace1970663a16e5c65baa5941b13}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMenu@{kMenu}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kMenu@{kMenu}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a3ff3255763404f286cc75aa78972601c}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSpeak@{kSpeak}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kSpeak@{kSpeak}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a7f9bec1a0304f1444d684aed5eddf0f8}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+Speak&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kChat@{kChat}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kChat@{kChat}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1aea2a1104b7cd82f7f248e61cd6700f80}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+Chat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMap@{kMap}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kMap@{kMap}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1afb5397a5037cdaeda0a604dcbfe8c01f}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+Map&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kCurrentLocation@{kCurrentLocation}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kCurrentLocation@{kCurrentLocation}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1acd1750f89d2eda82b0212e859686d62b}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+Current\+Location&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kGo@{kGo}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kGo@{kGo}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a44502fe4915d471b71350f3371066aac}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+Go&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEnd@{kEnd}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kEnd@{kEnd}}}\Hypertarget{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1a374bf9ba57a441a600d65b212cf9d13c}\label{parser_8h_ad39ede2bd3f9004b85e74dbc103c50f1} 
+k\+End&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{parser_8h_source_l00008}{8}} of file \mbox{\hyperlink{parser_8h_source}{parser.\+h}}.
+
+\Hypertarget{parser_8h_a70359c3ffb606dcdca00426b29cf127f}\index{parser.h@{parser.h}!DirectionsList@{DirectionsList}}
+\index{DirectionsList@{DirectionsList}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{DirectionsList}{DirectionsList}}
+{\footnotesize\ttfamily \label{parser_8h_a70359c3ffb606dcdca00426b29cf127f} 
+enum class \mbox{\hyperlink{parser_8h_a70359c3ffb606dcdca00426b29cf127f}{Directions\+List}} \+: uint16\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNone@{kNone}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kNone@{kNone}}}\Hypertarget{parser_8h_a70359c3ffb606dcdca00426b29cf127fa35c3ace1970663a16e5c65baa5941b13}\label{parser_8h_a70359c3ffb606dcdca00426b29cf127f} 
+k\+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNorth@{kNorth}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kNorth@{kNorth}}}\Hypertarget{parser_8h_a70359c3ffb606dcdca00426b29cf127fac1079db2ce4428bb7b1f7ce7288c887c}\label{parser_8h_a70359c3ffb606dcdca00426b29cf127f} 
+k\+North&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSouth@{kSouth}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kSouth@{kSouth}}}\Hypertarget{parser_8h_a70359c3ffb606dcdca00426b29cf127faa71b63644c9f83d8f5a14cce40f0e53c}\label{parser_8h_a70359c3ffb606dcdca00426b29cf127f} 
+k\+South&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kWest@{kWest}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kWest@{kWest}}}\Hypertarget{parser_8h_a70359c3ffb606dcdca00426b29cf127fa3bd54bab29f3403de0f8b50a02967b23}\label{parser_8h_a70359c3ffb606dcdca00426b29cf127f} 
+k\+West&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEast@{kEast}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kEast@{kEast}}}\Hypertarget{parser_8h_a70359c3ffb606dcdca00426b29cf127fae9deb5248e8d61eed4f3ac200c83991b}\label{parser_8h_a70359c3ffb606dcdca00426b29cf127f} 
+k\+East&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEnd@{kEnd}!parser.h@{parser.h}}\index{parser.h@{parser.h}!kEnd@{kEnd}}}\Hypertarget{parser_8h_a70359c3ffb606dcdca00426b29cf127fa374bf9ba57a441a600d65b212cf9d13c}\label{parser_8h_a70359c3ffb606dcdca00426b29cf127f} 
+k\+End&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{parser_8h_source_l00022}{22}} of file \mbox{\hyperlink{parser_8h_source}{parser.\+h}}.
+

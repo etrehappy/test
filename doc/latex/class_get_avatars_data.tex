@@ -1,0 +1,102 @@
+\doxysection{Get\+Avatars\+Data Class Reference}
+\hypertarget{class_get_avatars_data}{}\label{class_get_avatars_data}\index{GetAvatarsData@{GetAvatarsData}}
+
+
+Add these events\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_database_handler}{Database\+Handler}.  
+
+
+
+
+{\ttfamily \#include $<$event.\+h$>$}
+
+
+
+Inheritance diagram for Get\+Avatars\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_get_avatars_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Get\+Avatars\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_get_avatars_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_get_avatars_data_ab247aa9dd0bc1fba6a0aed7c00f72573}{Get\+Avatars\+Data}} (const std\+::string \&session\+\_\+id, const uint32\+\_\+t id\+\_\+selected\+\_\+avatar)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_get_avatars_data_a3722d8c6b4fc769c8d85ba207120ce79}{Get\+Id\+Selected\+Avatar}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{class_get_avatars_data_aa9303737d2711ca705dd738c4bec6132}{Get\+Session\+Id}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_event_ab1ec91d7ec3d4f11b8b965a440347d3b}{Event}} (\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}}, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}, const std\+::string \&)
+\item 
+virtual \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\item 
+\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}} \mbox{\hyperlink{class_event_addc69178c85be30b729eac46efc3adf0}{Get\+Priority}} () const
+\item 
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}} \mbox{\hyperlink{class_event_ada67f712274ef1a5f95df22bde85fc48}{Get\+Type}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_event_ac0e57b1c12e8579aa9d56504ff35d27f}{Get\+Routing\+Key}} () const
+\begin{DoxyCompactList}\small\item\em event\+\_\+routing\+\_\+key\+\_\+ == client\textquotesingle{}s session\+\_\+id\+\_\+ for most events except those handled by the \doxylink{class_database_handler}{Database\+Handler}, because in the MVP-\/version the \doxylink{class_database_handler}{Database\+Handler} is one for all clients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Add these events\+: \doxylink{class_network_handler}{Network\+Handler}. Handles\+: \doxylink{class_database_handler}{Database\+Handler}. 
+
+Definition at line \mbox{\hyperlink{event_8h_source_l00249}{249}} of file \mbox{\hyperlink{event_8h_source}{event.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_get_avatars_data_ab247aa9dd0bc1fba6a0aed7c00f72573}\index{GetAvatarsData@{GetAvatarsData}!GetAvatarsData@{GetAvatarsData}}
+\index{GetAvatarsData@{GetAvatarsData}!GetAvatarsData@{GetAvatarsData}}
+\doxysubsubsection{\texorpdfstring{GetAvatarsData()}{GetAvatarsData()}}
+{\footnotesize\ttfamily \label{class_get_avatars_data_ab247aa9dd0bc1fba6a0aed7c00f72573} 
+Get\+Avatars\+Data\+::\+Get\+Avatars\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{session\+\_\+id}{, }\item[{const uint32\+\_\+t}]{id\+\_\+selected\+\_\+avatar}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_get_avatars_data_a3722d8c6b4fc769c8d85ba207120ce79}\index{GetAvatarsData@{GetAvatarsData}!GetIdSelectedAvatar@{GetIdSelectedAvatar}}
+\index{GetIdSelectedAvatar@{GetIdSelectedAvatar}!GetAvatarsData@{GetAvatarsData}}
+\doxysubsubsection{\texorpdfstring{GetIdSelectedAvatar()}{GetIdSelectedAvatar()}}
+{\footnotesize\ttfamily \label{class_get_avatars_data_a3722d8c6b4fc769c8d85ba207120ce79} 
+uint32\+\_\+t Get\+Avatars\+Data\+::\+Get\+Id\+Selected\+Avatar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+\Hypertarget{class_get_avatars_data_aa9303737d2711ca705dd738c4bec6132}\index{GetAvatarsData@{GetAvatarsData}!GetSessionId@{GetSessionId}}
+\index{GetSessionId@{GetSessionId}!GetAvatarsData@{GetAvatarsData}}
+\doxysubsubsection{\texorpdfstring{GetSessionId()}{GetSessionId()}}
+{\footnotesize\ttfamily \label{class_get_avatars_data_aa9303737d2711ca705dd738c4bec6132} 
+const std\+::string \& Get\+Avatars\+Data\+::\+Get\+Session\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event_8h}{event.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event_8cpp}{event.\+cpp}}\end{DoxyCompactItemize}

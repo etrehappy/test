@@ -1,0 +1,37 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_event.html" title=" " alt="" coords="5,411,61,437"/>
+<area shape="rect" id="Node000001" href="$class_add_item_in_inventory.html" title="Added: NetworkHandler. Handles: DatabaseHandler." alt="" coords="157,5,292,32"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="33,395,40,313,53,208,75,108,89,69,107,42,130,26,156,18,158,23,132,31,111,46,94,71,80,110,59,209,45,314,39,395"/>
+<area shape="rect" id="Node000002" href="$class_avatar_list_client_request.html" title="Added: NetworkHandler. Handles: DatabaseHandler." alt="" coords="143,56,306,83"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="34,395,42,323,57,233,78,149,91,116,107,93,123,81,142,73,144,77,126,85,111,97,96,118,83,150,62,234,48,324,40,395"/>
+<area shape="rect" id="Node000003" href="$class_avatar_list_is_ready.html" title="Added: DatabaseHandler. Handles: NetworkHandler." alt="" coords="160,107,290,133"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="36,395,61,259,81,189,93,162,107,143,131,128,159,119,161,124,134,132,111,147,98,165,86,191,66,260,41,396"/>
+<area shape="rect" id="Node000004" href="$class_avatars_data_ready.html" title="Add these events: DatabaseHandler. Handles: GameHandler." alt="" coords="159,157,291,184"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="32,395,37,351,49,296,71,241,87,216,107,194,131,179,158,171,159,176,133,184,110,198,91,219,75,244,54,298,42,351,38,396"/>
+<area shape="rect" id="Node000005" href="$class_broadcast_message.html" title="Added: sender&#39;s NetworkHandler. Handles: all client&#39;s NetworkHandler." alt="" coords="158,208,292,235"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="35,395,43,360,56,320,77,279,107,245,131,230,157,222,159,227,133,235,110,249,81,282,61,322,48,362,41,396"/>
+<area shape="rect" id="Node000006" href="$class_disconnect_session.html" title="Added: DatabaseHandler. Handles: NetworkHandler." alt="" coords="158,259,292,285"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="41,394,65,343,84,317,107,295,131,282,156,275,158,280,133,287,110,299,88,321,70,346,46,397"/>
+<area shape="rect" id="Node000007" href="$class_exit_game_request.html" title="Added: NetworkHandler. Handles: GameHandler." alt="" coords="161,309,289,336"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="51,397,76,370,107,346,133,335,160,327,161,332,135,340,110,350,79,374,55,400"/>
+<area shape="rect" id="Node000008" href="$class_exit_game_response.html" title="Added: DatabaseHandler. Handles: NetworkHandler." alt="" coords="156,360,294,387"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="75,406,108,396,155,385,156,390,109,401,76,412"/>
+<area shape="rect" id="Node000009" href="$class_failure_check_log_pas.html" title="Add these events: DatabaseHandler. Handles: NetworkHandler in MVP&#45;version." alt="" coords="154,411,296,437"/>
+<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="76,421,153,421,153,427,76,427"/>
+<area shape="rect" id="Node000010" href="$class_first_connect.html" title="Add these events: ClientSession. Handles:" alt="" coords="177,461,273,488"/>
+<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="76,436,109,447,177,463,176,468,108,452,75,442"/>
+<area shape="rect" id="Node000011" href="$class_get_avatars_data.html" title="Add these events: NetworkHandler. Handles: DatabaseHandler." alt="" coords="167,512,282,539"/>
+<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="55,448,79,474,110,498,138,510,167,517,166,522,136,515,107,502,76,478,51,451"/>
+<area shape="rect" id="Node000012" href="$class_log_pas_client_response.html" title="Added: NetworkHandler. Handles: DatabaseHandler." alt="" coords="146,563,304,589"/>
+<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="46,451,70,502,88,527,110,548,146,565,144,570,107,553,84,531,65,505,41,454"/>
+<area shape="rect" id="Node000013" href="$class_login_request.html" title="Add these events: UserHandler. Handles:" alt="" coords="174,613,276,640"/>
+<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="41,452,48,486,61,526,81,566,110,599,141,616,174,623,173,628,139,621,107,603,77,569,56,528,43,488,35,453"/>
+<area shape="rect" id="Node000014" href="$class_save_game.html" title="Added: GameHandler. Handles: DatabaseHandler." alt="" coords="182,664,268,691"/>
+<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="38,452,42,497,54,550,75,604,91,629,110,650,126,661,144,668,182,675,181,680,142,673,124,666,107,654,87,632,71,607,49,552,37,497,32,453"/>
+<area shape="rect" id="Node000015" href="$class_start_game_client_request.html" title="Added: NetworkHandler. Handles: GameHandler." alt="" coords="141,715,308,741"/>
+<area shape="poly" id="edge15_Node000000_Node000015" title=" " alt="" coords="41,452,66,588,86,657,98,683,111,701,125,711,142,719,140,724,122,716,107,705,93,686,81,659,61,589,36,453"/>
+<area shape="rect" id="Node000016" href="$class_start_game_server_response_sucsses.html" title="Added: GameHandler. Handles: NetworkHandler." alt="" coords="109,765,341,792"/>
+<area shape="poly" id="edge16_Node000000_Node000016" title=" " alt="" coords="40,453,48,524,62,614,83,698,96,730,111,751,125,763,122,767,107,755,91,732,78,699,57,615,42,525,34,453"/>
+<area shape="rect" id="Node000017" href="$class_success_check_log_pas.html" title="Add these events: DatabaseHandler. Handles: NetworkHandler in MVP&#45;version, UserHandler." alt="" coords="148,816,302,843"/>
+<area shape="poly" id="edge17_Node000000_Node000017" title=" " alt="" coords="39,453,45,534,59,639,80,738,94,777,111,802,128,815,148,823,146,828,125,819,107,806,89,779,75,740,53,640,40,535,33,453"/>
+</map>

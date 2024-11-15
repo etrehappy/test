@@ -1,0 +1,98 @@
+\doxysection{Event Class Reference}
+\hypertarget{class_event}{}\label{class_event}\index{Event@{Event}}
+
+
+{\ttfamily \#include $<$event.\+h$>$}
+
+
+
+Inheritance diagram for Event\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_event__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_event_ab1ec91d7ec3d4f11b8b965a440347d3b}{Event}} (\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}}, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}, const std\+::string \&)
+\item 
+virtual \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\item 
+\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}} \mbox{\hyperlink{class_event_addc69178c85be30b729eac46efc3adf0}{Get\+Priority}} () const
+\item 
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}} \mbox{\hyperlink{class_event_ada67f712274ef1a5f95df22bde85fc48}{Get\+Type}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_event_ac0e57b1c12e8579aa9d56504ff35d27f}{Get\+Routing\+Key}} () const
+\begin{DoxyCompactList}\small\item\em event\+\_\+routing\+\_\+key\+\_\+ == client\textquotesingle{}s session\+\_\+id\+\_\+ for most events except those handled by the \doxylink{class_database_handler}{Database\+Handler}, because in the MVP-\/version the \doxylink{class_database_handler}{Database\+Handler} is one for all clients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{event_8h_source_l00072}{72}} of file \mbox{\hyperlink{event_8h_source}{event.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_ab1ec91d7ec3d4f11b8b965a440347d3b}\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}}
+{\footnotesize\ttfamily \label{class_event_ab1ec91d7ec3d4f11b8b965a440347d3b} 
+Event\+::\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}}}]{p}{, }\item[{\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}}}]{t}{, }\item[{const std\+::string \&}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+\Hypertarget{class_event_a105223995bbf1a1e4714d0c77f91cf0b}\index{Event@{Event}!````~Event@{\texorpdfstring{$\sim$}{\string~}Event}}
+\index{````~Event@{\texorpdfstring{$\sim$}{\string~}Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Event()}{\string~Event()}}
+{\footnotesize\ttfamily \label{class_event_a105223995bbf1a1e4714d0c77f91cf0b} 
+virtual Event\+::\texorpdfstring{$\sim$}{\string~}\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_addc69178c85be30b729eac46efc3adf0}\index{Event@{Event}!GetPriority@{GetPriority}}
+\index{GetPriority@{GetPriority}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{GetPriority()}{GetPriority()}}
+{\footnotesize\ttfamily \label{class_event_addc69178c85be30b729eac46efc3adf0} 
+\mbox{\hyperlink{event_8h_a1a2838dc20b8334df3c32f18f56e8613}{Event\+Priority}} Event\+::\+Get\+Priority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+\Hypertarget{class_event_ac0e57b1c12e8579aa9d56504ff35d27f}\index{Event@{Event}!GetRoutingKey@{GetRoutingKey}}
+\index{GetRoutingKey@{GetRoutingKey}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{GetRoutingKey()}{GetRoutingKey()}}
+{\footnotesize\ttfamily \label{class_event_ac0e57b1c12e8579aa9d56504ff35d27f} 
+const std\+::string \& Event\+::\+Get\+Routing\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+event\+\_\+routing\+\_\+key\+\_\+ == client\textquotesingle{}s session\+\_\+id\+\_\+ for most events except those handled by the \doxylink{class_database_handler}{Database\+Handler}, because in the MVP-\/version the \doxylink{class_database_handler}{Database\+Handler} is one for all clients. 
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+\Hypertarget{class_event_ada67f712274ef1a5f95df22bde85fc48}\index{Event@{Event}!GetType@{GetType}}
+\index{GetType@{GetType}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \label{class_event_ada67f712274ef1a5f95df22bde85fc48} 
+\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}} Event\+::\+Get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{event_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{event_8cpp_source}{event.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event_8h}{event.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{event_8cpp}{event.\+cpp}}\end{DoxyCompactItemize}

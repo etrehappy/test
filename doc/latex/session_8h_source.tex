@@ -1,0 +1,61 @@
+\doxysection{session.\+h}
+\hypertarget{session_8h_source}{}\label{session_8h_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/session.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/session.h}}
+\mbox{\hyperlink{session_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{settings_8h}{settings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8h}{event.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__handler_8h}{event\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__dispatcher_8h}{event\_dispatcher.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__queue_8h}{event\_queue.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user__handler_8h}{user\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2network__handler_8h}{network\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game__handler_8h}{game\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <boost/asio/experimental/awaitable\_operators.hpp>}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <boost/asio/awaitable.hpp>}\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <memory>}\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00020}00020\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00021}00021\ \textcolor{keyword}{using\ }boost::asio::use\_awaitable\_t;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00022}\mbox{\hyperlink{session_8h_a460a11bd04cf7b1d3e9a73034dafa7c1}{00022}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{server_2network__handler_8h_a460a11bd04cf7b1d3e9a73034dafa7c1}{b\_tcp\_acceptor}}\ =\ use\_awaitable\_t<>::as\_default\_on\_t<tcp::acceptor>;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00023}\mbox{\hyperlink{session_8h_af4e0e89164fb3480a9c6375b63be7b60}{00023}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{server_2network__handler_8h_af4e0e89164fb3480a9c6375b63be7b60}{b\_tcp\_socket}}\ =\ use\_awaitable\_t<>::as\_default\_on\_t<tcp::socket>;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00025}\mbox{\hyperlink{class_client_session}{00025}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_client_session}{ClientSession}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<ClientSession>\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00027}00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_client_session_a31cbb544c4c200df5679eeb8a265c62d}{ClientSession}}(std::shared\_ptr<b\_tcp\_socket>\ socket,\ \mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ q,\ \mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ d);}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00030}00030\ \ \ \ \ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_client_session_a0bf3965c0d1f2d3dea36984aacb1e9ca}{Start}}();}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_client_session_a712025b68bdc4258b27d63e9e8c4c11d}{IsActive}}();}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00032}00032\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00033}00033\ \textcolor{comment}{\ \ \ \ NetworkHandler::HandleClassedEvent(std::shared\_ptr<ExitGameResponse>\ event)}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00034}00034\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_client_session_a48a10235b18f346724d432b491e03766}{SetInactive}}();}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00037}00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00038}00038\ \ \ \ \textcolor{comment}{//\ boost::asio::awaitable<void>\ HandleConnection();}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00040}00040\ \ \ \ \ std::shared\_ptr<b\_tcp\_socket>\ socket\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ event\_queue\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ dispatcher\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ client\_ip\_;\ \textcolor{comment}{//\ !!!\ где\ нужен?}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ session\_id\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ active\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00047}00047\ \ \ \ \ std::shared\_ptr<UserHandler>\ user\_handler\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00048}00048\ \ \ \ \ std::shared\_ptr<NetworkHandler>\ network\_handler\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00049}00049\ \ \ \ \ std::shared\_ptr<GameHandler>\ game\_handler\_;}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00053}00053\ \ \ \ \textcolor{comment}{//\ std::string\ CheckOrCreateUUID();}}
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{session_8h_source_l00056}00056\ \};}
+
+\end{DoxyCode}

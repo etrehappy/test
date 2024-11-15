@@ -1,0 +1,202 @@
+\doxysection{C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/client/argparse.hpp File Reference}
+\hypertarget{argparse_8hpp}{}\label{argparse_8hpp}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/argparse.hpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/argparse.hpp}}
+{\ttfamily \#include $<$cerrno$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$any$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$charconv$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for argparse.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{argparse_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_has_container_traits}{argparse\+::details\+::\+Has\+Container\+Traits$<$ T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_has_container_traits_3_01std_1_1string_01_4}{argparse\+::details\+::\+Has\+Container\+Traits$<$ std\+::string $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_has_container_traits_3_01std_1_1string__view_01_4}{argparse\+::details\+::\+Has\+Container\+Traits$<$ std\+::string\+\_\+view $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_has_container_traits_3_01_t_00_01std_1_1void__t_3_01typename_01_t_45bf9f9c91ca7c1cb49ea6280ce472db}{argparse\+::details\+::\+Has\+Container\+Traits$<$ T, std\+::void\+\_\+t$<$ typename T\+::value\+\_\+type, decltype(std\+::declval$<$ T $>$().\+begin()), decltype(std\+::declval$<$ T $>$().\+end()), decltype(std\+::declval$<$ T $>$().\+size())$>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_has_streamable_traits}{argparse\+::details\+::\+Has\+Streamable\+Traits$<$ T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_has_streamable_traits_3_01_t_00_01std_1_1void__t_3_01decltype_07stdc91fa09967c0b4a20df453e08636ed8}{argparse\+::details\+::\+Has\+Streamable\+Traits$<$ T, std\+::void\+\_\+t$<$ decltype(std\+::declval$<$ std\+::ostream \& $>$()$<$$<$ std\+::declval$<$ T $>$())$>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_consume_binary_prefix_result}{argparse\+::details\+::\+Consume\+Binary\+Prefix\+Result}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_consume_hex_prefix_result}{argparse\+::details\+::\+Consume\+Hex\+Prefix\+Result}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number}{argparse\+::details\+::parse\+\_\+number$<$ T, Param $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_00_01radix__2_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T, radix\+\_\+2 $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_00_01radix__16_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T, radix\+\_\+16 $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_00_01chars__format_1_1general_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T, chars\+\_\+format\+::general $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_00_01chars__format_1_1hex_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T, chars\+\_\+format\+::hex $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_00_01chars__format_1_1binary_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T, chars\+\_\+format\+::binary $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_00_01chars__format_1_1scientific_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T, chars\+\_\+format\+::scientific $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1parse__number_3_01_t_00_01chars__format_1_1fixed_01_4}{argparse\+::details\+::parse\+\_\+number$<$ T, chars\+\_\+format\+::fixed $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1can__invoke__to__string}{argparse\+::details\+::can\+\_\+invoke\+\_\+to\+\_\+string$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structargparse_1_1details_1_1_is_choice_type_supported}{argparse\+::details\+::\+Is\+Choice\+Type\+Supported$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classargparse_1_1_argument}{argparse\+::\+Argument}}
+\item 
+class \mbox{\hyperlink{classargparse_1_1_argument_parser}{argparse\+::\+Argument\+Parser}}
+\item 
+class \mbox{\hyperlink{classargparse_1_1_argument_parser_1_1_mutually_exclusive_group}{argparse\+::\+Argument\+Parser\+::\+Mutually\+Exclusive\+Group}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceargparse}{argparse}}
+\item 
+namespace \mbox{\hyperlink{namespaceargparse_1_1details}{argparse\+::details}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{argparse_8hpp_a870b5b789a0e3be61b456a00bda67cbf}{ARGPARSE\+\_\+\+CUSTOM\+\_\+\+STRTOF}}~strtof
+\item 
+\#define \mbox{\hyperlink{argparse_8hpp_a35a697e6c75ba49d63d190045c259a7b}{ARGPARSE\+\_\+\+CUSTOM\+\_\+\+STRTOD}}~strtod
+\item 
+\#define \mbox{\hyperlink{argparse_8hpp_ace19ec3670db92c4a06c0e72082033aa}{ARGPARSE\+\_\+\+CUSTOM\+\_\+\+STRTOLD}}~strtold
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceargparse_1_1details_a31b348511ba5e7ff131cf09d9b2d6460}{argparse\+::details\+::chars\+\_\+format}} \{ \newline
+\mbox{\hyperlink{namespaceargparse_1_1details_a31b348511ba5e7ff131cf09d9b2d6460a55a95650a66b53ecbb960b53d985b964}{argparse\+::details\+::scientific}} = 0xf1
+, \mbox{\hyperlink{namespaceargparse_1_1details_a31b348511ba5e7ff131cf09d9b2d6460acec315e3d0975e5cc2811d5d8725f149}{argparse\+::details\+::fixed}} = 0xf2
+, \mbox{\hyperlink{namespaceargparse_1_1details_a31b348511ba5e7ff131cf09d9b2d6460ab8d1b43eae73587ba56baef574709ecb}{argparse\+::details\+::hex}} = 0xf4
+, \mbox{\hyperlink{namespaceargparse_1_1details_a31b348511ba5e7ff131cf09d9b2d6460a9d7183f16acce70658f686ae7f1a4d20}{argparse\+::details\+::binary}} = 0xf8
+, \newline
+\mbox{\hyperlink{namespaceargparse_1_1details_a31b348511ba5e7ff131cf09d9b2d6460a958153f1b8b96ec4c4eb2147429105d9}{argparse\+::details\+::general}} = fixed \texorpdfstring{$\vert$}{|} scientific
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59}{argparse\+::nargs\+\_\+pattern}} \{ \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59ad57c24f3fe52d16e7169b912dd647f0d}{argparse\+::optional}}
+, \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59a100b8cad7cf2a56f6df78f171f97a1ec}{argparse\+::any}}
+, \mbox{\hyperlink{namespaceargparse_ab95dccbbd126a6baa4206b9db1731b59a3fe0284a7cd758589321a05f30353587}{argparse\+::at\+\_\+least\+\_\+one}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{argparse\+::default\+\_\+arguments}} \+: unsigned int \{ \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea334c4a4c42fdb79d7ebc3e73b517e6f8}{argparse\+::none}} = 0
+, \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea657f8b8da628ef83cf69101b6817150a}{argparse\+::help}} = 1
+, \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adea2af72f100c356273d46284f6fd1dfc08}{argparse\+::version}} = 2
+, \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93adeaa181a603769c1f98ad927e7367c7aa51}{argparse\+::all}} = help \texorpdfstring{$\vert$}{|} version
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{namespaceargparse_1_1details_ad0bdca003b9442f5dd6f69f00016c2de}{argparse\+::details\+::repr}} (T const \&val)
+\item 
+{\footnotesize template$<$class F , class Tuple , class Extra , std\+::size\+\_\+t... I$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespaceargparse_1_1details_ac3cada06e554e0b66ea5e84947a54de7}{argparse\+::details\+::apply\+\_\+plus\+\_\+one\+\_\+impl}} (F \&\&f, Tuple \&\&t, Extra \&\&x, std\+::index\+\_\+sequence$<$ I... $>$)
+\item 
+{\footnotesize template$<$class F , class Tuple , class Extra $>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespaceargparse_1_1details_a801eda7dc3cab2115fee4f4073671024}{argparse\+::details\+::apply\+\_\+plus\+\_\+one}} (F \&\&f, Tuple \&\&t, Extra \&\&x)
+\item 
+constexpr auto \mbox{\hyperlink{namespaceargparse_1_1details_af1c9496e8da9220f864b82968cf7b294}{argparse\+::details\+::pointer\+\_\+range}} (std\+::string\+\_\+view s) noexcept
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\constexpr bool \mbox{\hyperlink{namespaceargparse_1_1details_a492cfec7fca1bbea1e47445c01c667ef}{argparse\+::details\+::starts\+\_\+with}} (std\+::basic\+\_\+string\+\_\+view$<$ CharT, Traits $>$ prefix, std\+::basic\+\_\+string\+\_\+view$<$ CharT, Traits $>$ s) noexcept
+\item 
+constexpr auto \mbox{\hyperlink{namespaceargparse_1_1details_a6172536c8ac4081966b283ed1b88a2f6}{argparse\+::details\+::consume\+\_\+binary\+\_\+prefix}} (std\+::string\+\_\+view s) -\/$>$ \mbox{\hyperlink{structargparse_1_1details_1_1_consume_binary_prefix_result}{Consume\+Binary\+Prefix\+Result}}
+\item 
+constexpr auto \mbox{\hyperlink{namespaceargparse_1_1details_a667e18eec0ce6f68fde84a062cbcd23b}{argparse\+::details\+::consume\+\_\+hex\+\_\+prefix}} (std\+::string\+\_\+view s) -\/$>$ \mbox{\hyperlink{structargparse_1_1details_1_1_consume_hex_prefix_result}{Consume\+Hex\+Prefix\+Result}}
+\item 
+{\footnotesize template$<$class T , auto Param$>$ }\\auto \mbox{\hyperlink{namespaceargparse_1_1details_afe9069ea0a1df8d6c1481e87f416dd3b}{argparse\+::details\+::do\+\_\+from\+\_\+chars}} (std\+::string\+\_\+view s) -\/$>$ T
+\item 
+{\footnotesize template$<$class T $>$ }\\auto \mbox{\hyperlink{namespaceargparse_1_1details_ab8816b5be2dfcc5fbfe7a2205e9aa6aa}{argparse\+::details\+::do\+\_\+strtod}} (std\+::string const \&s) -\/$>$ T
+\item 
+{\footnotesize template$<$typename Str\+It $>$ }\\std\+::string \mbox{\hyperlink{namespaceargparse_1_1details_aa287475779c8a079dd9a3c4b2d5b0ce1}{argparse\+::details\+::join}} (Str\+It first, Str\+It last, const std\+::string \&separator)
+\item 
+{\footnotesize template$<$typename String\+Type $>$ }\\std\+::size\+\_\+t \mbox{\hyperlink{namespaceargparse_1_1details_ace54a09a5c36453e0eca2b7909a667a3}{argparse\+::details\+::get\+\_\+levenshtein\+\_\+distance}} (const String\+Type \&s1, const String\+Type \&s2)
+\item 
+{\footnotesize template$<$typename Value\+Type $>$ }\\std\+::string \mbox{\hyperlink{namespaceargparse_1_1details_ada915974263acc0ef7bcb25af7cf6d4b}{argparse\+::details\+::get\+\_\+most\+\_\+similar\+\_\+string}} (const std\+::map$<$ std\+::string, Value\+Type $>$ \&map, const std\+::string \&input)
+\item 
+\mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \mbox{\hyperlink{namespaceargparse_abc3251385718451a3df9f5c95ee17f12}{argparse\+::operator\&}} (const \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \&a, const \mbox{\hyperlink{namespaceargparse_a172793a32b6bc1069cb87cad08e93ade}{default\+\_\+arguments}} \&b)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespaceargparse_1_1details_a5a5ad48bac51a036838a69a5962f38bb}{argparse\+::details\+::\+Is\+Container}} = \mbox{\hyperlink{structargparse_1_1details_1_1_has_container_traits}{Has\+Container\+Traits}}$<$T$>$\+::value
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespaceargparse_1_1details_a5238c32329ee5a2dfa4daa94cf9776c8}{argparse\+::details\+::\+Is\+Streamable}} = \mbox{\hyperlink{structargparse_1_1details_1_1_has_streamable_traits}{Has\+Streamable\+Traits}}$<$T$>$\+::value
+\item 
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespaceargparse_1_1details_acbe456dafd7df9bb8bdc2ea426636962}{argparse\+::details\+::repr\+\_\+max\+\_\+container\+\_\+size}} = 5
+\item 
+constexpr int \mbox{\hyperlink{namespaceargparse_1_1details_ab9b561eeddbaa51ea3ab29b28f250ba8}{argparse\+::details\+::radix\+\_\+2}} = 2
+\item 
+constexpr int \mbox{\hyperlink{namespaceargparse_1_1details_a46692300d9c6194efe062f86979e5a35}{argparse\+::details\+::radix\+\_\+8}} = 8
+\item 
+constexpr int \mbox{\hyperlink{namespaceargparse_1_1details_ab3c364ad852c09a36702c5e75b20bf33}{argparse\+::details\+::radix\+\_\+10}} = 10
+\item 
+constexpr int \mbox{\hyperlink{namespaceargparse_1_1details_adb4acde4b7510b91684614e6e6689874}{argparse\+::details\+::radix\+\_\+16}} = 16
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespaceargparse_1_1details_a4c10e073deec93add565913576fefd63}{argparse\+::details\+::standard\+\_\+integer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{argparse_8hpp_a35a697e6c75ba49d63d190045c259a7b}\index{argparse.hpp@{argparse.hpp}!ARGPARSE\_CUSTOM\_STRTOD@{ARGPARSE\_CUSTOM\_STRTOD}}
+\index{ARGPARSE\_CUSTOM\_STRTOD@{ARGPARSE\_CUSTOM\_STRTOD}!argparse.hpp@{argparse.hpp}}
+\doxysubsubsection{\texorpdfstring{ARGPARSE\_CUSTOM\_STRTOD}{ARGPARSE\_CUSTOM\_STRTOD}}
+{\footnotesize\ttfamily \label{argparse_8hpp_a35a697e6c75ba49d63d190045c259a7b} 
+\#define ARGPARSE\+\_\+\+CUSTOM\+\_\+\+STRTOD~strtod}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{argparse_8hpp_a870b5b789a0e3be61b456a00bda67cbf}\index{argparse.hpp@{argparse.hpp}!ARGPARSE\_CUSTOM\_STRTOF@{ARGPARSE\_CUSTOM\_STRTOF}}
+\index{ARGPARSE\_CUSTOM\_STRTOF@{ARGPARSE\_CUSTOM\_STRTOF}!argparse.hpp@{argparse.hpp}}
+\doxysubsubsection{\texorpdfstring{ARGPARSE\_CUSTOM\_STRTOF}{ARGPARSE\_CUSTOM\_STRTOF}}
+{\footnotesize\ttfamily \label{argparse_8hpp_a870b5b789a0e3be61b456a00bda67cbf} 
+\#define ARGPARSE\+\_\+\+CUSTOM\+\_\+\+STRTOF~strtof}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+
+\Hypertarget{argparse_8hpp_ace19ec3670db92c4a06c0e72082033aa}\index{argparse.hpp@{argparse.hpp}!ARGPARSE\_CUSTOM\_STRTOLD@{ARGPARSE\_CUSTOM\_STRTOLD}}
+\index{ARGPARSE\_CUSTOM\_STRTOLD@{ARGPARSE\_CUSTOM\_STRTOLD}!argparse.hpp@{argparse.hpp}}
+\doxysubsubsection{\texorpdfstring{ARGPARSE\_CUSTOM\_STRTOLD}{ARGPARSE\_CUSTOM\_STRTOLD}}
+{\footnotesize\ttfamily \label{argparse_8hpp_ace19ec3670db92c4a06c0e72082033aa} 
+\#define ARGPARSE\+\_\+\+CUSTOM\+\_\+\+STRTOLD~strtold}
+
+
+
+Definition at line \mbox{\hyperlink{argparse_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{argparse_8hpp_source}{argparse.\+hpp}}.
+

@@ -1,0 +1,66 @@
+\doxysection{C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/session.h File Reference}
+\hypertarget{session_8h}{}\label{session_8h}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/session.h@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/session.h}}
+{\ttfamily \#include "{}settings.\+h"{}}\newline
+{\ttfamily \#include "{}event.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+dispatcher.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+queue.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include "{}user\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}network\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}game\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include $<$boost/asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/asio/experimental/awaitable\+\_\+operators.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/asio/awaitable.\+hpp$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for session.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{session_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{session_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_client_session}{Client\+Session}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{session_8h_a460a11bd04cf7b1d3e9a73034dafa7c1}{b\+\_\+tcp\+\_\+acceptor}} = use\+\_\+awaitable\+\_\+t$<$$>$\+::as\+\_\+default\+\_\+on\+\_\+t$<$tcp\+::acceptor$>$
+\item 
+using \mbox{\hyperlink{session_8h_af4e0e89164fb3480a9c6375b63be7b60}{b\+\_\+tcp\+\_\+socket}} = use\+\_\+awaitable\+\_\+t$<$$>$\+::as\+\_\+default\+\_\+on\+\_\+t$<$tcp\+::socket$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{session_8h_a460a11bd04cf7b1d3e9a73034dafa7c1}\index{session.h@{session.h}!b\_tcp\_acceptor@{b\_tcp\_acceptor}}
+\index{b\_tcp\_acceptor@{b\_tcp\_acceptor}!session.h@{session.h}}
+\doxysubsubsection{\texorpdfstring{b\_tcp\_acceptor}{b\_tcp\_acceptor}}
+{\footnotesize\ttfamily \label{session_8h_a460a11bd04cf7b1d3e9a73034dafa7c1} 
+using \mbox{\hyperlink{server_2network__handler_8h_a460a11bd04cf7b1d3e9a73034dafa7c1}{b\+\_\+tcp\+\_\+acceptor}} = use\+\_\+awaitable\+\_\+t$<$$>$\+::as\+\_\+default\+\_\+on\+\_\+t$<$tcp\+::acceptor$>$}
+
+
+
+Definition at line \mbox{\hyperlink{session_8h_source_l00022}{22}} of file \mbox{\hyperlink{session_8h_source}{session.\+h}}.
+
+\Hypertarget{session_8h_af4e0e89164fb3480a9c6375b63be7b60}\index{session.h@{session.h}!b\_tcp\_socket@{b\_tcp\_socket}}
+\index{b\_tcp\_socket@{b\_tcp\_socket}!session.h@{session.h}}
+\doxysubsubsection{\texorpdfstring{b\_tcp\_socket}{b\_tcp\_socket}}
+{\footnotesize\ttfamily \label{session_8h_af4e0e89164fb3480a9c6375b63be7b60} 
+using \mbox{\hyperlink{server_2network__handler_8h_af4e0e89164fb3480a9c6375b63be7b60}{b\+\_\+tcp\+\_\+socket}} = use\+\_\+awaitable\+\_\+t$<$$>$\+::as\+\_\+default\+\_\+on\+\_\+t$<$tcp\+::socket$>$}
+
+
+
+Definition at line \mbox{\hyperlink{session_8h_source_l00023}{23}} of file \mbox{\hyperlink{session_8h_source}{session.\+h}}.
+

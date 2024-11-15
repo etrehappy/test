@@ -1,0 +1,239 @@
+\doxysection{view.\+cpp}
+\hypertarget{view_8cpp_source}{}\label{view_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/view.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/client/view.cpp}}
+\mbox{\hyperlink{view_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{view_8h}{view.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texts_8h}{texts.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00005}00005\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacetext__v}{text\_v}};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00007}\mbox{\hyperlink{class_view_a44ad60a768422d3fa8fbd7576950080a}{00007}}\ \mbox{\hyperlink{class_view_a44ad60a768422d3fa8fbd7576950080a}{View::View}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00008}00008\ \ \ \ \ :cout\_mutex\_\{\},\ view\_out\_\{std::cout\}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00010}00010\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00013}\mbox{\hyperlink{class_view_ad0dc854db9aabbea98a334dec89f785c}{00013}}\ \mbox{\hyperlink{class_view_ad0dc854db9aabbea98a334dec89f785c}{View::\string~View}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00017}\mbox{\hyperlink{class_view_a7e4bfadcce4e1db9d53664d85bb8b118}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a7e4bfadcce4e1db9d53664d85bb8b118}{View::ShowTextWithNewLine}}(\textcolor{keyword}{const}\ std::string\&\ s)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00019}00019\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00021}00021\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00023}00023\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ s;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00025}00025\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00029}00029\ \}\textcolor{comment}{/*\ ShowTextWithNewLine\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00031}\mbox{\hyperlink{class_view_ae539379d60f07fd6d0a63c4dd4edaa5e}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_ae539379d60f07fd6d0a63c4dd4edaa5e}{View::ShowTextWithoutNewLine}}(\textcolor{keyword}{const}\ std::string\&\ s)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00033}00033\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00035}00035\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00037}00037\ \ \ \ \ view\_out\_\ <<\ s;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00039}00039\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00043}00043\ \}\textcolor{comment}{/*\ ShowTextWithoutNewLine\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00045}\mbox{\hyperlink{class_view_aae1124bd00c398e525d86300458b695e}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_aae1124bd00c398e525d86300458b695e}{View::ShowErrorInput}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00047}00047\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00049}00049\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00050}00050\ \ \ \ \ system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00051}00051\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ kErrorInput;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00053}00053\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00057}00057\ \}\textcolor{comment}{/*\ ShowErrorInput\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00060}\mbox{\hyperlink{class_view_a66b05847e5cdc3b1f6a3ca66b4cddb63}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a66b05847e5cdc3b1f6a3ca66b4cddb63}{View::ShowErrorSendMessageToServer}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00061}00061\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00062}00062\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00064}00064\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00065}00065\ \ \ \ \ system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00066}00066\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ kErrorendMessageToServer;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00068}00068\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00072}00072\ \}\textcolor{comment}{/*\ ShowErrorSendMessageToServer\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00075}\mbox{\hyperlink{class_view_acf2114748159a5208c4038c6a6f6ec0a}{00075}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_acf2114748159a5208c4038c6a6f6ec0a}{View::ShowAvatarList}}(\textcolor{keyword}{const}\ ProtoMessage::GameMessage\&\ message)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00076}00076\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00077}00077\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00078}00078\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00079}00079\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{int}\ it\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ avatar\ :\ message.avatar\_list\_data().avatar\_list())}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ it\ <<\ \textcolor{stringliteral}{"{})\ "{}}\ <<\ avatar.name();}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00089}00089\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00093}00093\ \}\textcolor{comment}{/*\ ShowAvatarList\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00096}\mbox{\hyperlink{class_view_a4efe6a3ad9776c3e620a6593b015ccc1}{00096}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a4efe6a3ad9776c3e620a6593b015ccc1}{View::ShowErrorChoiseAvatar}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00097}00097\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00098}00098\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00099}00099\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00100}00100\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00102}00102\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ kErrorChoiseAvatar;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00104}00104\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00105}00105\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00108}00108\ \}\textcolor{comment}{/*\ ShowErrorChoiseAvatar\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00110}\mbox{\hyperlink{class_view_ad17c4b6f301e7179fe4dbc9eaebdc18c}{00110}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_ad17c4b6f301e7179fe4dbc9eaebdc18c}{View::ShowErrorStartGame}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00111}00111\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00112}00112\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00113}00113\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00114}00114\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00115}00115\ \ \ \ \ system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00116}00116\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ kErrorStartGame;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00118}00118\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00119}00119\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00120}00120\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00122}00122\ \}\textcolor{comment}{/*\ ShowErrorStartGame\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00124}\mbox{\hyperlink{class_view_a522c2e94c65cb7b68ca3999a41fcbc77}{00124}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a522c2e94c65cb7b68ca3999a41fcbc77}{View::ShowStartGameMessage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_avatar}{Avatar}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&\ l,\ std::mutex\&\ m)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00125}00125\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00126}00126\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00127}00127\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00128}00128\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00129}00129\ \ \ \ \ system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00130}00130\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ kStartGame;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{class_view_a50b47daa7f43dfc9b8e8c818630b6e6c}{ShowCurrentState}}(a,\ l,\ m,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00133}00133\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00134}00134\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00135}00135\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00136}00136\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00137}00137\ \}\textcolor{comment}{/*\ ShowStartGameMessage\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00139}\mbox{\hyperlink{class_view_a50b47daa7f43dfc9b8e8c818630b6e6c}{00139}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a50b47daa7f43dfc9b8e8c818630b6e6c}{View::ShowCurrentState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_avatar}{Avatar}}\&\ avatar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&\ location}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00140}00140\ \ \ \ \ ,\ std::mutex\&\ avatar\_and\_location,\ \textcolor{keywordtype}{bool}\ cout\_lock)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00141}00141\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00142}00142\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00143}00143\ \{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00144}00144\ \ \ \ \ std::unique\_lock<std::mutex>\ guard\_cout\{cout\_mutex\_,\ std::defer\_lock\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{if}\ (!cout\_lock)\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00147}00147\ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ guard\_cout.lock();}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00150}00150\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00151}00151\ \ \ \ \ std::lock\_guard<std::mutex>\ guard\_game\_data\{avatar\_and\_location\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00153}00153\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ text\_v::kAvatarState}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ <<\ text\_v::kLvl\ <<\ avatar.\mbox{\hyperlink{class_avatar_a20f9125d9feb54868fd919b9a7340895}{GetLevel}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ <<\ kSpace\ <<\ text\_v::kHealth\ <<\ avatar.\mbox{\hyperlink{class_avatar_ad26100e29a8565f9304ffb4cdf3b13bc}{GetHealth}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ <<\ kSpace\ <<\ text\_v::kMana\ <<\ avatar.\mbox{\hyperlink{class_avatar_adc4e5598f121ea1bb9fc005de2f78cbb}{GetMana}}()}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ <<\ kNewStr\ <<\ text\_v::kCurrentLocation\ <<\ location.\mbox{\hyperlink{class_location_aef1490068c12124a6aed7b18e4bc1467}{GetName}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00159}00159\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00160}00160\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00161}00161\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00163}00163\ \}\textcolor{comment}{/*\ ShowCurrentState\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00166}\mbox{\hyperlink{class_view_a13da1f05b0bf9ea415b41879ce8ca08d}{00166}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_a13da1f05b0bf9ea415b41879ce8ca08d}{View::ShowMap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_avatar}{Avatar}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&\ l,\ std::mutex\&\ avatar\_and\_location)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00167}00167\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00168}00168\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00169}00169\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00170}00170\ \ \ \ \ std::scoped\_lock\ lock(cout\_mutex\_,\ avatar\_and\_location);}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00171}00171\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{comment}{/*\ TODO:\ Make\ a\ more\ universal\ function\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00174}00174\ \ \ \ \ view\_out\_\ <<\ \textcolor{stringliteral}{"{}Карта\ таверны:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ line\ :\ l.\mbox{\hyperlink{class_location_a2f8e517588f0381f62eec050f1b762cf}{GetMap}}())\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00177}00177\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ view\_out\_\ <<\ line\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00181}00181\ \ \ \ \ view\_out\_\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nЛегенда\ символов:\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ <<\ map\_symbols::kWall\ <<\ \textcolor{stringliteral}{"{}\ -\/\ Стена\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ <<\ map\_symbols::kDoor\ <<\ \textcolor{stringliteral}{"{}\ -\/\ Дверь\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ <<\ map\_symbols::kNpcLora\ <<\ \textcolor{stringliteral}{"{}\ -\/\ Хозяйка\ Лора\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ <<\ map\_symbols::kNpcAdrik\ <<\ \textcolor{stringliteral}{"{}\ -\/\ Помощник\ Адрик\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ <<\ map\_symbols::kPlayer\ <<\ \textcolor{stringliteral}{"{}\ -\/\ Игрок\(\backslash\)n"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00187}00187\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00188}00188\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00189}00189\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00190}00190\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00191}00191\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00193}00193\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00196}\mbox{\hyperlink{class_view_aa24e0078e20640e2a0e11c927aff4df0}{00196}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_aa24e0078e20640e2a0e11c927aff4df0}{View::ShowLocDescription}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_location}{Location}}\&\ l,\ std::mutex\&\ avatar\_and\_location)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00197}00197\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00198}00198\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00199}00199\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00200}00200\ \ \ \ \ std::scoped\_lock\ lock(cout\_mutex\_,\ avatar\_and\_location);}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{comment}{/*\ TODO:\ Make\ a\ more\ universal\ function\ */}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00204}00204\ \ \ \ \ view\_out\_\ <<\ \textcolor{stringliteral}{"{}Я\ нахожусь\ в\ "{}}\ <<\ l.\mbox{\hyperlink{class_location_aef1490068c12124a6aed7b18e4bc1467}{GetName}}()\ <<\ \textcolor{stringliteral}{"{}.\ "{}}\ <<\ l.\mbox{\hyperlink{class_location_aaba682fffd7c0c260f4834f2239d4a96}{GetDescription}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00205}00205\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00206}00206\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00207}00207\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00208}00208\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00209}00209\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00213}\mbox{\hyperlink{class_view_abee2d24a04aa733c8e3a341f35f255be}{00213}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_view_abee2d24a04aa733c8e3a341f35f255be}{View::ShowCommonMessage}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ text)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00214}00214\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00215}00215\ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00216}00216\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00217}00217\ \ \ \ \ std::lock\_guard<std::mutex>\ g\{cout\_mutex\_\};}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00219}00219\ \ \ \ \ view\_out\_\ <<\ \textcolor{stringliteral}{"{}[Чат\ мир]::"{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ text;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00220}00220\ \ \ \ \ view\_out\_\ <<\ kNewStr\ <<\ kBracket;}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00222}00222\ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00223}00223\ \{}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00224}00224\ \ \ \ \ \mbox{\hyperlink{client_2logger_8h_a912cd05d1f12828d44a543a32c147660}{MVP\_LOG\_EXEPTION}}(e)}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00225}00225\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00226}00226\ \}}
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{view_8cpp_source_l00233}00233\ }
+
+\end{DoxyCode}

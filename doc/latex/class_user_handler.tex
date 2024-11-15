@@ -1,0 +1,135 @@
+\doxysection{User\+Handler Class Reference}
+\hypertarget{class_user_handler}{}\label{class_user_handler}\index{UserHandler@{UserHandler}}
+
+
+{\ttfamily \#include $<$user\+\_\+handler.\+h$>$}
+
+
+
+Inheritance diagram for User\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_user_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for User\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_user_handler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_handler_a3db5e3310bec5ed1942499edfb22cefd}{User\+Handler}} (\mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&, const std\+::string \&)
+\item 
+\mbox{\hyperlink{class_user_handler_aade1743e808deec0bbb7024b80c6f2a8}{\texorpdfstring{$\sim$}{\string~}\+User\+Handler}} ()
+\item 
+boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_user_handler_a0ecd0cc04206cc4e82fcc0c86197b68f}{Forward\+Event\+To\+Handler}} (\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}) override
+\item 
+void \mbox{\hyperlink{class_user_handler_a59a5bbd46bd2fa883fe261693a2aae3a}{Register\+In\+Dispatcher}} (\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&d) override
+\begin{DoxyCompactList}\small\item\em !! по ссылке? \end{DoxyCompactList}\item 
+template$<$$>$ boost\+::asio\+::awaitable$<$ void $>$ \mbox{\hyperlink{class_user_handler_af03bf0276a623ed44dfb6cd7285d1197}{Handle\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_success_check_log_pas}{Success\+Check\+Log\+Pas}} $>$ event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_event_handler_affc1e076502a8be932a74952b7cdad87}{\texorpdfstring{$\sim$}{\string~}\+Event\+Handler}} ()=default
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{Pass\+Classed\+Event}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$, std\+::function$<$ \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}}(std\+::shared\+\_\+ptr$<$ T $>$)$>$, \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{Event\+Type}})
+\begin{DoxyCompactList}\small\item\em Pass\+Classed\+Event uses dynamic\+\_\+pointer\+\_\+cast to convert the event into a derived class and pass it to a handler-\/function. \doxylink{class_event}{Event} conversion is used to get specific member functions of the event. For exapmle, event \doxylink{class_log_pas_client_response}{Log\+Pas\+Client\+Response}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_event_handler}{Event\+Handler}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_event_handler_a45db47ed598254d69c921cb4e77feb3f}{b\+\_\+await\+\_\+void}} = boost\+::asio\+::awaitable$<$void$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{user__handler_8h_source_l00021}{21}} of file \mbox{\hyperlink{user__handler_8h_source}{user\+\_\+handler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_user_handler_a3db5e3310bec5ed1942499edfb22cefd}\index{UserHandler@{UserHandler}!UserHandler@{UserHandler}}
+\index{UserHandler@{UserHandler}!UserHandler@{UserHandler}}
+\doxysubsubsection{\texorpdfstring{UserHandler()}{UserHandler()}}
+{\footnotesize\ttfamily \label{class_user_handler_a3db5e3310bec5ed1942499edfb22cefd} 
+User\+Handler\+::\+User\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_queue}{Event\+Queue}} \&}]{q}{, }\item[{const std\+::string \&}]{session\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{user__handler_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{user__handler_8cpp_source}{user\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_user_handler_aade1743e808deec0bbb7024b80c6f2a8}\index{UserHandler@{UserHandler}!````~UserHandler@{\texorpdfstring{$\sim$}{\string~}UserHandler}}
+\index{````~UserHandler@{\texorpdfstring{$\sim$}{\string~}UserHandler}!UserHandler@{UserHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UserHandler()}{\string~UserHandler()}}
+{\footnotesize\ttfamily \label{class_user_handler_aade1743e808deec0bbb7024b80c6f2a8} 
+User\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+User\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{user__handler_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{user__handler_8cpp_source}{user\+\_\+handler.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_handler_a0ecd0cc04206cc4e82fcc0c86197b68f}\index{UserHandler@{UserHandler}!ForwardEventToHandler@{ForwardEventToHandler}}
+\index{ForwardEventToHandler@{ForwardEventToHandler}!UserHandler@{UserHandler}}
+\doxysubsubsection{\texorpdfstring{ForwardEventToHandler()}{ForwardEventToHandler()}}
+{\footnotesize\ttfamily \label{class_user_handler_a0ecd0cc04206cc4e82fcc0c86197b68f} 
+boost\+::asio\+::awaitable$<$ void $>$ User\+Handler\+::\+Forward\+Event\+To\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\+\_\+event}}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_abd451bda687f5b108ab5f03e28b77e01}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{user__handler_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{user__handler_8cpp_source}{user\+\_\+handler.\+cpp}}.
+
+\Hypertarget{class_user_handler_af03bf0276a623ed44dfb6cd7285d1197}\index{UserHandler@{UserHandler}!HandleClassedEvent@{HandleClassedEvent}}
+\index{HandleClassedEvent@{HandleClassedEvent}!UserHandler@{UserHandler}}
+\doxysubsubsection{\texorpdfstring{HandleClassedEvent()}{HandleClassedEvent()}}
+{\footnotesize\ttfamily \label{class_user_handler_af03bf0276a623ed44dfb6cd7285d1197} 
+template$<$$>$ \\
+boost\+::asio\+::awaitable$<$ void $>$ User\+Handler\+::\+Handle\+Classed\+Event (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_success_check_log_pas}{Success\+Check\+Log\+Pas}} $>$}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{user__handler_8ipp_source_l00003}{3}} of file \mbox{\hyperlink{user__handler_8ipp_source}{user\+\_\+handler.\+ipp}}.
+
+\Hypertarget{class_user_handler_a59a5bbd46bd2fa883fe261693a2aae3a}\index{UserHandler@{UserHandler}!RegisterInDispatcher@{RegisterInDispatcher}}
+\index{RegisterInDispatcher@{RegisterInDispatcher}!UserHandler@{UserHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterInDispatcher()}{RegisterInDispatcher()}}
+{\footnotesize\ttfamily \label{class_user_handler_a59a5bbd46bd2fa883fe261693a2aae3a} 
+void User\+Handler\+::\+Register\+In\+Dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_event_dispatcher}{Event\+Dispatcher}} \&}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+!! по ссылке? 
+
+
+
+Implements \mbox{\hyperlink{class_event_handler_aefcb4e30e42a09216701c52d43fe7694}{Event\+Handler}}.
+
+
+
+Definition at line \mbox{\hyperlink{user__handler_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{user__handler_8cpp_source}{user\+\_\+handler.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{user__handler_8h}{user\+\_\+handler.\+h}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{user__handler_8cpp}{user\+\_\+handler.\+cpp}}\item 
+C\+:/\+Users/etreh/\+Documents/\+Programming/\+Otus/\+C++\+\_\+\+Developer/\+Professional/\+Project/hw14/source/server/\mbox{\hyperlink{user__handler_8ipp}{user\+\_\+handler.\+ipp}}\end{DoxyCompactItemize}

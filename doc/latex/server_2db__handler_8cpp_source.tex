@@ -1,0 +1,113 @@
+\doxysection{db\+\_\+handler.\+cpp}
+\hypertarget{server_2db__handler_8cpp_source}{}\label{server_2db__handler_8cpp_source}\index{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/db\_handler.cpp@{C:/Users/etreh/Documents/Programming/Otus/C++\_Developer/Professional/Project/hw14/source/server/db\_handler.cpp}}
+\mbox{\hyperlink{server_2db__handler_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event__handler_8h}{event\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2db__handler_8h}{db\_handler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{db__handler_8ipp}{db\_handler.ipp}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00005}\mbox{\hyperlink{class_database_handler_af4fa823ecb6e7395776cd379ca3e2715}{00005}}\ \mbox{\hyperlink{class_database_handler_ac27357d3431faf4fd6810483a24a43fd}{DatabaseHandler::DatabaseHandler}}(\mbox{\hyperlink{class_database}{Database}}\&\ db,\ \mbox{\hyperlink{class_event_queue}{EventQueue}}\&\ q)}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00006}00006\ \ \ \ \ :event\_queue\_\{q\},\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{comment}{/*db\_read\_\ \{db.GetToRead()\}*/}\ db\_read\_write\_\{db.GetToReadAndWrite()\}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00011}00011\ \mbox{\hyperlink{class_database_handler_a54cc84549167c9d6a94ba686cf64a27f}{DatabaseHandler::\string~DatabaseHandler}}()}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00015}\mbox{\hyperlink{class_database_handler_ae63b3fd50309f1a876f17f22d9f059e3}{00015}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_database_handler_ae63b3fd50309f1a876f17f22d9f059e3}{DatabaseHandler::RegisterInDispatcher}}(\mbox{\hyperlink{class_event_dispatcher}{EventDispatcher}}\&\ d)}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{/*\ Passed\ shared\_from\_this\ because\ it\ used\ by\ the\ EventDispatcher.\ But\ in\ the\ MVP\ }}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00018}00018\ \textcolor{comment}{\ \ \ \ *\ \ \ version\ there\ is\ only\ one\ DatabaseHandler\ for\ all\ clients.\ }}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00019}00019\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//d.RegisterHandler(EventType::kUserLogPasClientResponse,\ shared\_from\_this(),\ settings::server::kDatabaseEventRoutingKey);}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//d.RegisterHandler(EventType::kAuthenticateAttempt,\ shared\_from\_this(),\ settings::kDatabaseClientId);}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{auto}\ register\_handler\ =\ [\textcolor{keyword}{this},\ \&d](\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629}{EventType}}\ type)\ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_event_dispatcher_ac68fbc2bc0961a36d22b710f4f6969e1}{RegisterHandler}}(type,\ shared\_from\_this(),\ settings::server::kDatabaseEventRoutingKey);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00027}00027\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aebae12d7c937b743dcc14615c89d15af}{EventType::kUserLogPasClientResponse}});}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00028}00028\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a3e9f7058dc7c25fe1c5286a7da7ba767}{EventType::kUsersAvatarListClientRequest}});}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00029}00029\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a50e515120f9b7e010dd1f6c3d13a7d1a}{EventType::kGetAvatarsData}});}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00030}00030\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abc7535d303037ff917effe7d6cb333a7}{EventType::kAddItemInInventory}});}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00031}00031\ \ \ \ \ register\_handler(\mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5db6b6ab6b584b35aee715796431c8d3}{EventType::kSaveGame}});}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00035}\mbox{\hyperlink{class_database_handler_af7d89bdb4ca0067634a0f2c3789dd711}{00035}}\ boost::asio::awaitable<void>\ \mbox{\hyperlink{class_database_handler_af7d89bdb4ca0067634a0f2c3789dd711}{DatabaseHandler::ForwardEventToHandler}}(\mbox{\hyperlink{event_8h_aa94052c7b85316a6d3208b4be2c2628f}{shrd\_event}}\ event)}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{auto}\ executor\ =\ \textcolor{keyword}{co\_await}\ boost::asio::this\_coro::executor;}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{switch}\ (event-\/>GetType())}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aebae12d7c937b743dcc14615c89d15af}{EventType::kUserLogPasClientResponse}}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<LogPasClientResponse>}}(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&DatabaseHandler::HandleClassedEvent<LogPasClientResponse>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629aebae12d7c937b743dcc14615c89d15af}{EventType::kUserLogPasClientResponse}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a3e9f7058dc7c25fe1c5286a7da7ba767}{EventType::kUsersAvatarListClientRequest}}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<AvatarListClientRequest>}}(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&DatabaseHandler::HandleClassedEvent<AvatarListClientRequest>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a3e9f7058dc7c25fe1c5286a7da7ba767}{EventType::kUsersAvatarListClientRequest}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a50e515120f9b7e010dd1f6c3d13a7d1a}{EventType::kGetAvatarsData}}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<GetAvatarsData>}}(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&DatabaseHandler::HandleClassedEvent<GetAvatarsData>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a50e515120f9b7e010dd1f6c3d13a7d1a}{EventType::kGetAvatarsData}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abc7535d303037ff917effe7d6cb333a7}{EventType::kAddItemInInventory}}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<AddItemInInventory>}}(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&DatabaseHandler::HandleClassedEvent<AddItemInInventory>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629abc7535d303037ff917effe7d6cb333a7}{EventType::kAddItemInInventory}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5db6b6ab6b584b35aee715796431c8d3}{EventType::kSaveGame}}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ boost::asio::co\_spawn(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ executor,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_event_handler_a98317812cb6f0bcb3e5f540a05f71b1f}{PassClassedEvent<SaveGame>}}(}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ event,}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(\&DatabaseHandler::HandleClassedEvent<SaveGame>,\ \textcolor{keyword}{this},\ std::placeholders::\_1),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{event_8h_a921bea877914e2bf0856fa61313d2629a5db6b6ab6b584b35aee715796431c8d3}{EventType::kSaveGame}}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ boost::asio::detached);}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{co\_return};}
+\DoxyCodeLine{\Hypertarget{server_2db__handler_8cpp_source_l00107}00107\ \}}
+
+\end{DoxyCode}
