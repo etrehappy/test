@@ -1,0 +1,203 @@
+﻿syntax = "proto3";
+
+package ProtoMessage;
+
+enum CommandType 
+{
+    kNullCommand = 0;
+
+    // Авторизация
+    kLoginPasRequest = 1;//от сервера
+    kLoginPasResponse = 2;//от клиента к серверу
+    kAuthSuccess = 3;//от сервера
+    kAuthFailure = 4;//от сервера
+
+    //Создание и выбор аватара
+    kUsersAvatarListClientRequest = 5; //от клиента к серверу
+    kUsersAvatarListServerResponse = 6; //от сервера
+    kStartGameClientRequest = 7; //от клиента к серверу
+    kStartGameServerResponse = 8; //от сервера
+
+    //Предметы
+    kAddItemInInventory = 9; //от клиента к серверу
+
+    //Чат
+    kSendToCommonChat = 10; //от клиента к серверу
+    kGetCommonMessage = 11; //от сервера 
+
+    //Menu
+    kExitGameClientRequest = 12; //от клиента к серверу
+    kExitGameServerResponse = 13; //от сервера 
+
+    //kUserSelectedAvatar = 7; //от сервера
+
+    // Игровые команды
+    // MOVE_REQUEST = 5;
+    // MOVE_RESPONSE = 6; 
+
+    // INTERACT_OBJECT_REQUEST = 7; // Взаимодействие с объектом
+    // INTERACT_OBJECT_RESPONSE = 8; // Ответ на взаимодействие с объектом
+
+    // INVENTORY_REQUEST = 9; // Запрос инвентаря
+    // INVENTORY_RESPONSE = 10; // Ответ на инвентарь
+/*QuestKeyIsReceived*/
+    kError = 999; // Ошибка
+}
+
+enum ItemType 
+{
+    kNullItem = 0;
+    kDoorKey = 1;
+    kEnd = 999;
+}
+
+message GameMessage 
+{
+    CommandType command = 1;
+
+     oneof payload 
+    {
+        AuthMessage auth_data = 2; // Поля для авторизации
+        AvatarListMessage avatar_list_data = 3;
+        StartGameMessage start_game = 4;
+        ItemType item = 5;
+        ChatMessage chat_data = 6;
+        ExitGameMessage exit_game = 7;
+        // MoveRequest move_request = 3; // Запрос на перемещение
+        // MoveResponse move_response = 4; // Ответ на перемещение
+        // InteractObjectRequest interact_request = 5; // Взаимодействие с объектом
+        // InteractObjectResponse interact_response = 6; // Ответ на взаимодействие с объектом
+        // AttackRequest attack_request = 7; // Запрос атаки
+        // AttackResponse attack_response = 8; // Ответ на атаку
+        // InventoryRequest inventory_request = 9; // Запрос инвентаря
+        // InventoryResponse inventory_response = 10; // Ответ на инвентарь
+        // ChatMessage chat_message = 11; // Сообщение в чате
+        ErrorMessage error_message = 999; // Ошибка
+    }
+}
+
+message ExitGameMessage
+{
+    Avatar avatar = 1;
+    bool is_server_ready = 2;
+}
+
+message ChatMessage 
+{       
+    string text_message = 1;
+    string sender_avatar_name = 2; //необязательно
+    string recipient_avatar_name = 3; //необязательно               
+}
+// Авторизационные сообщения
+message AuthMessage 
+{
+    oneof auth_payload 
+    {
+        //LoginPasRequest login_request = 1;
+        LogPasClientResponse login_response = 1;
+        AuthSuccess auth_success = 2; //от сервера
+        //AuthFailure auth_failure = 4;
+    }
+}
+
+message AvatarListMessage 
+{
+    repeated Avatar avatar_list = 1;
+}
+
+message Avatar 
+{
+    uint32 id = 1;
+    string name = 2;
+	uint32 race = 3;
+    uint32 class = 4;
+    uint32 level = 5;
+    uint32 experience = 6;
+    uint32 health = 7;
+    uint32 mana = 8;
+    uint32 strength = 9;
+    uint32 dexterity = 10;
+    uint32 intelligence = 11; 
+    uint32 location_id = 12;
+    int32 pos_x = 13;
+    int32 pos_y = 14;  
+}
+
+message StartGameMessage 
+{
+    oneof payload 
+    {
+        uint32 id_selected_avatar = 1;//от клиента к серверу
+        bool is_server_ready = 2; //от сервера
+    }
+
+    Avatar avatar = 3;
+}
+
+message LogPasClientResponse 
+{
+    string login = 1;
+    string password = 2;    
+}
+
+message AuthSuccess 
+{
+    string uuid = 1;
+}
+
+message AuthFailure 
+{
+    string error_message = 1;
+}
+
+// // Игровые команды
+
+// // Перемещение по карте
+// message MoveRequest {
+//     string direction = 1; // Направление движения (north, south, east, west)
+// }
+
+// message MoveResponse {
+//     string new_location = 1; // Новое местоположение после перемещения
+//     string description = 2; // Описание локации
+// }
+
+// // Взаимодействие с объектами
+// message InteractObjectRequest {
+//     string object_name = 1; // Название объекта
+//     string action = 2; // Действие (взять, использовать, осмотреть)
+// }
+
+// message InteractObjectResponse {
+//     string result = 1; // Результат действия
+// }
+
+// // Боевка
+// message AttackRequest {
+//     string target = 1; // Цель атаки
+// }
+
+// message AttackResponse {
+//     string result = 1; // Результат атаки
+// }
+
+// // Инвентарь
+// message InventoryRequest {
+//     bool request_details = 1; // Нужно ли запрашивать детали предметов
+// }
+
+// message InventoryResponse {
+//     repeated string items = 1; // Список предметов
+// }
+
+// // Чат
+// message ChatMessage {
+//     string sender = 1; // Отправитель
+//     string message = 2; // Сообщение
+// }
+
+// Сообщение об ошибке
+message ErrorMessage 
+{
+    string error_description = 1;
+}
